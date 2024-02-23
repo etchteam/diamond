@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Diamond UI</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <diamond-section padding="fluid">
+        <diamond-wrap size="sm">
+          <diamond-grid justify-content="center" class="diamond-spacing-bottom-lg">
+            <diamond-grid-item>
+              <img src="./images/logo.svg" alt="Diamond ui" width="124" height="20" />
+            </diamond-grid-item>
+          </diamond-grid>
+
+          <h1 class="diamond-text-align-center diamond-spacing-bottom-fluid">Bring clarity to your components</h1>
+
+          <div class="diamond-text-size-xl diamond-spacing-bottom-lg">
+            <p>
+              Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities. 
+            </p>
+
+            <p>
+              This results in a UI ecosystem that is robust, reusable, extremely flexible, very testable and low maintenance.
+            </p> 
+
+            <p>
+              The methodology does not dictate any technology or naming constraints.
+            </p>
+          </div>
+
+          <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg" border padding="lg">
+            <form>
+              <diamond-form-group class="diamond-spacing-bottom-md">
+                <diamond-grid justify-content="center">
+                  <diamond-grid-item>
+                    <label for="email">Sign up for email notifications</label>
+                  </diamond-grid-item>
+                </diamond-grid>
+                <diamond-input class="">
+                  <input type="email" placeholder="user@example.com" id="email" required />
+                </diamond-input>
+                <p class="diamond-text-size-sm">
+                  We promise to treat your inbox with respect.
+                </p>
+              </diamond-form-group>
+              <diamond-button width="full-width" vwriant="primary">
+                <button type="submit">Subscribe</button>
+              </diamond-button>
+            </form>
+          </diamond-card>
+        </diamond-wrap>
+      </diamond-section>
+    </main>
+    <footer class="diamond-text-align-center">
+      <diamond-section padding="lg">
+        <p>A project by <a href="https://etch.co">Etch</a></p>
+      </diamond-section>
+    </footer>
+  </body>
+</html>

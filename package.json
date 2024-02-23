@@ -1,0 +1,20 @@
+{
+  "name": "diamond",
+  "version": "1.0.0",
+  "description": "A front-end site for diamond ui",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gavyn McKenzie",
+  "license": "ISC",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "devDependencies": {
+    "parcel": "2.11.0"
+  },
+  "dependencies": {
+    "@etchteam/diamond-ui": "1.25.2"
+  }
+}
