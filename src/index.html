@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Diamond UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Diamond UI - Bring clarity to your components</title>
 
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="app.js"></script>
+    <meta name="description" content="Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities." />
+
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
     <main>
@@ -13,13 +15,13 @@
         <diamond-wrap size="sm">
           <diamond-grid justify-content="center" class="diamond-spacing-bottom-lg">
             <diamond-grid-item>
-              <img src="./images/logo.svg" alt="Diamond ui" width="124" height="20" />
+              <img src="images/logo.svg" alt="Diamond ui" width="124" height="20" />
             </diamond-grid-item>
           </diamond-grid>
 
-          <h1 class="diamond-text-align-center diamond-spacing-bottom-fluid">Bring clarity to your components</h1>
+          <h1 class="diamond-text-align-center diamond-spacing-bottom-lg diamond-text-weight-body">Bring clarity to your components</h1>
 
-          <div class="diamond-text-size-xl diamond-spacing-bottom-lg">
+          <div class="diamond-text-size-xl diamond-spacing-bottom-lg diamond-text-weight-light">
             <p>
               Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities. 
             </p>
@@ -33,23 +35,26 @@
             </p>
           </div>
 
-          <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg" border padding="lg">
-            <form>
+          <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="lg" radius>
+            <form action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" method="post" target="_blank">
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_6399ac2bf5_fa635584a8" tabindex="-1" value="">
+              </div>
               <diamond-form-group class="diamond-spacing-bottom-md">
                 <diamond-grid justify-content="center">
                   <diamond-grid-item>
-                    <label for="email">Sign up for email notifications</label>
+                    <label for="email" class="diamond-text-weight-bold">Sign up for email notifications</label>
                   </diamond-grid-item>
                 </diamond-grid>
                 <diamond-input class="">
-                  <input type="email" placeholder="user@example.com" id="email" required />
+                  <input type="email" name="EMAIL" placeholder="user@example.com" id="email" required />
                 </diamond-input>
                 <p class="diamond-text-size-sm">
                   We promise to treat your inbox with respect.
                 </p>
               </diamond-form-group>
-              <diamond-button width="full-width" vwriant="primary">
-                <button type="submit">Subscribe</button>
+              <diamond-button width="full-width" variant="primary">
+                <button type="submit" class="diamond-text-weight-bold">Subscribe</button>
               </diamond-button>
             </form>
           </diamond-card>
