@@ -12,6 +12,10 @@
   "license": "ISC",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
+    "@parcel/packager-raw-url": "2.11.0",
+    "@parcel/packager-xml": "2.11.0",
+    "@parcel/transformer-webmanifest": "2.11.0",
+    "@parcel/transformer-xml": "2.11.0",
     "parcel": "2.11.0"
   },
   "dependencies": {
