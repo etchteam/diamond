@@ -19,6 +19,6 @@
     "parcel": "2.11.0"
   },
   "dependencies": {
-    "@etchteam/diamond-ui": "^1.27.1"
+    "@etchteam/diamond-ui": "^1.27.2"
   }
 }
