@@ -10,7 +10,7 @@
   },
   "author": "Gavyn McKenzie",
   "license": "ISC",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "> 1%",
   "devDependencies": {
     "@parcel/packager-raw-url": "2.11.0",
     "@parcel/packager-xml": "2.11.0",
@@ -19,6 +19,6 @@
     "parcel": "2.11.0"
   },
   "dependencies": {
-    "@etchteam/diamond-ui": "^1.27.2"
+    "@etchteam/diamond-ui": "^1.27.4"
   }
 }
