@@ -10,7 +10,7 @@
   --diamond-font-family: 'Nunito sans', -apple-system, system-ui,
     BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
 
-  --diamond-font-size-h1: 2.5rem;
+  --diamond-font-size-h1: clamp(2rem, 10vw, 4rem);
 
   --diamond-input-border-color: var(--color-gray);
   --diamond-input-border-color-hover: var(--color-blue);
@@ -21,4 +21,16 @@
 
   --diamond-theme-heading-color: var(--color-blue);
   --diamond-theme-link-color: var(--color-blue);
+}
+
+h1 {
+  font-weight: var(--diamond-font-weight-black);
+}
+
+.logo {
+  display: inline-block;
+  margin-left: .1em;
+  vertical-align: middle;
+  transform: translateY(-18%);
+  width: 3.5rem;
 }
