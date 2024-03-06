@@ -21,9 +21,12 @@
 
   --diamond-theme-heading-color: var(--color-blue);
   --diamond-theme-link-color: var(--color-blue);
+
+  --diamond-spacing-fluid-sm: clamp(1rem, 2.5vw, 3rem);
 }
 
-h1 {
+h1,
+h2 {
   font-weight: var(--diamond-font-weight-black);
 }
 

@@ -33,34 +33,70 @@
         </diamond-grid>
         <diamond-wrap size="xl">
           <diamond-enter type="fade">
-            <h1 class="diamond-text-align-center diamond-spacing-bottom-lg">
+            <h1 class="diamond-text-align-center diamond-spacing-bottom-md">
               Bring clarity to<br />
               your components
             </h1>
+            <diamond-wrap size="md" class="diamond-spacing-bottom-fluid-lg">
+              <p class="diamond-text-size-xl diamond-spacing-bottom-lg diamond-text-weight-light diamond-text-align-center">
+                Diamond UI is a method for organising components to cleanly separate their responsibilities.
+              </p>
+            </diamond-wrap>
           </diamond-enter>
         </diamond-wrap> 
 
         <diamond-enter type="fade-in-up" delay="0.2">
-          <diamond-wrap size="md">
-            <div class="diamond-text-size-xl diamond-spacing-bottom-lg diamond-text-weight-light">
-              <p>
-                Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities. 
-              </p>
+          <diamond-wrap size="md" class="diamond-spacing-bottom-fluid">
+            <h2 class="diamond-text-size-h3">
+              Design Systems can get messy
+            </h2>
+            
+            <p>Are you fed up of bloated components?</p>
 
-              <p>
-                This results in a UI ecosystem that is robust, reusable, extremely flexible, very testable and low maintenance.
-              </p> 
+            <p>Can't decide if it's an atom, a molecule or an organism?</p>
 
-              <p>
-                The methodology does not dictate any technology or naming constraints.
-              </p>
-            </div>
+            <p>Do you add more and more props to your components?</p>
+
+            <p>Do you have to update components for every design change?</p>
+
+            <p class="diamond-spacing-bottom-lg">Are your components awkward to test?</p>
+
+            <h2 class="diamond-text-size-h3">Make things clear and simple</h2>
+
+            <p>
+              As a product grows and evolves, its UI can get harder to update and maintain, often leading to:
+            </p>
+
+            <ul>
+              <li>bloated components</li>
+              <li>complicated props</li>
+              <li>maintenance hell</li>
+            </ul>
+
+            <p>
+              Diamond principles force components become more robust, reusable and flexible.
+            </p>
+
+            <p>
+              For developers this means:
+            </p>
+
+            <ul>
+              <li>there’s fewer components to maintain</li>
+              <li>clear definitions and less ambiguity</li>
+              <li>future problems are easier to solve</li>
+              <li>components can be framework agnostic</li>
+            </ul>
+
+            <p>
+              The approach has been tried and tested on a variety of design systems and we’re in the process of building Diamond UI for public use.
+            </p>
           </diamond-wrap>
         </diamond-enter>
 
         <diamond-enter type="fade-in-up" enter-on-scroll>
           <diamond-wrap size="md">
-            <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="lg" radius>
+            <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="fluid-sm" radius>
               <form 
                 action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" 
                 method="post" 
@@ -72,7 +108,7 @@
                 <diamond-form-group class="diamond-spacing-bottom-md">
                   <diamond-grid justify-content="center">
                     <diamond-grid-item>
-                      <label for="email" class="diamond-text-weight-bold">Sign up for email notifications</label>
+                      <label for="email" class="diamond-text-weight-bold">Diamond UI is coming soon</label>
                     </diamond-grid-item>
                   </diamond-grid>
                   <diamond-input>
@@ -83,8 +119,15 @@
                   </p>
                 </diamond-form-group>
                 <diamond-button width="full-width" variant="primary">
-                  <button type="submit" class="diamond-text-weight-bold" data-umami-event="subscribe">Subscribe</button>
+                  <button type="submit" class="diamond-text-weight-bold" data-umami-event="subscribe">
+                    Notify me
+                  </button>
                 </diamond-button>
+                <p class="diamond-spacing-top-md diamond-text-weight-bold">
+                  <a href="https://etch.co/blog/what-is-diamond-ui" target="_blank" rel="noopener noreferrer">
+                    Learn more about Diamond UI
+                  </a>
+                </p>
               </form>
             </diamond-card>
           </diamond-wrap>
