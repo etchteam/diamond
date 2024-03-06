@@ -24,15 +24,19 @@
   <body>
     <main>
       <diamond-section padding="fluid">
-        <diamond-wrap size="sm">
-          <diamond-grid justify-content="center" class="diamond-spacing-bottom-lg">
-            <diamond-grid-item>
-              <img src="images/logo.svg" alt="Diamond ui" width="124" height="20" />
-            </diamond-grid-item>
-          </diamond-grid>
+        <diamond-grid justify-content="center" class="diamond-spacing-bottom-lg">
+          <diamond-grid-item>
+            <img src="images/logo.svg" alt="Diamond ui" width="124" height="20" />
+          </diamond-grid-item>
+        </diamond-grid>
+        <diamond-wrap size="xl">
+          <h1 class="diamond-text-align-center diamond-spacing-bottom-lg">
+            Bring clarity to<br />
+            your components
+          </h1>
+        </diamond-wrap> 
 
-          <h1 class="diamond-text-align-center diamond-spacing-bottom-lg diamond-text-weight-body">Bring clarity to your components</h1>
-
+        <diamond-wrap size="md">
           <div class="diamond-text-size-xl diamond-spacing-bottom-lg diamond-text-weight-light">
             <p>
               Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities. 
@@ -46,9 +50,15 @@
               The methodology does not dictate any technology or naming constraints.
             </p>
           </div>
+        </diamond-wrap>
 
+        <diamond-wrap size="md">
           <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="lg" radius>
-            <form action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" method="post" target="_blank">
+            <form 
+              action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" 
+              method="post" 
+              target="_blank"
+            >
               <div aria-hidden="true" style="position: absolute; left: -5000px;">
                 <input type="text" name="b_6399ac2bf5_fa635584a8" tabindex="-1" value="">
               </div>
@@ -58,7 +68,7 @@
                     <label for="email" class="diamond-text-weight-bold">Sign up for email notifications</label>
                   </diamond-grid-item>
                 </diamond-grid>
-                <diamond-input class="">
+                <diamond-input>
                   <input type="email" name="EMAIL" placeholder="user@example.com" id="email" required />
                 </diamond-input>
                 <p class="diamond-text-size-sm">
@@ -75,7 +85,41 @@
     </main>
     <footer class="diamond-text-align-center">
       <diamond-section padding="lg">
-        <p>A project by <a href="https://etch.co">Etch</a></p>
+        <p>
+          A project by 
+          <a href="https://etch.co" target="_blank" rel="noopener noreferrer">
+            <svg
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 76 32"
+              aria-labelledby="logo"
+              role="img"
+            >
+              <title id="logo">Etch</title>
+              <g>
+                <path fill="#F06" d="M0 4L0 20 16 4z" />
+                <path fill="#F06" d="M0 12L0 28 16 28z" />
+                <path fill="#F66" d="M0 12L0 28 16 12z" />
+              </g>
+              <g>
+                <path fill="#F06" d="M20 4H28V20H20z" />
+                <path fill="#F06" d="M20 12L20 28 36 28z" />
+                <path fill="#F66" d="M20 12L20 28 36 12z" />
+              </g>
+              <g>
+                <path fill="#F06" d="M40 12L40 28 56 28z" />
+                <path fill="#F66" d="M40 12L40 28 56 12z" />
+              </g>
+              <g>
+                <path fill="#F06" d="M60 4H68V20H60z" />
+                <path fill="#F06" d="M72 12L60 12 60 16 76 32 76 16z" />
+                <path fill="#F66" d="M60 12L60 32 76 16 72 12z" />
+              </g>
+            </svg>
+          </a>
+        </p>
       </diamond-section>
     </footer>
   </body>
