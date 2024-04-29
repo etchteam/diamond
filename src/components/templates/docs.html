@@ -1,0 +1,756 @@
+<h2 id="foreword">Foreword</h2>
+<p>I’ve been writing HTML and CSS for a long time. There’s something amazing about drawing with code. Seeing all the little words and numbers turn into pictures on the screen that you can put in front of anybody in the world, essentially for free.</p>
+<p>I remember the slow transition from fixed pages to flexible components, to systems. It felt like magic when we started writing and documenting components like we’d solved all the problems in the world with making websites. Now we had components, we could just re-use them all over our sites and fly away into the sunset as front-end development masters.</p>
+<p>Over time, our egos came crashing down as new designs didn’t fit the components we’d built. They almost fit, so we shoehorned them in with new props. We were doing it! Our components could support anything! </p>
+<p>As time went on, the components became more and more complicated, trying to support every scenario, becoming harder to test and harder to understand.</p>
+<p>I spoke to Jim, our designer: “Why are the designs always fighting the existing components, why can’t you re-use what is already there?”.</p>
+<p>“I am re-using it. There are 4 types of components: composition, canvas, content and controls.”</p>
+<p>And that was Diamond.</p>
+<h2 id="the-problem">The problem</h2>
+<blockquote>
+  <p>A good bit of software always starts with a problem, right? Don’t ask for features, tell me the problem!</p>
+</blockquote>
+<p>If you’re reading this, you’re probably in one of two places: you want to start a design system, or you’ve already got one. How do you create and organise your components in a way that is scalable and maintainable over time? The days of in-and-out, make a website, put it on the internet and it’s done forever are long gone. </p>
+<p>Everything we make has to be supported, often for many years.</p>
+<h3 id="lets-make-components">Let’s make components!</h3>
+<p>So you’ve got a fresh copy of Storybook, a bunch of designs and you decide to jump in and make some components. You start off setting up some design tokens and creating the base typography and then it’s component time.</p>
+<p>The first component is a page hero. Pretty straightforward, it’s a big coloured box, a large title, some text and a call to action.</p>
+<p><img src="images/docs/Screenshot_2024-03-19_at_05.20.18.png" alt="[https://codepen.io/gavynmckenzie/pen/ExJZvNd](https://codepen.io/gavynmckenzie/pen/ExJZvNd)"></p>
+<p><a href="https://codepen.io/gavynmckenzie/pen/ExJZvNd">https://codepen.io/gavynmckenzie/pen/ExJZvNd</a></p>
+<p>Using a component-first mindset, you create a button component and a hero component. The hero takes some props for the title, the intro, the CTA text and the URL for where the button goes. This is awesome! It’s turned a bunch of HTML into a simple one-liner.</p>
+<pre><code class="language-html">&lt;page-hero
+  title=&quot;Page title&quot;
+  intro=&quot;Lorem ipsum dolor [...etc]&quot;
+  cta=&quot;Main action&quot;
+  url=&quot;/page-slug&quot;
+/&gt;
+</code></pre>
+<p>A little while later a new design comes in, with a slightly different hero, they’ve added a yellow variant with a new button style.</p>
+<p><img src="images/docs/Screenshot_2024-03-19_at_05.28.03.png" alt="Screenshot 2024-03-19 at 05.28.03.png"></p>
+<p>Fair enough, you add a prop to the hero to control the background colour and another one to pass the new button variant to the CTA. It’s a couple more props, but it’s not too bad.</p>
+<pre><code class="language-html">&lt;page-hero
+  title=&quot;Page title&quot;
+  intro=&quot;Lorem ipsum dolor [...etc]&quot;
+  cta=&quot;Main action&quot;
+  url=&quot;/page-slug&quot;
+  cta-style=&quot;secondary&quot;
+  theme=&quot;yellow&quot;
+/&gt;
+</code></pre>
+<p>This component is pretty neat, now it’s getting more powerful and can support more variations!</p>
+<p>Over the months, more designs come in and more props get added. Different teams have different requirements and they all need to use the design system components. Some eyebrow text is added above the page title, a second smaller paragraph gets added below the intro (this one has links in it too) and there’s the ability to add multiple CTAs of different types (sometimes they are buttons, sometimes links). The SEO team decide the eyebrow needs to be the <code>h1</code> and the “page title” text actually needs to be a <code>p</code> for maximum search power.</p>
+<p><img src="images/docs/Screenshot_2024-03-19_at_05.39.57.png" alt="Screenshot 2024-03-19 at 05.39.57.png"></p>
+<pre><code class="language-html">&lt;page-hero
+  title=&quot;Page title&quot;
+  intro=&quot;Lorem ipsum dolor [...etc]&quot;
+  cta=&quot;Main action&quot;
+  url=&quot;https://another.site/page-slug&quot;
+  cta-target=&quot;_blank&quot;
+  cta-rel=&quot;noopener noreferrer&quot;
+  cta-style=&quot;secondary&quot;
+  theme=&quot;grey&quot;
+  eyebrow=&quot;Eyebrow text&quot;
+  eyebrow-tag=&quot;h1&quot;
+  title-tag=&quot;p&quot;
+  secondary-cta=&quot;Secondary action&quot;
+  secondary-cta-type=&quot;button&quot;
+  secondary-cta-style=&quot;secondary&quot;
+  on-secondary-cta-click=&quot;handleCtaClick()&quot;
+&gt;
+    &lt;p slot=&quot;secondary-text&quot;&gt;
+        Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod 
+        ipsum ut mi &lt;a href=&quot;#&quot;&gt;elementum interdum&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/page-hero&gt;
+</code></pre>
+<p>This component is getting out of hand. </p>
+<p>It’s riddled with conditional statements and testing the different combinations of props gets increasingly awkward. We would have done better just writing this out with HTML! You decide it’s gotten too complicated and you need to start a new design system that will solve these problems once and for all.</p>
+<p>The cycle can continue for years.</p>
+<h3 id="components-are-functions">Components are functions</h3>
+<p>When you think about it, a component is a function that takes some parameters and returns some HTML. When writing code a generally agreed-on principle is that a function should <em>do one thing</em>. This makes functions more readable, modular and easy to maintain.</p>
+<p>Here’s our page hero component as a function:</p>
+<pre><code class="language-jsx">function pageHero(
+  title, 
+  intro, 
+  cta, 
+  url, 
+  ctaTarget, 
+  ctaRel, 
+  ctaStyle, 
+  theme, 
+  eyebrow, 
+  eyebrowTag, 
+  titleTag, 
+  secondaryCta, 
+  secondaryCtaType, 
+  secondaryCtaStyle, 
+  onSecondaryCtaClick, 
+  secondaryText
+) {
+  let result = `&lt;header class=&quot;page-hero page-hero--${theme}&quot;&gt;`;
+  
+  if (eyebrow) {
+      result += `&lt;${eyebrowTag} class=&quot;page-hero__eyebrow&quot;&gt;${eyebrow}&lt;/${eyebrowTag}&gt;`;
+  }
+  
+  result += `&lt;${titleTag} class=&quot;page-hero__title&quot;&gt;${title}&lt;/${titleTag}&gt;`;
+  
+  [...horror continues]
+  
+  return result
+}
+</code></pre>
+<p>If there was a function that looked like this, it would set off some serious alarm bells, why is it OK in components?</p>
+<h3 id="help-me">Help me</h3>
+<p>So how do we stop our codebase from heading down this path? How can we define components from the start with clean boundaries to prevent the props from getting out of hand?</p>
+<p>Diamond UI sets strict rules for component responsibilities that solve future maintenance problems <strong>now.</strong> Let’s take a look.</p>
+<h2 id="what-is-diamond">What is Diamond?</h2>
+<blockquote>
+  <p>A diamond’s quality is determined by the 4 Cs: cut, colour, clarity and carat.</p>
+</blockquote>
+<p>Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities. This results in a UI ecosystem that is robust, reusable, extremely flexible, very testable and low maintenance. The methodology does not dictate any technology or naming constraints.</p>
+<p>Components are grouped into one of four areas, aiming to be concerned with fulfilling a single area of responsibility.</p>
+<p>Diamond UI components are based around the 4 Cs of UI:</p>
+<ul>
+  <li>Composition</li>
+  <li>Canvas</li>
+  <li>Content</li>
+  <li>Controls</li>
+</ul>
+<h3 id="composition">Composition</h3>
+<p>Compositions are an invisible element of the page that provides layout. Compositions are solely concerned with creating structure and spacing.</p>
+<p>Typical examples of a composition component are: </p>
+<ul>
+  <li><code>Grid</code> - creates a layout with grid cells arranged in columns and rows</li>
+  <li><code>Spacing</code> - creates spacing between components or areas of the page</li>
+  <li><code>Container</code> - sets a max width for a page, block of content or components</li>
+</ul>
+<p><img src="images/docs/Screenshot_2022-09-14_at_13.35.08.png" alt="[https://codepen.io/gavmck/pen/ExLNbbg](https://codepen.io/gavmck/pen/ExLNbbg)"></p>
+<p><a href="https://codepen.io/gavmck/pen/ExLNbbg">https://codepen.io/gavmck/pen/ExLNbbg</a></p>
+<h3 id="canvas">Canvas</h3>
+<p>A canvas represents a coloured box on the page that content can be poured into. </p>
+<p>Canvases generally sit within a composition element to give them a layout context or they will flow outwards to fill the space.</p>
+<p>Canvases can provide padding for their content area, but should not generally dictate any other layout constraints.</p>
+<p>Typical examples of canvas components are: </p>
+<ul>
+  <li><code>Card</code> - a box, often presented with an image, title, text and a call to action</li>
+  <li><code>Navbar</code> - a floating element at the top of the page, containing the logo and main navigation</li>
+  <li><code>Hero</code> - the first element in the main content of the page, containing the title and intro</li>
+</ul>
+<p><img src="images/docs/Screenshot_2022-09-14_at_13.42.44.png" alt="[https://codepen.io/gavmck/pen/vYjypKv](https://codepen.io/gavmck/pen/vYjypKv)"></p>
+<p><a href="https://codepen.io/gavmck/pen/vYjypKv">https://codepen.io/gavmck/pen/vYjypKv</a></p>
+<h3 id="content">Content</h3>
+<p>Content components are focused around text and images and the base level, but can extend into more specialised areas such as a person or a product. Content components are where the UI library can become more specialised towards the industry or product that the library is serving.</p>
+<p>Typical examples of content components are:</p>
+<ul>
+  <li><code>Heading</code> - title elements, represented in HTML as h1-5</li>
+  <li><code>Text</code> - a piece of typographic content</li>
+  <li><code>Icon</code> - a glyph representing something in the app ecosystem</li>
+  <li><code>Person</code>, <code>ProductSummary</code>, <code>PaymentDetails</code> - product/industry-specific content</li>
+</ul>
+<p><img src="images/docs/Screenshot_2022-09-14_at_14.27.18.png" alt="[https://codepen.io/gavmck/pen/bGMBLgR](https://codepen.io/gavmck/pen/bGMBLgR)"></p>
+<p><a href="https://codepen.io/gavmck/pen/bGMBLgR">https://codepen.io/gavmck/pen/bGMBLgR</a></p>
+<h3 id="controls">Controls</h3>
+<p>Controls are interactive elements of the page. Anything that can be clicked, dragged, typed into or accessed in some way with the mouse, keyboard or touch is a control.</p>
+<p>Typical examples of controls are:</p>
+<ul>
+  <li><code>Button</code> - a clickable component that triggers an action, such as submitting a form</li>
+  <li><code>Link</code> - a hypertext link that takes the user to another page or section of the app</li>
+  <li><code>Input</code> - a form input that allows users to enter information</li>
+</ul>
+<p><img src="images/docs/Screenshot_2022-09-14_at_14.37.15.png" alt="[https://codepen.io/gavmck/pen/NWMbyaw](https://codepen.io/gavmck/pen/NWMbyaw)"></p>
+<p><a href="https://codepen.io/gavmck/pen/NWMbyaw">https://codepen.io/gavmck/pen/NWMbyaw</a></p>
+<h2 id="how-to-turn-a-design-into-diamonds">How to turn a design into Diamonds</h2>
+<p>Let’s go right back to the start and look at our page hero component again. Could we have done this differently with Diamond?</p>
+<p><img src="images/docs/Screenshot_2024-04-29_at_15.09.48.png" alt="Screenshot 2024-04-29 at 15.09.48.png"></p>
+<p>Diving this page up into the 4 C’s we can see:</p>
+<ul>
+  <li>Composition - Grid, Container, Spacing</li>
+  <li>Canvas - Page Section</li>
+  <li>Content - Title and Text</li>
+  <li>Controls - Button</li>
+</ul>
+<p>We’ve managed to chip quite a few Diamonds out of this design. This might initially look likq quite a lot of components for such a small piece of the page, but let’s see how they can help us out as the design gets more complicated.</p>
+<p>Adding the eyebrow text and secondary paragraph is pretty straightforward. Because all our components accept any children, we can just add an HTML element or component for the eyebrow text and another one for the secondary paragraph <em>without updating any of the existing component props</em>. By favouring this composition over the props pattern, the new paragraph can also accept the link at the end whereas our previous string prop for <code>intro</code> was unable to include any extra text formatting.</p>
+<p><img src="images/docs/Screenshot_2024-03-21_at_05.17.00.png" alt="Screenshot 2024-03-21 at 05.17.00.png"></p>
+<p>We’ve now got two buttons, one has a new ‘secondary’ style. As they’re sitting next to each other, we can re-use our flex grid component to give control over their size and spacing. The components we created in our initial design phase are already starting to pay us back.</p>
+<p><img src="images/docs/Screenshot_2024-03-21_at_05.24.12.png" alt="Screenshot 2024-03-21 at 05.24.12.png"></p>
+<p>One day the product team decide they need an email signup in the main hero. There’s a new dark page section with an email capture. Once again, we can just drop the input into our grid component instead of a button and the new variant works without any updates needed to our existing components.</p>
+<p><img src="images/docs/Screenshot_2024-03-21_at_05.32.42.png" alt="Screenshot 2024-03-21 at 05.32.42.png"></p>
+<p>The framework has become much more flexible and with fewer props and variations per component, much more testable and maintainable too. </p>
+<h2 id="getting-into-the-nitty-gritty">Getting into the nitty gritty</h2>
+<p>So far, other than our initial problem component, we haven’t touched on any code. This is because Diamond is a mindset, more than a strict set of coding standards. However, I’m a developer and developers love to nerd out on building things with code, so let’s dive into some ideas on actually writing things with Diamond.</p>
+<p>We’ve created a set of base CSS, web components and classes that encompass Diamond thinking along with a few other ideas that we’ll go into in the following sections. You can explore this library in the <a href="https://diamond.etch.co/storybook">storybook documentation</a> and <a href="https://github.com/etchteam/diamond-ui">Github repo</a>, or install it from npm <a href="https://www.npmjs.com/package/@etchteam/diamond-ui">@etchteam/diamond-ui</a>.</p>
+<h3 id="when-is-it-a-component">When is it a component?</h3>
+<p>For years, everything was a component. Components provide a defined interface for a piece of UI that sets a specific set of props and the ways those props can interact to create a final piece of HTML. This gives us a very robust set of behaviour, because every component is independent and nested in each other, but we start to run into performance issues.</p>
+<p>There are two issues with having lots of components on a page: <a href="https://developer.chrome.com/docs/lighthouse/performance/dom-size">excessive DOM size</a> and <a href="https://developer.chrome.com/docs/lighthouse/performance/bootup-time">JavaScript execution time</a>.</p>
+<p>Components that render DOM and wrap other components and other components eventually cause a large amount of DOM nodes that the browser has to keep track of. Too much HTML can lead to slow renders and janky pages.</p>
+<p>A component interface is often used as a way to apply classes to an element and we need to download, parse and run some JavaScript to do that. Whilst each instance can be tiny, it quickly adds up.</p>
+<p>To address these, there are 3 types of components in the Diamond ecosystem: Components, CSS Components and Utility/Context classes.</p>
+<h4 id="components">Components</h4>
+<p>Components are the classic groupings of HTML, CSS and JavaScript (and sometimes assets or JSON data) that we have been using for years now. These are usually wrapped up with your front-end framework, such as React, Angular, Vue or Web Components. They will often have built-in, interactive, functionality due to the JavaScript and use the JavaScript bundler to load their CSS.</p>
+<p>Components provide a defined API of props to interact with (even more so in TypeScript!) and have hard boundaries so their appearance is not affected by the context in which they are used.</p>
+<p>These components are the default catch-all that can always be used and work everywhere. But that comes at a potential cost of JavaScript bundle size and extra DOM nodes.</p>
+<h4 id="css-components">CSS Components</h4>
+<p>CSS components are a new tool we have been experimenting with at Etch at the time of writing (~March 2024) to reduce JavaScript bundle size and scripting time. Whilst working with Web Components, we realised there is no strict requirement to register the component to the custom elements registry, so We Components with no HTML sub-tree or JavaScript interaction have no need to run the JavaScript to initialise them.</p>
+<p><strong>U wot m8?</strong></p>
+<p>Web Components are custom HTML elements. Whilst there is a defined set of HTML elements that come with semantic meanings and pre-defined interactions, any element name can be valid HTML, as long as it contains at least one hyphen in the element name to define it as a custom element e.g. <code>&lt;awesome-element&gt;</code>. The element is treated as a non-semantic HTML element, such as a <code>div</code> or <code>span</code> by the browser.</p>
+<p>Usually, when writing Web Components, you would define the custom element in the registry, by running some JavaScript to tell the browser it exists.</p>
+<pre><code class="language-jsx">customElements.define(&quot;awesome-element&quot;, AwesomeElement);
+</code></pre>
+<p>This binds the element&#39;s HTML tag to the JavaScript class that contains its behaviour. </p>
+<p>However, some of our Web Components only exist to create a defined component interface for binding styles to an element. Let’s look at a flexbox grid.</p>
+<pre><code class="language-jsx">&lt;diamond-grid gap=&quot;small&quot;&gt;
+  &lt;diamond-grid-item mobile=&quot;12&quot; tablet=&quot;6&quot; desktop=&quot;4&quot;&gt;
+    [...content]
+  &lt;/diamond-grid-item&gt;
+&lt;/diamond-grid&gt;
+</code></pre>
+<p>The <code>diamond-grid</code> element creates a flexbox grid layout and sets the gap between items to be <code>small</code> from the design tokens. The <code>diamond-grid-item</code> is sat in a classic 12-column grid layout and sets itself to take up the full 12 columns on mobile, 6/12 on tablet and 4/12 on desktop.</p>
+<p>Using a standard component, these props would bind themselves to the element with JavaScript and update the <code>class</code> attribute on the inner element.</p>
+<pre><code class="language-jsx">render() {
+  return (
+    &lt;div 
+        class={{
+            &#39;diamond-grid-item&#39;: true,
+            [`diamond-grid-item--mobile-${props.mobile}`]: !!props.mobile,
+            [`diamond-grid-item--tablet-${props.tablet}`]: !!props.tablet,
+            [`diamond-grid-item--desktop-${props.desktop}`]: !!props.desktop,
+        }}
+    &gt;
+      &lt;slot /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>The HTML element has to be bound to the registry, the JavaScript bundle has to download and the element needs to initialise and render before the classes can be bound and the styles can kick in. We’re using a bunch of JavaScript to do the job of HTML and CSS so we can provide a cleaner, defined, interface for our component.</p>
+<p>There are 2 things we can do to tackle this.</p>
+<p>Step one is to define our styles using the attribute settings on the component.</p>
+<pre><code class="language-css">diamond-grid-item {
+  &amp;[mobile=&quot;12&quot;] {
+      width: calc(12 / 12 * 100%);
+  }
+  
+  @media (width &gt;= 768px) {
+      &amp;[tablet=&quot;6&quot;] {
+          width: calc(6 / 12 * 100%);
+      }
+    }
+  
+  @media (width &gt;= 1280px) {
+      &amp;[desktop=&quot;4&quot;] {
+            width: calc(4 / 12 * 100%);
+      }
+    }
+}
+</code></pre>
+<p>By using attribute styles, we can bypass the need for JavaScript to create classes. The CSS is already scoped with the element selector and the attribute styles work out of the box.</p>
+<p>As a side note, <a href="https://caniuse.com/css3-attr">soon</a> we’ll be able to use the CSS <code>attr()</code> function to minimise the amount of CSS needed to create one of these attribute base style setups, by passing the attribute value straight to CSS.</p>
+<pre><code class="language-css">diamond-grid-item {
+  &amp;[mobile] {
+    width: calc(attr(mobile) / 12 * 100%);
+  }
+}
+</code></pre>
+<p>So, now we don’t need a render function and more, the only thing the Custom Element is giving us is type safety and code completion/hints from the TypeScript types that it generates.</p>
+<p>We can again bypass the need for the browser to download this JavaScript by creating a type for this element in pure TypeScript.</p>
+<pre><code class="language-tsx">type Column =
+  | &#39;1&#39;
+  | &#39;2&#39;
+  ... more columns 
+  | &#39;11&#39;
+  | &#39;12&#39;;
+
+export interface GridItemAttributes {
+  mobile?: Column;
+  tablet?: Column;
+  desktop?: Column;
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    &#39;diamond-grid-item&#39;: GridItemAttributes;
+  }
+}
+</code></pre>
+<p>This type can be imported in JavaScript in exactly the same way as we would import a standard web component, meaning this CSS component can be upgraded seamlessly if needed in future, but it will not add any production JavaScript code that the browser has to parse and run.</p>
+<pre><code class="language-css">import &#39;@etchteam/diamond-ui/composition/Grid/GridItem&#39;;
+</code></pre>
+<p>CSS components offer all the developer experience advantages of regular components, whilst improving the end-user performance.</p>
+<p><strong>A little JSXtra</strong></p>
+<p>One little gotcha in React/JSX is that it uses different HTML elements typing setup, so you need to define the type separately for use in JSX.</p>
+<pre><code class="language-tsx">declare module &#39;react&#39; {
+  namespace JSX {
+    interface IntrinsicElements {
+      &#39;diamond-grid-item&#39;: JSXCustomElement&lt;GridItemAttributes&gt;;
+    }
+  }
+}
+</code></pre>
+<h4 id="utility-classes">Utility classes</h4>
+<p>The final component layer is CSS utility classes. Where a component can be reduced to a single element that requires a single extra class and no extra DOM, we can use a utility class. </p>
+<p>A perfect example of this is spacing between components.</p>
+<p>The spacing between components is entirely context-dependent. If we look back at the Diamond groups, spacing is a Composition component. We could use the blunt hammer of a regular component or a CSS component to create a spacing component and wrap it around other components to set the spacing between them.</p>
+<pre><code class="language-tsx">&lt;diamond-spacing bottom=&quot;medium&quot;&gt;
+  &lt;diamond-card&gt;
+    [...content]
+  &lt;/diamond-card&gt;
+&lt;diamond-spacing&gt;
+</code></pre>
+<p>The problem we have is that each time we add/change spacing it creates an extra DOM node. Over a large page, this quickly adds up.</p>
+<p>Instead, we can use a spacing utility class to add spacing to existing components, without adding extra markup.</p>
+<pre><code class="language-tsx">&lt;diamond-card class=&quot;spacing-bottom--medium&quot;&gt;
+  [...content]
+&lt;/diamond-card&gt;
+</code></pre>
+<p>Utility classes should only be used where it is expected to only need to add a single class, or you can quickly get into a utility class mess, such as this example from the Tailwind (utility first CSS) site.</p>
+<pre><code class="language-tsx">&lt;div class=&quot;w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white&quot;&gt;
+  [...content]
+&lt;/div&gt;
+</code></pre>
+<h3 id="separating-semantics-from-styles">Separating semantics from styles</h3>
+<p>There are two kinds of HTML: semantic HTML that gives content meaning or adds implied functionality, like <code>article</code>, <code>h1</code>, <code>p</code>, <code>header</code>, <code>button</code>, <code>a</code>; and non-semantic HTML that we use for structure and convenience like <code>div</code> and <code>span</code>.</p>
+<p>Semantics are great when used properly and terrible when used incorrectly. If we don’t expose semantic elements, it’s easy for heading levels to get into the wrong document order or landmark elements to be used in the wrong place or buttons used in the place of links and vice versa.</p>
+<p>Let’s look at the hero component again. Inside the <code>page-hero</code> was a nested <code>cta-button</code> component. This could render a <code>button</code> or an <code>a</code> tag. We then have a problem, because these semantic elements have several built-in, but conflicting, attributes which could be applied to each.</p>
+<p>The button can have <code>type</code> , <code>form</code>, <code>name</code> , <code>formaction</code>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">etc, etc, etc</a>. Supporting all these would be a nightmare. The <code>a</code> tag also has lots of built-in attributes, such as <code>href</code>, <code>target</code>, <code>rel</code> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">many more</a>. How do we support all these attributes, whilst providing a well-defined set of types for our <code>cta-button</code> component?</p>
+<p>The solution is to separate the style from semantics. Much like we add some divs or spans to help structure our HTML around the semantic elements, we can make our components in a way that separates style from semantics.</p>
+<p>There are several ways to approach this, depending on the framework and developer preferences.</p>
+<p>Web components seem to favour a wrapped approach. </p>
+<pre><code class="language-html">&lt;cta-button&gt;
+    &lt;button type=&quot;button&quot;&gt;
+        Main action
+    &lt;/button&gt;
+&lt;/cta-button&gt;
+
+&lt;cta-button variant=&quot;secondary&quot;&gt;
+    &lt;a href=&quot;https://makebetter.software&quot;&gt;
+      Secondary action
+    &lt;/a&gt;
+&lt;/cta-button&gt;
+</code></pre>
+<p>If we take this principle forward, it also works in the context of different JavaScript frameworks that have custom components that sit on top of Semantic HTML, such as Vue Cli’s <code>router-link</code> or the Next.js <code>Link</code> component. Both these components replace the usage of an <code>a</code> tag for internal links so the action can be hooked up to the SPA router rather than doing a standard HTTP request.</p>
+<pre><code class="language-html">&lt;cta-button&gt;
+    &lt;router-link to=&quot;/page-slug&quot;&gt;
+        Main action
+    &lt;/router-link&gt;
+&lt;/cta-button&gt;
+
+&lt;cta-button&gt;
+    &lt;Link href=&quot;/page-slug&quot;&gt;
+      Secondary action
+    &lt;/Link&gt;
+&lt;/cta-button&gt;
+</code></pre>
+<p>Outside of a JavaScript context, separating the style from semantics using this wrap method means the components work with JavaScript disabled or if a bug has caused the JavaScript to stop running, or if the connection speed is just terrible and the app hasn’t hydrated yet. We’re enhancing HTML with custom styling, but not taking anything away.</p>
+<p>In React or Vue, another method is to pass a component <code>as</code> prop to either pass through an HTML element or even a custom component, such as the Next.js <code>Link</code> .</p>
+<pre><code class="language-html">&lt;CtaButton as=&quot;a&quot; href=&quot;/page-slug&quot;&gt;
+  Main action
+&lt;/CtaButton&gt;
+</code></pre>
+<p>In the component, we can spread the unknown props onto the HTML so it supports all the extra semantic attributes from the HTML element passed in.</p>
+<pre><code class="language-tsx">function CtaButton({ as = &#39;button&#39;, children, ...props }) {
+    const Component = as;
+  return (
+    &lt;Component {...props}&gt;
+      {children}
+    &lt;/Component&gt;
+  );
+}
+</code></pre>
+<p>Finally, Angular also supports components as directives (HTML attributes), which lets you bind component functionality to any HTML element (although it’s usually good to only allow a few specific ones)</p>
+<pre><code class="language-html">&lt;a cta-button href=&quot;/page-slug&quot;&gt;
+  Main action
+&lt;/a&gt;
+</code></pre>
+<p>By separating the appearance of components from the semantics, we can construct the semantics that are appropriate for the context at the page/view level without having to bind lots of extra props to our components.</p>
+<h3 id="theming-components">Theming components</h3>
+<p>Many components in a UI ecosystem need to support different themes, such as light, medium, dark or info, success, warning or error. Some common examples might be a page section, a card or an alert message.</p>
+<p>There are a couple of common ways of supporting themes in a component. </p>
+<p>We could wrap the component in a theme class which sets the background colour, text colour of elements etc.</p>
+<pre><code class="language-tsx">&lt;div class=&quot;theme-dark&quot;&gt;
+  &lt;awesome-component&gt;&lt;/awesome-component&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.theme-dark {
+    background: #000;
+    color: #fff;
+}
+
+.theme-dark h2 {
+    color: #fefefe;
+}
+
+.theme-dark a {
+    color: #ff0000;
+}
+&lt;/style&gt;
+</code></pre>
+<p>The problem we have here is that the theme class makes assumptions about the application of the colours in the theme. If we want to go off-piste and so something differently, the theme is not able to support it.</p>
+<p>The next logical assumption is to make the component itself support themes.</p>
+<pre><code class="language-tsx">&lt;awesome-component theme=&quot;dark&quot;&gt;&lt;/awesome-component&gt;
+
+&lt;style&gt;
+.awesome-component--dark {
+  background: #000;
+  color: #fff;
+}
+
+.awesome-component--dark h2 {
+    color: #fefefe;
+}
+
+.awesome-component--dark a {
+    color: #ff0000;
+}
+&lt;/style&gt;
+</code></pre>
+<p>This is a little more flexible as the theme colours can be applied any way we like within the component, but every component needs to be updated to support every theme, both from a props and a CSS point of view. This leads into a maintenance pit, with ever increasing themed component CSS.</p>
+<p>If there are any child components that support theming, the theme has to be passed down through the props from parent to child to make sure all components inherit the theme correctly.</p>
+<p>How do we fix this? To make any theme-able component support any theme, we use <strong>CSS custom property powered theme contexts</strong>.</p>
+<h4 id="theme-contexts">Theme contexts</h4>
+<p>A theme context sets a group of CSS custom properties that define our theme. Because CSS custom properties are evaluated at runtime, components can dynamically inherit the values as they are currently defined.</p>
+<pre><code class="language-css">.theme-dark {
+  --theme-background: #000;
+  --theme-color: #fff;
+  --theme-heading-color: #fefefe;
+  --theme-link-color: #ff0000;
+}
+</code></pre>
+<p>Within the component, we can apply the theme context using the variables.</p>
+<pre><code class="language-css">.awesome-component {
+  background: var(--theme-background);
+  color: var(--theme-color);
+}
+</code></pre>
+<p>Notice that the <code>h2</code> and <code>a</code> styles were missing? That is because these elements can set their own theme control independently and auto inherit the theme context from the place they are placed in the HTML.</p>
+<pre><code class="language-css">/* typography.css */
+
+h2 {
+  color: var(--theme-heading-color);
+} 
+
+a {
+  color: var(--theme-link-color);
+}
+</code></pre>
+<p>A base theme should be applied at the <code>:root</code> to ensure components that support theming start off with sensible defaults.</p>
+<pre><code class="language-css">:root {
+    --theme-background: var(--theme-light-background);
+  --theme-color: var(--theme-light-color);
+  --theme-heading-color: var(--theme-light-heading-color);
+  --theme-link-color: var(--theme-light-link-color);
+}
+</code></pre>
+<p>Theme contexts help to enforce colour contrast accessibility because the theme colours are defined at a design token level, allowing designers to check them against WCAG guidelines before they are rolled out everywhere.</p>
+<p>Components that support theming are simple, because the CSS looks almost identical to a component that doesn’t support theming, except for the inclusion of the theme variables.</p>
+<p>Themes can be nested, as the context always applies to the components within the context and is overwritten if that context is reset.</p>
+<p>Special temporary, takeover, or seasonal, themes can also be created ad-hoc and applied to any components that support theme contexts in the event there is a brand collaboration or special promotion that needs a different set of brand colours.</p>
+<p>For a basic theme, we would suggest creating at least the following values.</p>
+<ul>
+  <li>background</li>
+  <li>colour</li>
+  <li>heading colour</li>
+  <li>border colour</li>
+  <li>link colour</li>
+</ul>
+<p>We often also end up adding: muted, border colour hover, link text decoration and icon colour; but these are not essential.</p>
+<p>When we figured out theme contexts, it felt like magic.</p>
+<h3 id="rules-of-engagement">Rules of engagement</h3>
+<p>The rules of engagement are a set of generic rules for any component that we adhere to in order to keep the component robust, flexible and future friendly. They are loosely based on Micah Godbolt’s idea of Road Runner Rules for Design Systems, which defines a set of rules that apply to everything in your design system.</p>
+<h4 id="fill-the-space">Fill the space</h4>
+<p>Components should always fill the space they are given. The available width and height for a component should be given to it by the <strong>Composition</strong> context, such as the grid layout or a container component that limits width. A component that limits its own width or height via CSS will find that width/height setting needs to change in another context in future. This would be mixing <strong>content</strong>/<strong>canvas/controls</strong> with <strong>composition</strong>.</p>
+<p><strong>Exceptions</strong></p>
+<p>The only caveat to this is inline elements, such as <code>span</code>, <code>button</code>, <code>img</code> that are defined by their content size (note this is not size limit due to CSS constraints).</p>
+<h4 id="no-external-margins">No external margins</h4>
+<p>Components should not define external margins or spacing. Gaps around components are dependent on the context in which they are used and, as such, they should not define that gap. Gaps between components can be created either using a grid <strong>composition</strong> components, which sets spacing between cells or a spacing <strong>composition</strong> component, which exists solely to create space between components. External margins on components would be mixing <strong>content</strong>/<strong>canvas/controls</strong> with <strong>composition</strong>.</p>
+<h4 id="prefer-stringsnumbers-to-booleans-for-props">Prefer strings/numbers to booleans for props</h4>
+<p>Boolean props, whilst they look very clean, are only able to have a value of <code>true</code> or <code>false</code>. This immediately prevents any further extension of that prop if new requirements arise and lead to breaking changes needing to be introduced. By always using a string or number, props are easily able to accommodate more variations in the future.</p>
+<h4 id="composition-over-props">Composition over props</h4>
+<p>Content and child elements should be controlled through composition by combining multiple components or pieces of content, rather than using props. This keeps components flexible when the content structure changes in future (such as a different button type or when typographic formatting is required). It also allows the semantic elements to be updated appropriately to the correct element, such as with heading orders. Composition helps to prevent mixed component types, such as this alert that mixes <strong>canvas</strong>, <strong>content</strong> and <strong>controls</strong>.</p>
+<pre><code class="language-css">// Props
+&lt;alert-box 
+  title=&quot;Alert title&quot;
+  content=&quot;Some alert content&quot; 
+  href=&quot;#&quot; 
+  action=&quot;Button text&quot; 
+/&gt;
+
+// Composition
+&lt;alert-box&gt;
+  &lt;h3&gt;Alert title&lt;/h3&gt;
+  &lt;p&gt;Some alert content&lt;/p&gt;
+  
+  &lt;cta-button&gt;
+    &lt;a href=&quot;#&quot;&gt;Button text&lt;/a&gt;
+  &lt;/cta-button&gt;
+&lt;/alert-box&gt;
+</code></pre>
+<h4 id="expose-semantic-elements">Expose semantic elements</h4>
+<p>This was covered in “separating semantics from styles” earlier, but real semantic HTML elements should always be exposed, allowing them to be updated appropriately for the context. A good example of this is a piece of UI that looks like a button but is sometimes a link and sometimes a button. This is also particularly useful for headings that look like one level but semantically are a different HTML tag.</p>
+<pre><code class="language-css">&lt;cta-button&gt;
+  &lt;button type=&quot;button&quot;&gt;Button text&lt;/button&gt;
+&lt;/cta-button&gt;
+
+&lt;cta-button&gt;
+  &lt;a href=&quot;#&quot;&gt;button text&lt;/a&gt;
+&lt;/cta-button&gt;
+</code></pre>
+<h4 id="dont-pass-through-props">Don’t pass through props</h4>
+<p>Passing through props is when a set of props are passed to a parent component that is solely concerned with a child component. This creates a maintenance binding that means every prop that is added to the child component may need to be added to the parent component as well. Instead, use composition to pass the whole component into a slot in the parent.</p>
+<p>By not creating a hard binding, the child component is free to add new props or potentially be a different component entirely. Pass-through props are often a sign of mixed Diamond component types, such as this page hero that mixes <strong>canvas</strong> and <strong>controls</strong>.</p>
+<pre><code class="language-css">// Pass through
+&lt;page-hero
+  cta-button-text=&quot;Button text&quot;
+  cta-button-style=&quot;primary&quot;
+  cta-button-href=&quot;#&quot;
+/&gt;
+
+// Composition
+&lt;page-hero&gt;
+  &lt;cta-button 
+    slot=&quot;cta&quot;
+    button-style=&quot;primary&quot;
+  &gt;
+    &lt;a href=&quot;#&quot;&gt;Button text&lt;/a&gt;
+  &lt;/cta-button&gt;
+&lt;/page-hero&gt;
+</code></pre>
+<h2 id="diamond-versus">Diamond Versus</h2>
+<p>This section compares Diamond UI to some other popular methodologies and frameworks. In many cases, you can use Diamond thinking at the same time to enhance your process within the given framework.</p>
+<h3 id="atomic-design">Atomic design</h3>
+<p><a href="https://atomicdesign.bradfrost.com/">https://atomicdesign.bradfrost.com/</a></p>
+<p>Running into common issues using Atomic design is probably the thing that lead to Diamond. We used Atomic Design for many years and greatly respect its contribution to component focused front-end architecture.</p>
+<p>Atomic design relies on dividing components into groups called: atoms, molecules, organisms, templates and pages.</p>
+<p>The smallest components are atoms. These are things like HTML elements, or other bits of UI that can’t be broken down any further without ceasing to be functional.</p>
+<p>[picture of some atoms]</p>
+<p>Moving up from atoms, molecules are small groups of UI elements that bond together to create a purpose. A label, input and button can group together to form a search input group.</p>
+<p>[picture of a search input group]</p>
+<p>Following this trend, organisms are larger groups of atoms and molecules. Organisms are more complicated bits of UI that form a distinct section of a user interface. A typical organism might be the hero we used as a case study at the beginning of these docs.</p>
+<p>[picture of the hero]</p>
+<p>A template is as simple as being a full page with placeholder content and the final group, pages, is the templates that have been populated with real data.</p>
+<h4 id="common-issues"><strong>Common issues?</strong></h4>
+<p>We frequently ran into a couple of common issues using Atomic Design across large teams. </p>
+<p>The gist of Atomic Design is small components are atoms, bigger ones are molecules and so on. Developers are often unsure which group a component falls into. Is a component small or large because of its visual size, or the amount of code that goes into it? Does a molecule have to consume atoms or can it be self sufficient? We noticed a trend of component library consumers relying on search, because they did not know which group a component would sit within.</p>
+<p>Because organisms consume molecules which consume atoms, there is also a trend for component props to become overly complicated when supporting large teams. As seen in our case study, a page hero organism can quickly need to support many variations. If this has been wrapped up into a single component element, the props object needs to be quite extensive to support all the different use cases.</p>
+<h4 id="differences-with-diamond"><strong>Differences with Diamond</strong></h4>
+<ul>
+  <li>Atomic Design groups components into <strong>small vs large</strong>.</li>
+  <li>Diamond groups components by <strong>purpose</strong>.</li>
+</ul>
+<p>Atomic Design and Diamond can be applied at the same time. Developers can use Atomic Design groupings, whilst making sure to limit components within those groups to one of the 4Cs of Diamond thinking. This is a common approach when transitioning from pure Atomic Design or looking to solve the common issues with Atomic Design listed above.</p>
+<h3 id="oocss">OOCSS</h3>
+<p><a href="http://oocss.org/">http://oocss.org/</a></p>
+<p>OOCSS was introduced in 2008 as a way to tackle page-centric CSS that had led to CSS bloat over large projects. </p>
+<p>The main principles are to:</p>
+<ul>
+  <li>Separate structure from skin</li>
+  <li>Separate container from content</li>
+</ul>
+<p>Structure would refer to widths, heights, margins and paddings. Skin is backgrounds, text colour, borders and other visual UI elements. </p>
+<p>Let’s take a button as an example.</p>
+<pre><code class="language-css">.button {
+  background: #ffffff;
+  border: 1px solid #ff0000;
+  border-radius: .5rem;
+  color: #ff0000;
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .25rem 1rem;
+}
+</code></pre>
+<p>We can see that the structural styles (display, margin, padding) are grouped with the visual styles (background, border, color).</p>
+<p>In OOCSS, we would split these groups apart.</p>
+<pre><code class="language-css">.button-base {
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .25rem 1rem;
+}
+
+.button-default {
+    background: #ffffff;
+  border: 1px solid #ff0000;
+  border-radius: .5rem;
+  color: #ff0000;
+}
+</code></pre>
+<p>OOCSS also mandates separating the container from the content. This means that an element should not be styled by its parent container, allowing it to be used independently anywhere on the page.</p>
+<pre><code class="language-css">/* Coupled container and content */
+.sidebar {
+    padding: 1rem;
+    width: 20rem;
+}
+
+.sidebar .button {
+    background: #ff0000;
+    color: #fff;
+}
+
+/* Split container and content */
+.sidebar {
+  padding: 1rem;
+    width: 20rem;
+}
+
+.button-primary {
+  background: #ff0000;
+    color: #fff;
+}
+</code></pre>
+<h4 id="issues">Issues</h4>
+<p>OOCSS does an awesome job of separating different CSS concerns, but it’s very development centric. Without bringing designers into the methodology, we are likely to see a clash between the design and development teams.</p>
+<p>Whilst OOCSS separates structure and style, it still allows structural CSS (width, height, margins) to exist on components, which can cause maintenance and application issues later. If a button component base structural styles include width and margin, it will be more difficult to use this in a wide array of contexts.</p>
+<h4 id="differences-with-diamond-1">Differences with Diamond</h4>
+<p>Diamond has a lot of parallels with OOCSS, but extends the methodology into both design and a component centred approach. Diamond and OOCSS can be used at the same time, with Diamond providing a stricter framework for separating structure and style, as well as container and content.</p>
+<ul>
+  <li>OOCSS is primarily concerned with <strong>CSS organisation,</strong> with the CSS being applied to HTML elements.</li>
+  <li>Diamond is concerned with <strong>UI organisation</strong>. Diamond thinking is applied at the design level and mirrored in the code.</li>
+  <li>OOCSS splits <strong>CSS classes</strong> by application.</li>
+  <li>Diamond splits <strong>components</strong> by application. We push one step further into the separation of skin and structure, by not allowing widths/heights and margins to be applied to non-Composition elements.</li>
+  <li>OOCSS uses <strong>skin classes</strong>.</li>
+  <li>Diamond uses <strong>skin contexts</strong>. In “theming components” we created CSS variable skin contexts that can be applied by our components.</li>
+</ul>
+<h3 id="smacss">SMACSS</h3>
+<p><a href="https://smacss.com/">https://smacss.com/</a> </p>
+<p>SMACSS was written in 2011 following the release of OOCSS. SMACSS divides CSS into 5 distinct categories:</p>
+<ul>
+  <li>Base - single HTML element selectors (and maybe simple attribute, pseudo  and sibling selectors)</li>
+  <li>Layout - dividing the page into sections, which hold one or more modules.</li>
+  <li>Module - reusable, modular parts of the design such as callouts, sidebar sections, product lists.</li>
+  <li>State - describes how modules or layouts will look when in a specific state, such as open/closed, active/inactive. They also describe how a module appears in different views such as the home page.</li>
+  <li>Theme - describes how modules or layouts might look in different theme contexts or brands.</li>
+</ul>
+<p>SMACSS realises that mixing these categories results in over complexity and results in bloated, hard to maintain, CSS over time. The guidelines extend these categories into naming conventions for the classes.</p>
+<pre><code class="language-css">h1, h2, h3, p {
+  /* Base rules */
+}
+
+#main, #sidebar, .l-flipped {
+  /* Layout rules */
+}
+
+.callout, .product-list {
+  /* Module rules */
+}
+
+.is-hidden, .is-active {
+  /* State rules */
+}
+
+/*
+  Where&#39;s the theme rules!?
+  Theme rules extend module classes, 
+  but are applied in a different CSS file.
+*/
+</code></pre>
+<h4 id="issues-1">Issues</h4>
+<p>SMACSS modules share the same issues as Atomic Design molecules and organisms, in that they are quite vague in their application and can easily become quite bloated. There are no hard rules on where a module should start or end and what a module should be, so it can be hard to find the component we want when looking at the component library documentation.</p>
+<p>The SMACSS docs make extensive use of ids, element qualifiers and descendent selectors (It was a whole different world back then!). These are now thought to be CSS anti-patterns, leading to issues with specificity and bloated selectors.</p>
+<p>The naming convention for module and state relies on combination or descendent selectors because there can easily be multiple state classes with the same name.</p>
+<pre><code class="language-css">.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.accordion {
+  height: 0;
+}
+
+.accordion.is-open {
+  height: auto;
+}
+</code></pre>
+<p>If the <code>.is-open</code> class was applied without the qualifier, it could easily be accidentally applied to multiple unrelated elements on the page.</p>
+<p>SMACSS theming suggests keeping theme CSS in a separate file to the main CSS. This prevents there being a single source of truth for component layout code. Having to move between multiple files increases cognitive load and context switching on the developers having to hold more information in memory rather than in front of them on the screen.</p>
+<h4 id="differences-with-diamond-2">Differences with Diamond</h4>
+<ul>
+  <li>SMACSS splits <strong>CSS</strong> by application.</li>
+  <li>Diamond splits <strong>components</strong> by application.</li>
+  <li>SMACSS uses the <strong>layout and modules</strong> categories to define components.</li>
+  <li>Diamond uses <strong>composition, canvas, content and controls</strong> to define components.</li>
+  <li>SMACSS uses <strong>state classes</strong> to define component states.</li>
+  <li>Diamond uses <strong>component props</strong> to define component states.</li>
+  <li>SMACSS uses separate <strong>theme stylesheets</strong>.</li>
+  <li>Diamond uses <strong>theme contexts</strong>.</li>
+</ul>
+<h3 id="bem">BEM</h3>
+<p><a href="https://getbem.com/">https://getbem.com/</a> </p>
+<p>BEM is a method of structuring CSS to help create reusable components and more understandable CSS.</p>
+<p>BEM groups CSS selectors into 3 categories:</p>
+<ul>
+  <li>Block - the top level component group, such as a hero component or a button.</li>
+  <li>Element - an element within a component group, such as a hero title or a button icon.</li>
+  <li>Modifier - a state or variant on a component group, such as a dark hero or an active button.</li>
+</ul>
+<p>Each category has a specific naming convention in CSS. BEM CSS selectors only use classes and are as flat as possible. To differentiate between the types of selector, different delimiters are used between words in the class. Whilst these can be anything, they are commonly set to <strong>elements</strong> being prefixed by double underscore and <strong>modifiers</strong> being prefixed by double hyphen. <strong>Block</strong> selectors do not have a prefix and are always the namespace at the start of the class.</p>
+<pre><code class="language-css">.block__element--modifier {
+  /* CSS rules */
+}
+</code></pre>
+<p>BEM is often used with Atomic Design and this is the way we structured CSS at Etch for many years.</p>
+<h4 id="issues-2">Issues</h4>
+<p>BEM is as simple as being a naming convention for CSS classes. An emphasis on blocks encourages the creation of contained components, which can lead to bloated props. There are no guidelines in BEM on the application of CSS, only the naming structure. This means it is down to the developers to separate the concerns of different blocks. With no strict separation, it is easy to mix concerns and create inconsistent application of different UI styles.</p>
+<p>BEM also has no relation to the design process, being totally concerned with CSS naming conventions.</p>
+<p>With shadow DOM or CSS modules, the BEM naming convention almost becomes obsolete, as the idea is to namespace classes to avoid clashes as CSS is always global. Many developers find BEM to be ugly and verbose as a naming convention.</p>
+<h4 id="differences-with-diamond-3">Differences with Diamond</h4>
+<ul>
+  <li>BEM is a <strong>naming convention</strong> for CSS classes.</li>
+  <li>Diamond is a grouping by <strong>component application.</strong></li>
+  <li>BEM does not separate styles by application, only by component.</li>
+  <li>BEM is explicit about how to write CSS selectors.</li>
+  <li>Diamond does not dictate how to write any code.</li>
+</ul>
+<h3 id="tailwind">Tailwind</h3>
+<p><a href="https://tailwindcss.com/">https://tailwindcss.com/</a> </p>
+<p>Tailwind is a utility-first CSS framework, that is a flavour of <a href="https://acss.io/">Atomic CSS</a> (Not Atomic Design!). Both Tailwind and Atomic CSS focus on tiny utility classes that perform a single function. </p>
+<p>Tailwind is very close to turning design tokens into classes so they can be assembled in any combination on an HTML element. An advantage of Tailwind is that the CSS footprint can be kept very small, whilst allowing an enormous potential for different UI styles.</p>
+<pre><code class="language-html">&lt;!-- &quot;Standard&quot; button component --&gt;
+&lt;button class=&quot;button&quot;&gt;Button text&lt;/button&gt;
+
+&lt;!-- Tailwind button --&gt;
+&lt;button class=&quot;bg-slate-900 text-white font-semibold h-12 px-6 rounded-lg flex items-center justify-center&quot;&gt;
+  Button text
+&lt;/button&gt;
+</code></pre>
+<pre><code class="language-css">/* &quot;Standard&quot; button CSS */
+.button {
+    align-items: center;
+  background: rgb(15 23 42);
+  border-radius: .5rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-weight: 600;
+  height: 3rem;
+  justify-content: center;
+  padding-inline: 1.5rem;
+}
+
+/* Tailwind CSS */
+.bg-slate-900 { background: rgb(15 23 42); }
+.text-white { color: rgb(255, 255, 255); }
+.font-semibold { font-weight: 600; }
+.h-12 { height: 3rem; }
+.px-6 { padding-inline: 1.5rem; }
+.rounded-lg { border-radius: .5rem; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+</code></pre>
+<h4 id="issues-3">Issues</h4>
+<p>Tailwind is a bit like presenting all the ingredients for a menu instead of finished dishes. In skilled hands, these ingredients can be assembled into delicious UI dishes, but there are no pre-set combinations.</p>
+<p>As there are no pre-set combinations, it’s easy for UI to become inconsistent when applied over a large development team and multiple apps.</p>
+<p>The class system in the HTML is quite verbose and it’s easy to apply the same/conflicting class group multiple times. It’s pretty awkward to read and does not make for a consise set of HTML.</p>
+<p>Tailwind describes what you are doing, rather than the result you want. This is the opposite of declarative programming. </p>
+<p>Tailwind describes the UI style that is needed, rather than the content that is being marked up. Traditionally HTML is used to add more meaning to content, rather than creating a UI for it.</p>
+<h4 id="differences-with-diamond-4">Differences with Diamond</h4>
+<ul>
+  <li>Tailwind is a <strong>set of utility classes</strong> to create UI.</li>
+  <li>Diamond is <strong>a way of separating UI components</strong> into reusable blocks.</li>
+  <li>Tailwind is concerned with <strong>the CSS</strong>.</li>
+  <li>Diamond is concerned with <strong>the whole design and development process</strong>.</li>
+  <li>Tailwind offers <strong>unlimited combinations</strong>.</li>
+  <li>Diamond curates UI into <strong>composable groups</strong>.</li>
+</ul>  

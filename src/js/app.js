@@ -1,4 +1,5 @@
 import '@etchteam/diamond-ui/composition/Enter/Enter';
+import hljs from 'highlight.js';
 
 const form = document.querySelector('form');
 const email = document.querySelector('input[type="email"]');
@@ -17,4 +18,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
     email.closest('diamond-input').setAttribute('state', 'invalid');
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  hljs.highlightAll();
 });

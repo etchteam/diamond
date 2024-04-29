@@ -16,9 +16,11 @@
     "@parcel/packager-xml": "2.11.0",
     "@parcel/transformer-webmanifest": "2.11.0",
     "@parcel/transformer-xml": "2.11.0",
-    "parcel": "2.11.0"
+    "parcel": "2.11.0",
+    "posthtml-include": "2.0.1"
   },
   "dependencies": {
-    "@etchteam/diamond-ui": "^1.27.4"
+    "@etchteam/diamond-ui": "^1.27.4",
+    "highlight.js": "11.9.0"
   }
 }

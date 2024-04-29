@@ -1,4 +1,5 @@
 @import 'npm:@etchteam/diamond-ui/diamond-ui.css';
+@import 'npm:highlight.js/styles/default.css';
 @import './font.css';
 @import './theme.css';
 
@@ -19,10 +20,13 @@
   --diamond-button-primary-background-hover: color-mix(in srgb, var(--color-blue), var(--diamond-color-black) 10%);
   --diamond-button-primary-color: var(--diamond-color-white);
 
-  --diamond-theme-heading-color: var(--color-blue);
   --diamond-theme-link-color: var(--color-blue);
 
   --diamond-spacing-fluid-sm: clamp(1rem, 2.5vw, 3rem);
+}
+
+h1 {
+  --diamond-theme-heading-color: var(--color-blue);
 }
 
 h1,
