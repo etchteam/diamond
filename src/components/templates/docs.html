@@ -529,7 +529,7 @@ a {
 <p>Following this trend, organisms are larger groups of atoms and molecules. Organisms are more complicated bits of UI that form a distinct section of a user interface. A typical organism might be the hero we used as a case study at the beginning of these docs.</p>
 <p>[picture of the hero]</p>
 <p>A template is as simple as being a full page with placeholder content and the final group, pages, is the templates that have been populated with real data.</p>
-<h4 id="common-issues"><strong>Common issues?</strong></h4>
+<h4 id="common-issues">Common issues?</h4>
 <p>We frequently ran into a couple of common issues using Atomic Design across large teams. </p>
 <p>The gist of Atomic Design is small components are atoms, bigger ones are molecules and so on. Developers are often unsure which group a component falls into. Is a component small or large because of its visual size, or the amount of code that goes into it? Does a molecule have to consume atoms or can it be self sufficient? We noticed a trend of component library consumers relying on search, because they did not know which group a component would sit within.</p>
 <p>Because organisms consume molecules which consume atoms, there is also a trend for component props to become overly complicated when supporting large teams. As seen in our case study, a page hero organism can quickly need to support many variations. If this has been wrapped up into a single component element, the props object needs to be quite extensive to support all the different use cases.</p>

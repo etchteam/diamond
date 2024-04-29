@@ -7,6 +7,7 @@
   --color-blue: #0066ff;
   --color-blue-light: #f2f7ff;
   --color-gray: #bdbdbd;
+  --color-black: #222;
 
   --diamond-font-family: 'Nunito sans', -apple-system, system-ui,
     BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
@@ -20,9 +21,41 @@
   --diamond-button-primary-background-hover: color-mix(in srgb, var(--color-blue), var(--diamond-color-black) 10%);
   --diamond-button-primary-color: var(--diamond-color-white);
 
+  --diamond-theme-color: var(--color-black);
   --diamond-theme-link-color: var(--color-blue);
 
-  --diamond-spacing-fluid-sm: clamp(1rem, 2.5vw, 3rem);
+  --diamond-spacing-sm: 0.75rem;
+  --diamond-spacing: 1.5rem;
+  --diamond-spacing-lg: 2.25rem;
+  --diamond-spacing-fluid: clamp(1.5rem, 7.5vw, 4.5rem);
+
+  --diamond-font-size-h1: 2.441rem;
+  --diamond-font-size-h2: 1.953rem;
+  --diamond-font-size-h3: 1.563rem;
+  --diamond-font-size-h4: 1.25rem;
+  --diamond-font-size-base: 1rem;
+
+  --diamond-font-size-sm: 0.8rem;
+  --diamond-font-size-md: 1rem;
+  --diamond-font-size-lg: 1.25rem;
+  --diamond-font-size-xl: 1.563rem;
+  --diamond-font-size-xxl: 1.953rem;
+  --diamond-font-size-xxxl: 2.441rem;
+
+  --diamond-font-line-height: 1.5rem;
+  --diamond-font-line-height-heading: 2.25rem;
+
+  --base-unit: 0.75rem;
+}
+
+@media (width >= 768px) {
+  :root {
+    --diamond-font-size-h1: 3.815rem;
+    --diamond-font-size-h2: 3.052rem;
+    --diamond-font-size-h3: 2.441rem;
+    --diamond-font-size-h4: 1.953rem;
+    --diamond-font-line-height-heading: 3.75rem;
+  }
 }
 
 h1 {
@@ -30,8 +63,39 @@ h1 {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-weight: var(--diamond-font-weight-black);
+  margin-bottom: var(--diamond-spacing-sm);
+}
+
+h3,
+h4 {
+  line-height: 1.5rem;
+}
+
+@media (width >= 768px) {
+  h3,
+  h4 {
+    line-height: 3rem;
+  }
+}
+
+p,
+ul {
+  margin-bottom: var(--diamond-spacing);
+}
+
+pre {
+  margin: 0 0 var(--diamond-spacing);
+}
+
+blockquote {
+  background-color: var(--diamond-color-grey-100);
+  border-left: var(--diamond-spacing-sm) solid var(--color-black);
+  margin: 0 0 var(--diamond-spacing);
+  padding: var(--diamond-spacing-sm) 0 var(--diamond-spacing-sm) var(--diamond-spacing-sm);
 }
 
 .logo {
