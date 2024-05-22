@@ -3,37 +3,59 @@
 @import './theme.css';
 
 :root {
+  --color-black: #1d131e;
+  --color-grey: #f6f6f1;
+  --color-white: #ffffff;
+
   --color-blue: #0066ff;
-  --color-blue-light: #f2f7ff;
-  --color-gray: #bdbdbd;
+  --color-light-blue: #669abf;
+  --color-red: #b03d5b;
 
-  --diamond-font-family: 'Nunito sans', -apple-system, system-ui,
-    BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  --diamond-font-line-height: 1.6;
+  --diamond-font-line-height-sm: 1.15;
+  --diamond-font-line-height-heading: var(--diamond-font-line-height-sm);
 
-  --diamond-font-size-h1: clamp(2rem, 10vw, 4rem);
+  --diamond-font-size-default: 1rem;
+  --diamond-font-size-xs: 0.563rem;
+  --diamond-font-size-sm: 0.75rem;
+  --diamond-font-size-base: 1rem;
+  --diamond-font-size-md: 1.333em;
+  --diamond-font-size-lg: 1.777em;
+  --diamond-font-size-xl: 2.369em;
+  --diamond-font-size-xxl: 3.157em;
+  --diamond-font-size-xxxl: 4.209em;
 
-  --diamond-input-border-color: var(--color-gray);
-  --diamond-input-border-color-hover: var(--color-blue);
+  --diamond-font-size-h1: 5.61rem;
+  --diamond-font-size-h2: 3.157rem;
+  --diamond-font-size-h3: 1.777rem;
+  --diamond-font-size-h4: 1.333rem;
+
+  --diamond-button-padding-inline: var(--diamond-spacing-lg);
+
+  --diamond-button-background: var(--color-white);
+  --diamond-button-background-hover: var(--color-white);
+  --diamond-button-background-disabled: var(--color-grey);
+  --diamond-button-border-color: var(--color-blue);
+  --diamond-button-border-color-hover: var(--color-blue);
+  --diamond-button-border-color-disabled: var(--color-grey);
+  --diamond-button-color: var(--color-blue);
+  --diamond-button-color-hover: var(--color-blue);
+  --diamond-button-color-disabled: var(--color-grey);
 
   --diamond-button-primary-background: var(--color-blue);
-  --diamond-button-primary-background-hover: color-mix(in srgb, var(--color-blue), var(--diamond-color-black) 10%);
-  --diamond-button-primary-color: var(--diamond-color-white);
-
-  --diamond-theme-heading-color: var(--color-blue);
-  --diamond-theme-link-color: var(--color-blue);
-
-  --diamond-spacing-fluid-sm: clamp(1rem, 2.5vw, 3rem);
+  --diamond-button-primary-background-hover: var(--color-blue);
+  --diamond-button-primary-background-disabled: var(--color-grey);
+  --diamond-button-primary-border-color: transparent;
+  --diamond-button-primary-border-color-hover: transparent;
+  --diamond-button-primary-border-color-disabled: transparent;
+  --diamond-button-primary-color: var(--color-white);
+  --diamond-button-primary-color-hover: var(--color-white);
+  --diamond-button-primary-color-disabled: var(--color-white);
 }
 
-h1,
-h2 {
-  font-weight: var(--diamond-font-weight-black);
-}
-
-.logo {
-  display: inline-block;
-  margin-left: .1em;
-  vertical-align: middle;
-  transform: translateY(-18%);
-  width: 3.5rem;
+nav-bar {
+  border-bottom: .125rem solid rgba(0, 0, 0, 0.05);
+  display: block;
+  position: sticky;
+  top: 0;
 }

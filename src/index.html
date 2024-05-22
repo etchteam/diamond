@@ -24,153 +24,348 @@
     <script defer src="https://eu.umami.is/script.js" data-website-id="9d537fd5-cc28-4c00-9350-45e5727f264f"></script>
   </head>
   <body>
+    <nav-bar>
+      <header>
+        <diamond-section padding="md" class="theme-white">
+          <diamond-wrap size="xl">
+            <diamond-img>
+              <img 
+                src="images/logo.svg" 
+                alt="Diamond UI logo" 
+                width="124" 
+                height="20"
+              />
+            </diamond-img>
+          </diamond-wrap>
+        </diamond-section>
+      </header>
+    </nav-bar>
     <main>
-      <diamond-section padding="fluid">
-        <diamond-grid justify-content="center" class="diamond-spacing-bottom-lg">
-          <diamond-grid-item>
-            <img src="images/logo.svg" alt="Diamond ui" width="124" height="20" />
-          </diamond-grid-item>
-        </diamond-grid>
+      <diamond-section padding="fluid" class="theme-grey">
         <diamond-wrap size="xl">
-          <diamond-enter type="fade">
-            <h1 class="diamond-text-align-center diamond-spacing-bottom-md">
-              Bring clarity to<br />
-              your components
-            </h1>
-            <diamond-wrap size="md" class="diamond-spacing-bottom-fluid-lg">
-              <p class="diamond-text-size-xl diamond-spacing-bottom-lg diamond-text-weight-light diamond-text-align-center">
-                Diamond UI is a method for organising components to cleanly separate their responsibilities.
+          <diamond-grid>
+            <diamond-grid-item small-mobile="12" tablet="8" large-tablet="7">
+              <span>Proin consectetur tempus</span>
+              <h1>Big title, clever words</h1>
+              <p class="diamond-text-size-md">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum enim vitae ipsum imperdiet, ac imperdiet orci interdum. Vivamus eget bibendum sem.
               </p>
-            </diamond-wrap>
-          </diamond-enter>
-        </diamond-wrap> 
 
-        <diamond-enter type="fade-in-up" delay="0.2">
-          <diamond-wrap size="md" class="diamond-spacing-bottom-fluid">
-            <h2 class="diamond-text-size-h3">
-              Design Systems can get messy
-            </h2>
-            
-            <p>Are you fed up of bloated components?</p>
+              <diamond-button size="lg" variant="primary" width="full-width-mobile" class="diamond-spacing-top-lg">
+                <button>Get started</button>
+              </diamond-button>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-wrap>
+      </diamond-section>
 
-            <p>Can't decide if it's an atom, a molecule or an organism?</p>
-
-            <p>Do you add more and more props to your components?</p>
-
-            <p>Do you have to update components for every design change?</p>
-
-            <p class="diamond-spacing-bottom-lg">Are your components awkward to test?</p>
-
-            <h2 class="diamond-text-size-h3">Make things clear and simple</h2>
-
+      <diamond-section padding="fluid">
+        <diamond-wrap size="xl">
+          <div class="diamond-text-align-center diamond-spacing-bottom-xl">
+            <h2>Section title</h2>
             <p>
-              As a product grows and evolves, its UI can get harder to update and maintain, often leading to:
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
+          </div>
+          <diamond-grid wrap="wrap" gap="lg">
+            <diamond-grid-item small-mobile="12" tablet="4" class="diamond-text-align-center">
+              <diamond-img class="diamond-spacing-bottom-md">
+                <img
+                  src="https://placehold.co/100x100"
+                  alt="Placeholder image"
+                  width="150"
+                  height="150"
+                />
+              </diamond-img>
+              <h3>USP title</h3>
+              <p>
+                Proin facilisis justo a sodales tincidunt.
+              </p>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" tablet="4" class="diamond-text-align-center">
+              <diamond-img class="diamond-spacing-bottom-md">
+                <img
+                  src="https://placehold.co/100x100"
+                  alt="Placeholder image"
+                  width="150"
+                  height="150"
+                />
+              </diamond-img>
+              <h3>USP title</h3>
+              <p>
+                Proin facilisis justo a sodales tincidunt.
+              </p>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" tablet="4" class="diamond-text-align-center">
+              <diamond-img class="diamond-spacing-bottom-md">
+                <img
+                  src="https://placehold.co/100x100"
+                  alt="Placeholder image"
+                  width="150"
+                  height="150"
+                />
+              </diamond-img>
+              <h3>USP title</h3>
+              <p>
+                Proin facilisis justo a sodales tincidunt.
+              </p>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-wrap>
+      </diamond-section>
 
-            <ul>
-              <li>bloated components</li>
-              <li>complicated props</li>
-              <li>maintenance hell</li>
-            </ul>
-
+      <diamond-section padding="fluid" class="theme-grey">
+        <diamond-wrap size="xl">
+          <div class="diamond-text-align-center diamond-spacing-bottom-lg">
+            <h2>Section title</h2>
             <p>
-              Diamond principles force components become more robust, reusable and flexible.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
+          </div>
 
-            <p>
-              For developers this means:
-            </p>
-
-            <ul>
-              <li>there’s fewer components to maintain</li>
-              <li>clear definitions and less ambiguity</li>
-              <li>future problems are easier to solve</li>
-              <li>components can be framework agnostic</li>
-            </ul>
-
-            <p>
-              The approach has been tried and tested on a variety of design systems and we’re in the process of building Diamond UI for public use.
-            </p>
-          </diamond-wrap>
-        </diamond-enter>
-
-        <diamond-enter type="fade-in-up" enter-on-scroll>
-          <diamond-wrap size="md">
-            <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="fluid-sm" radius>
-              <form 
-                action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" 
-                method="post" 
-                target="_blank"
-              >
-                <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                  <input type="text" name="b_6399ac2bf5_fa635584a8" tabindex="-1" value="">
-                </div>
-                <diamond-form-group class="diamond-spacing-bottom-md">
-                  <diamond-grid justify-content="center">
-                    <diamond-grid-item>
-                      <label for="email" class="diamond-text-weight-bold">Diamond UI is coming soon</label>
-                    </diamond-grid-item>
-                  </diamond-grid>
-                  <diamond-input>
-                    <input type="email" name="EMAIL" placeholder="user@example.com" id="email" required />
-                  </diamond-input>
-                  <p class="diamond-text-size-sm">
-                    We promise to treat your inbox with respect.
-                  </p>
-                </diamond-form-group>
-                <diamond-button width="full-width" variant="primary">
-                  <button type="submit" class="diamond-text-weight-bold" data-umami-event="subscribe">
-                    Notify me
-                  </button>
-                </diamond-button>
-                <p class="diamond-spacing-top-md diamond-text-weight-bold">
-                  <a href="https://etch.co/blog/bring-clarity-to-your-components" target="_blank" rel="noopener noreferrer">
-                    Learn more about Diamond UI
-                  </a>
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" tablet="4">
+              <diamond-card border class="theme-white">
+                <diamond-img block full-width responsive class="diamond-spacing-bottom-md">
+                  <img
+                    src="https://placehold.co/400x300"
+                    alt="Placeholder image"
+                    width="400"
+                    height="300"
+                  />
+                </diamond-img>
+                <h3>USP title</h3>
+                <p>
+                  Proin facilisis justo a sodales tincidunt.
                 </p>
-              </form>
-            </diamond-card>
+                <diamond-button width="full-width" class="diamond-spacing-top-lg">
+                  <button>Button text</button>
+                </diamond-button>
+              </diamond-card>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" tablet="4">
+              <diamond-card border class="theme-white">
+                <diamond-img block full-width responsive class="diamond-spacing-bottom-md">
+                  <img
+                    src="https://placehold.co/400x300"
+                    alt="Placeholder image"
+                    width="400"
+                    height="300"
+                  />
+                </diamond-img>
+                <h3>USP title</h3>
+                <p>
+                  Proin facilisis justo a sodales tincidunt.
+                </p>
+                <diamond-button width="full-width" class="diamond-spacing-top-lg">
+                  <button>Button text</button>
+                </diamond-button>
+              </diamond-card>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" tablet="4">
+              <diamond-card border class="theme-white">
+                <diamond-img block full-width responsive class="diamond-spacing-bottom-md">
+                  <img
+                    src="https://placehold.co/400x300"
+                    alt="Placeholder image"
+                    width="400"
+                    height="300"
+                  />
+                </diamond-img>
+                <h3>USP title</h3>
+                <p>
+                  Proin facilisis justo a sodales tincidunt.
+                </p>
+                <diamond-button width="full-width" class="diamond-spacing-top-lg">
+                  <button>Button text</button>
+                </diamond-button>
+              </diamond-card>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-wrap>
+      </diamond-section>
+
+      <diamond-section padding="fluid">
+        <diamond-wrap size="xl">
+          <diamond-grid align-items="center" wrap="wrap" gap="lg">
+            <diamond-grid-item small-mobile="12" tablet="6">
+              <diamond-img block full-width responsive>
+                <img 
+                  src="https://placehold.co/400x300"
+                  alt="Placeholder image"
+                  width="400"
+                  height="300"
+                />
+              </diamond-img>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" tablet="6">
+              <h2>Section title</h2>
+              <p>
+                Vestibulum tincidunt diam vitae nunc blandit blandit. Mauris hendrerit, 
+                quam quis tempor interdum, eros urna fringilla velit, sit amet sagittis 
+                libero magna sit amet augue. 
+              </p>
+              <p>
+                Suspendisse vitae ante velit. Fusce vitae 
+                mollis eros. Maecenas bibendum maximus felis, ut convallis est lobortis 
+                a.
+              </p>
+              <diamond-button width="full-width-mobile" class="diamond-spacing-top-lg">
+                <button>Button text</button>
+              </diamond-button>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-wrap>
+      </diamond-section>
+
+      <diamond-section padding="fluid" class="theme-grey">
+        <diamond-wrap size="xl">
+          <diamond-grid align-items="center" wrap="wrap" gap="lg" direction="row-reverse">
+            <diamond-grid-item small-mobile="12" tablet="6">
+              <diamond-img block full-width responsive>
+                <img 
+                  src="https://placehold.co/400x300"
+                  alt="Placeholder image"
+                  width="400"
+                  height="300"
+                />
+              </diamond-img>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" tablet="6">
+              <h2>Section title</h2>
+              <p>
+                Vestibulum tincidunt diam vitae nunc blandit blandit. Mauris hendrerit, 
+                quam quis tempor interdum, eros urna fringilla velit, sit amet sagittis 
+                libero magna sit amet augue. 
+              </p>
+              <p>
+                Suspendisse vitae ante velit. Fusce vitae 
+                mollis eros. Maecenas bibendum maximus felis, ut convallis est lobortis 
+                a.
+              </p>
+              <diamond-button width="full-width-mobile" class="diamond-spacing-top-lg">
+                <button>Button text</button>
+              </diamond-button>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-wrap>
+      </diamond-section>
+
+      <diamond-section padding="fluid">
+        <diamond-wrap size="md">
+          <div class="diamond-text-align-center diamond-spacing-bottom-lg">
+            <h2>Sign up for stuff</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+          <diamond-wrap size="sm" gutter="none">
+            <form method="POST" action="/">
+              <diamond-form-group class="diamond-spacing-bottom-md">
+                <label for="input1">Form label</label>
+                <diamond-input>
+                  <input type="text" id="input1" name="input1" />
+                </diamond-input>
+              </diamond-form-group>
+
+              <diamond-form-group class="diamond-spacing-bottom-md">
+                <label for="input2">Form label</label>
+                <diamond-input>
+                  <input type="text" id="input2" name="input2" />
+                </diamond-input>
+              </diamond-form-group>
+
+              <diamond-form-group>
+                <label for="input3">Form label</label>
+                <diamond-input>
+                  <input type="text" id="input3" name="input3" />
+                </diamond-input>
+              </diamond-form-group>
+
+              <diamond-button class="diamond-spacing-top-lg" size="lg" width="full-width" variant="primary">
+                <button>Submit</button>
+              </diamond-button>
+            </form>
           </diamond-wrap>
-        </diamond-enter>
+        </diamond-wrap>
       </diamond-section>
     </main>
-    <footer class="diamond-text-align-center">
-      <diamond-section padding="lg">
-        <p>
-          A project by 
-          <a href="https://etch.co" target="_blank" rel="noopener noreferrer">
-            <svg
-              class="logo"
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              viewBox="0 0 76 32"
-              aria-labelledby="logo"
-              role="img"
-            >
-              <title id="logo">Etch</title>
-              <g>
-                <path fill="#F06" d="M0 4L0 20 16 4z" />
-                <path fill="#F06" d="M0 12L0 28 16 28z" />
-                <path fill="#F66" d="M0 12L0 28 16 12z" />
-              </g>
-              <g>
-                <path fill="#F06" d="M20 4H28V20H20z" />
-                <path fill="#F06" d="M20 12L20 28 36 28z" />
-                <path fill="#F66" d="M20 12L20 28 36 12z" />
-              </g>
-              <g>
-                <path fill="#F06" d="M40 12L40 28 56 28z" />
-                <path fill="#F66" d="M40 12L40 28 56 12z" />
-              </g>
-              <g>
-                <path fill="#F06" d="M60 4H68V20H60z" />
-                <path fill="#F06" d="M72 12L60 12 60 16 76 32 76 16z" />
-                <path fill="#F66" d="M60 12L60 32 76 16 72 12z" />
-              </g>
-            </svg>
-          </a>
-        </p>
+    <footer>
+      <diamond-section padding="fluid" class="theme-black">
+        <diamond-wrap size="xl">
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <diamond-list variant="unstyled">
+                <strong>List title</strong><br />
+                <ul>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                </ul>
+              </diamond-list>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="3">
+              <diamond-list variant="unstyled">
+                <ul>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                </ul>
+              </diamond-list>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="3">
+              <diamond-list variant="unstyled">
+                <ul>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Link 1</a>
+                  </li>
+                </ul>
+              </diamond-list>
+            </diamond-grid-item>
+          </diamond-grid>
+
+          <hr class="diamond-spacing-top-lg diamond-spacing-bottom-lg" />
+
+          <diamond-img class="diamond-spacing-bottom-md">
+            <img 
+              src="images/logo-white.svg" 
+              alt="Diamond UI logo" 
+              width="124" 
+              height="20"
+            />
+          </diamond-img>
+
+          <p>
+            &copy; 2021 Diamond UI. All rights reserved.
+          </p>
+        </diamond-wrap>
       </diamond-section>
     </footer>
   </body>

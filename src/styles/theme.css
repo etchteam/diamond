@@ -1,3 +1,20 @@
-.theme-medium {
-  --diamond-theme-background: var(--color-blue-light);
+.theme-grey {
+  --diamond-theme-background: var(--color-grey);
+  --diamond-theme-color: var(--color-black);
+  --diamond-theme-heading-color: var(--color-black);
+  --diamond-theme-link-color: var(--color-blue);
+}
+
+.theme-black {
+  --diamond-theme-background: var(--color-black);
+  --diamond-theme-color: var(--color-white);
+  --diamond-theme-heading-color: var(--color-white);
+  --diamond-theme-link-color: var(--color-white);
+}
+
+.theme-white {
+  --diamond-theme-background: var(--color-white);
+  --diamond-theme-color: var(--color-black);
+  --diamond-theme-heading-color: var(--color-black);
+  --diamond-theme-link-color: var(--color-blue);
 }
