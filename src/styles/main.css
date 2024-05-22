@@ -11,6 +11,8 @@
   --color-light-blue: #669abf;
   --color-red: #b03d5b;
 
+  --diamond-spacing-lg: 1.5rem;
+
   --diamond-font-line-height: 1.6;
   --diamond-font-line-height-sm: 1.15;
   --diamond-font-line-height-heading: var(--diamond-font-line-height-sm);
@@ -67,6 +69,7 @@ nav-bar {
   display: block;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 overflow-carousel {
