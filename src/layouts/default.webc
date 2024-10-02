@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title @text="title">Diamond UI - Bring clarity to your components</title>
+    <meta name="description" :content="description">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#0066ff">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--- Bundled base styles --->
+    <link rel="stylesheet" href="../../node_modules/@etchteam/diamond-ui/diamond-ui.css" webc:bucket="styles">
+    <link rel="stylesheet" href="../styles/main.css" webc:bucket="styles">
+    <link rel="stylesheet" href="../styles/font.css" webc:bucket="styles">
+    <link rel="stylesheet" href="../styles/theme.css" webc:bucket="styles">
+    <link rel="stylesheet" :href="getBundleFileUrl('css', 'styles')" webc:keep>
+    <!--- Bundled component styles --->
+    <link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep>
+
+    <script defer src="https://eu.umami.is/script.js" data-website-id="9d537fd5-cc28-4c00-9350-45e5727f264f" webc:keep></script>
+  </head>
+  <body @raw="content"></body>
+</html>

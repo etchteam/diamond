@@ -1,7 +1,3 @@
-@import 'npm:@etchteam/diamond-ui/diamond-ui.css';
-@import './font.css';
-@import './theme.css';
-
 :root {
   --color-blue: #0066ff;
   --color-blue-light: #f2f7ff;
