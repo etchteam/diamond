@@ -1,0 +1,22 @@
+<style webc:scoped>
+  :host {
+    display: block;
+    margin-block-start: var(--diamond-spacing-lg);
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: max-content min-content;
+    justify-content: space-between;
+    border-block-end: var(--diamond-border);
+    padding-block-end: var(--diamond-spacing);
+  }
+</style>
+
+<header>
+  <diamond-wrap size="xl">
+    <div class="header-inner">
+      <slot></slot>
+    </div>
+  </diamond-wrap>
+</header>

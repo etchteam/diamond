@@ -1,0 +1,18 @@
+<style webc:scoped>
+  ul {
+    display: flex;
+    column-gap: var(--diamond-spacing);
+  }
+</style>
+
+<nav>
+  <ul class="list-style-none">
+    <li webc:for="siteLink of $data.siteLinks">
+      <a
+        :href="siteLink.href"
+        :class="`${page.url === siteLink.href ? 'active' : ''}`"
+        @text="siteLink.label"
+      ></a>
+    </li>
+  </ul>
+</nav>

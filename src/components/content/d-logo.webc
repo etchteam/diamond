@@ -1,0 +1,16 @@
+<a href="/">
+  <img
+    webc:if="!skin || skin === 'dark'"
+    src="/assets/images/logo-dark.svg"
+    alt="Diamond UI"
+    width="124"
+    height="20"
+  />
+  <img
+    webc:if="skin === 'light'"
+    src="/assets/images/logo.svg"
+    alt="Diamond UI"
+    width="124"
+    height="20"
+  />
+</a>
