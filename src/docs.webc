@@ -1,0 +1,9 @@
+---
+layout: default.webc
+---
+
+<diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
+  <diamond-section padding="fluid">
+    <h1>Docs</h1>
+  </diamond-section>
+</diamond-wrap>

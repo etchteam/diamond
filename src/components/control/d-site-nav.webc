@@ -10,7 +10,7 @@
     <li webc:for="siteLink of $data.siteLinks">
       <a
         :href="siteLink.href"
-        :class="`${page.url === siteLink.href ? 'active' : ''}`"
+        :class="`${page.url.includes(siteLink.href) ? 'active' : ''}`"
         @text="siteLink.label"
       ></a>
     </li>
