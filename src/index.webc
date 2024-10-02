@@ -38,84 +38,35 @@ layout: default.webc
   <d-separator></d-separator>
 
   <diamond-section padding="fluid">
-    <h2 class="diamond-text-size-h3">
-      Design Systems can get messy
-    </h2>
-    
-    <p>Are you fed up of bloated components?</p>
-
-    <p>Can't decide if it's an atom, a molecule or an organism?</p>
-
-    <p>Do you add more and more props to your components?</p>
-
-    <p>Do you have to update components for every design change?</p>
-
-    <p class="diamond-spacing-bottom-lg">Are your components awkward to test?</p>
-
-    <h2 class="diamond-text-size-h3">Make things clear and simple</h2>
-
-    <p>
-      As a product grows and evolves, its UI can get harder to update and maintain, often leading to:
-    </p>
-
+    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+      <p>It’s pretty simple, but that’s the whole point!</p>
+      <h2>It’s easy to understand</h2>
+      <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+    </d-title-group>
+    <p>When following Diamond UI methodology</p>
     <ul>
-      <li>bloated components</li>
-      <li>complicated props</li>
-      <li>maintenance hell</li>
+      <li>Simple – components are small and easy to understand.</li>
+      <li>With clear boundaries between them, it’s immediately obvious when a component is trying to overstep its area of responsibility and contribute to technical debt.</li>
+      <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
+      <li>The methodology does not dictate any technology or naming constraints.</li>
     </ul>
+  </diamond-section>
 
-    <p>
-      Diamond principles force components become more robust, reusable and flexible.
-    </p>
+  <d-separator></d-separator>
 
-    <p>
-      For developers this means:
-    </p>
-
+  <diamond-section padding="fluid">
+    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+      <p>You’ll grow to like it</p>
+      <h2>It pays you back</h2>
+      <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+    </d-title-group>
+    <p>When maintaining components that were built with Diamond UI</p>
     <ul>
-      <li>there’s fewer components to maintain</li>
-      <li>clear definitions and less ambiguity</li>
-      <li>future problems are easier to solve</li>
-      <li>components can be framework agnostic</li>
+      <li>By scoping to a single area of responsibility, components are less prone to prop bloat.</li>
+      <li>With fewer output variations, Diamond components are easier to test.</li>
+      <li>Diamond UI components have simple interfaces and less complicated props to understand.</li>
+      <li>Diamond UI solves future problems, by being extremely flexible. Components can be constructed in thousands of combinations to suit the context.</li>
+      <li>When compared to a utility-first framework, Diamond UI components retain human legibility whilst staying almost as flexible.</li>
     </ul>
-
-    <p>
-      The approach has been tried and tested on a variety of design systems and we’re in the process of building Diamond UI for public use.
-    </p>
-
-    <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="fluid-sm" radius>
-      <form 
-        action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" 
-        method="post" 
-        target="_blank"
-      >
-        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-          <input type="text" name="b_6399ac2bf5_fa635584a8" tabindex="-1" value="">
-        </div>
-        <diamond-form-group class="diamond-spacing-bottom-md">
-          <diamond-grid justify-content="center">
-            <diamond-grid-item>
-              <label for="email" class="diamond-text-weight-bold">Diamond UI is coming soon</label>
-            </diamond-grid-item>
-          </diamond-grid>
-          <diamond-input>
-            <input type="email" name="EMAIL" placeholder="user@example.com" id="email" required />
-          </diamond-input>
-          <p class="diamond-text-size-sm">
-            We promise to treat your inbox with respect.
-          </p>
-        </diamond-form-group>
-        <diamond-button width="full-width" variant="primary">
-          <button type="submit" class="diamond-text-weight-bold" data-umami-event="subscribe">
-            Notify me
-          </button>
-        </diamond-button>
-        <p class="diamond-spacing-top-md diamond-text-weight-bold">
-          <a href="https://etch.co/blog/bring-clarity-to-your-components" target="_blank" rel="noopener noreferrer">
-            Learn more about Diamond UI
-          </a>
-        </p>
-      </form>
-    </diamond-card>
   </diamond-section>
 </diamond-wrap>
