@@ -1,0 +1,12 @@
+h1,
+h2 {
+  font-weight: var(--diamond-font-weight-black);
+}
+
+.logo {
+  display: inline-block;
+  margin-left: .1em;
+  vertical-align: middle;
+  transform: translateY(-18%);
+  width: 3.5rem;
+}

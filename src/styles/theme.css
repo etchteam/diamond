@@ -1,3 +1,11 @@
+:root {
+  --diamond-theme-background: var(--color-blue-darkest);
+  --diamond-theme-color: var(--color-white);
+  --diamond-theme-heading-color: var(--color-white);
+  --diamond-theme-link-color: var(--color-blue-light);
+  --diamond-theme-border-color: var(--color-blue-dark);
+}
+
 .theme-medium {
   --diamond-theme-background: var(--color-blue-light);
 }
