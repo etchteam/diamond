@@ -35,6 +35,8 @@ layout: default.webc
     </diamond-grid>
   </diamond-section>
 
+  <d-separator></d-separator>
+
   <diamond-section padding="fluid">
     <h2 class="diamond-text-size-h3">
       Design Systems can get messy

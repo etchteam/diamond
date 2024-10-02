@@ -1,0 +1,25 @@
+<style webc:scoped>
+  :host {
+    display: flex;
+    align-items: center;
+    column-gap: var(--diamond-spacing);
+  }
+
+  .line {
+    border-block-start: var(--diamond-border);
+    height: 1px;
+    flex: 1 1 auto;
+  }
+
+  .diamond {
+    aspect-ratio: 1;
+    background-color: var(--diamond-theme-border-color);
+    block-size: var(--diamond-font-size-xs);
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+</style>
+
+<div class="line"></div>
+<div class="diamond"></div>
+<div class="line"></div>
