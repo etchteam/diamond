@@ -14,7 +14,7 @@
 </style>
 
 <header>
-  <diamond-wrap size="xl">
+  <diamond-wrap size="xxl">
     <div class="header-inner">
       <slot></slot>
     </div>

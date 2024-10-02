@@ -1,6 +1,6 @@
 h1,
 h2 {
-  font-weight: var(--diamond-font-weight-black);
+  font-weight: var(--diamond-font-weight-base);
 }
 
 a {

@@ -2,20 +2,40 @@
 layout: default.webc
 ---
 
-<diamond-section padding="fluid">
-  <diamond-wrap size="xl">
-    <h1 class="diamond-text-align-center diamond-spacing-bottom-md">
-      Bring clarity to<br />
-      your components
-    </h1>
-    <diamond-wrap size="md" class="diamond-spacing-bottom-fluid-lg">
-      <p class="diamond-text-size-xl diamond-spacing-bottom-lg diamond-text-weight-light diamond-text-align-center">
-        Diamond UI is a method for organising components to cleanly separate their responsibilities.
-      </p>
-    </diamond-wrap>
-  </diamond-wrap> 
+<diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
+  <diamond-section padding="fluid">
+    <diamond-grid wrap="wrap" justify-content="space-between">
+      <diamond-grid-item small-mobile="12" large-tablet="6">
+        <h1 class="diamond-spacing-bottom-md">
+          Bring clarity to<br />
+          your components
+        </h1>
+        <p class="diamond-text-size-xl diamond-spacing-bottom-lg">
+          Diamond UI is a methodology for teams who build software products and design systems.
+        </p>
+        <diamond-card muted radius>
+          <diamond-grid align-items="baseline" gap="sm">
+            <diamond-grid-item><d-icon icon="info" class="diamond-text-size-lg"></d-icon></diamond-grid-item>
+            <diamond-grid-item grow shrink>
+              <h2 class="diamond-text-size-base diamond-text-weight-bold">You’ve heard of Atomic Design, right?</h2>
+              <p>
+                It’s great, and we’re big fans, but after years of building interfaces, we’ve found a more intuitive way to define components and organise code. 
+              </p>
+              <p>
+                Let us tell you about another way to build components.
+              </p>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-card>
+      </diamond-grid-item>
+      <diamond-grid-item small-mobile="12" large-tablet="4" class="diamond-hidden-small-mobile diamond-visible-large-tablet">
+        <!--- @TODO: replace this with an animated inline svg --->
+        <img src="/assets/images/temp-hero.svg" alt="" width="400" height="400" />
+      </diamond-grid-item>
+    </diamond-grid>
+  </diamond-section>
 
-  <diamond-wrap size="md" class="diamond-spacing-bottom-fluid">
+  <diamond-section padding="fluid">
     <h2 class="diamond-text-size-h3">
       Design Systems can get messy
     </h2>
@@ -60,9 +80,7 @@ layout: default.webc
     <p>
       The approach has been tried and tested on a variety of design systems and we’re in the process of building Diamond UI for public use.
     </p>
-  </diamond-wrap>
 
-  <diamond-wrap size="md">
     <diamond-card class="diamond-text-align-center diamond-spacing-bottom-lg theme-medium" padding="fluid-sm" radius>
       <form 
         action="https://etchapps.us6.list-manage.com/subscribe/post?u=6399ac2bf5&amp;id=fa635584a8&amp;f_id=00f23de3f0" 
@@ -97,5 +115,5 @@ layout: default.webc
         </p>
       </form>
     </diamond-card>
-  </diamond-wrap>
-</diamond-section>
+  </diamond-section>
+</diamond-wrap>

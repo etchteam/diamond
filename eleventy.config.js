@@ -1,6 +1,7 @@
 import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
 import webc from '@11ty/eleventy-plugin-webc';
+import renderSvg from './lib/renderSvg.js';
 
 async function transformCSS(content) {
   if (this.type !== 'css') {
@@ -23,6 +24,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets');
   // Reloading on css changes
   eleventyConfig.addWatchTarget('src/styles/*.css');
+  // make the renderSvg function available globally in templates
+  eleventyConfig.addJavaScriptFunction('renderSvg', renderSvg);
   // load all components added to the src/components directory
   eleventyConfig.addPlugin(webc, {
     components: 'src/components/**/*.webc',

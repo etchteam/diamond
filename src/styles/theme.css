@@ -1,9 +1,10 @@
 :root {
   --diamond-theme-background: var(--color-blue-darkest);
-  --diamond-theme-color: var(--color-white);
+  --diamond-theme-color: var(--color-blue-lightest);
   --diamond-theme-heading-color: var(--color-white);
   --diamond-theme-link-color: var(--color-blue-light);
   --diamond-theme-border-color: var(--color-blue-dark);
+  --diamond-theme-background-muted: var(--color-blue-darker);
 }
 
 .theme-medium {

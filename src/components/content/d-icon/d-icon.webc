@@ -1,0 +1,22 @@
+<style webc:scoped>
+	svg {
+		display: inline-block;
+		height: 1em;
+		width: auto;
+		position: relative;
+		top: 0.125em;
+		transition: color var(--transition);
+	}
+</style>
+
+<script webc:type="js">
+	if (!icon) {
+		throw new Error('An icon prop is required');
+	}
+
+	renderSvg(`./src/components/content/d-icon/${icon}.svg`, label ? [
+		{ name: 'aria-label', value: label }
+	] : [
+		{ name: 'aria-hidden', value: true }
+	]);
+</script>
