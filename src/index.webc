@@ -17,7 +17,9 @@ layout: default.webc
           <diamond-grid align-items="baseline" gap="sm">
             <diamond-grid-item><d-icon icon="info" class="diamond-text-size-lg"></d-icon></diamond-grid-item>
             <diamond-grid-item grow shrink>
-              <h2 class="diamond-text-size-base diamond-text-weight-bold">You’ve heard of Atomic Design, right?</h2>
+              <h2 class="diamond-text-size-base diamond-text-weight-bold diamond-spacing-bottom-xs">
+                You’ve heard of Atomic Design, right?
+              </h2>
               <p>
                 It’s great, and we’re big fans, but after years of building interfaces, we’ve found a more intuitive way to define components and organise code. 
               </p>

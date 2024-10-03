@@ -1,0 +1,31 @@
+<style webc:scoped>
+  :host {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--diamond-spacing-sm);
+    color: var(--color-white);
+    align-items: center;
+  }
+
+  img {
+    aspect-ratio: 1;
+    display: block;
+    height: auto;
+    width: 5ch;
+  }
+
+  p {
+    line-height: var(--diamond-font-line-height-sm);
+  }
+
+  .dui {
+    font-size: var(--diamond-font-size-lg);
+    font-weight: var(--diamond-font-weight-bold);
+  }
+</style>
+
+<img src="/assets/images/diamond-symbol.svg" alt="" width="200" height="200" />
+<p>
+  <span class="dui">Diamond ui</span><br />
+  is a project made by <a href="https://etch.co" target="_blank" rel="external">Etch</a>
+</p>
