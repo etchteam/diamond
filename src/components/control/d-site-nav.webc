@@ -6,29 +6,26 @@
 </style>
 
 <script>
-const siteNav = document.getElementById('site-nav');
-const pageUrl = window.location.pathname;
+  class SiteNavLink extends HTMLElement {
+    static register() {
+      if ("customElements" in window) {
+        customElements.define('d-site-nav-link', SiteNavLink);
+      }
+    }
 
-class SiteNavLink extends HTMLElement {
-  static register() {
-    if ("customElements" in window) {
-      customElements.define('d-site-nav-link', SiteNavLink);
+    connectedCallback() {
+      const link = this.querySelector('a');
+
+      if (window.location.pathname === link.getAttribute('href')) {
+        link.classList.add('active');
+      }
     }
   }
 
-  connectedCallback() {
-    const link = this.querySelector('a');
-
-    if (window.location.pathname === link.getAttribute('href')) {
-      link.classList.add('active');
-    }
-  }
-}
-
-SiteNavLink.register();
+  SiteNavLink.register();
 </script>
 
-<nav id="site-nav">
+<nav>
   <ul class="list-style-none">
     <li webc:for="siteLink of $data.siteLinks">
       <d-site-nav-link>

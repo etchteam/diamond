@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../styles/input.css" webc:bucket="styles">
     <link rel="stylesheet" href="../styles/base.css" webc:bucket="styles">
     <link rel="stylesheet" href="../styles/util.css" webc:bucket="styles">
+    <link rel="stylesheet" href="../styles/prism-theme.css" webc:bucket="styles">
     <link rel="stylesheet" :href="getBundleFileUrl('css', 'styles')" webc:keep>
     <!--- Bundled component styles --->
     <link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep>

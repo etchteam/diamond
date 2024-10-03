@@ -15,11 +15,12 @@
     aspect-ratio: 1;
     background-color: var(--diamond-theme-border-color);
     block-size: var(--diamond-font-size-xs);
-    border-radius: 2px;
+    border-radius: var(--diamond-radius-xs);
     transform: rotate(45deg);
   }
 </style>
 
+<!--- @TODO: Animate this on scroll (diamond spin, line width) --->
 <div class="line"></div>
 <div class="diamond"></div>
 <div class="line"></div>

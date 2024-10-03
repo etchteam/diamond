@@ -1,6 +1,7 @@
 import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
 import webc from '@11ty/eleventy-plugin-webc';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import renderSvg from './lib/renderSvg.js';
 
 async function transformCSS(content) {
@@ -33,6 +34,8 @@ export default function(eleventyConfig) {
       transforms: [transformCSS],
     },
   });
+  // add syntax highlighting to code blocks
+	eleventyConfig.addPlugin(syntaxHighlight);
 
   return {
     dir: {

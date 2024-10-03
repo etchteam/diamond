@@ -3,72 +3,152 @@ layout: default.webc
 ---
 
 <diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
-  <diamond-section padding="fluid">
-    <diamond-grid wrap="wrap" justify-content="space-between">
-      <diamond-grid-item small-mobile="12" large-tablet="6">
-        <h1 class="diamond-spacing-bottom-md">
-          Bring clarity to<br />
-          your components
-        </h1>
-        <p class="diamond-text-size-xl diamond-spacing-bottom-lg">
-          Diamond UI is a methodology for teams who build software products and design systems.
-        </p>
-        <diamond-card muted radius>
-          <diamond-grid align-items="baseline" gap="sm">
-            <diamond-grid-item><d-icon icon="info" class="diamond-text-size-lg"></d-icon></diamond-grid-item>
-            <diamond-grid-item grow shrink>
-              <h2 class="diamond-text-size-base diamond-text-weight-bold diamond-spacing-bottom-xs">
-                You’ve heard of Atomic Design, right?
-              </h2>
-              <p>
-                It’s great, and we’re big fans, but after years of building interfaces, we’ve found a more intuitive way to define components and organise code. 
-              </p>
-              <p>
-                Let us tell you about another way to build components.
-              </p>
-            </diamond-grid-item>
-          </diamond-grid>
-        </diamond-card>
-      </diamond-grid-item>
-      <diamond-grid-item small-mobile="12" large-tablet="4" class="diamond-hidden-small-mobile diamond-visible-large-tablet">
-        <!--- @TODO: replace this with an animated inline svg --->
-        <img src="/assets/images/temp-hero.svg" alt="" width="400" height="400" />
-      </diamond-grid-item>
-    </diamond-grid>
-  </diamond-section>
+  <section>
+    <diamond-section padding="fluid">
+      <diamond-grid wrap="wrap" justify-content="space-between">
+        <diamond-grid-item small-mobile="12" large-tablet="6">
+          <h1 class="diamond-spacing-bottom-md">
+            Bring clarity to<br />
+            your components
+          </h1>
+          <p class="diamond-text-size-xl diamond-spacing-bottom-lg">
+            Diamond UI is a methodology for teams who build software products and design systems.
+          </p>
+          <diamond-card muted radius>
+            <diamond-grid align-items="baseline" gap="sm">
+              <diamond-grid-item><d-icon icon="info" class="diamond-text-size-lg"></d-icon></diamond-grid-item>
+              <diamond-grid-item grow shrink>
+                <h2 class="diamond-text-size-base diamond-text-weight-bold diamond-spacing-bottom-xs">
+                  You’ve heard of Atomic Design, right?
+                </h2>
+                <p>
+                  It’s great, and we’re big fans, but after years of building interfaces, we’ve
+                  found a more intuitive way to define components and organise code. 
+                </p>
+                <p>
+                  Let us tell you about another way to build components.
+                </p>
+              </diamond-grid-item>
+            </diamond-grid>
+          </diamond-card>
+        </diamond-grid-item>
+        <diamond-grid-item small-mobile="12" large-tablet="4" class="diamond-hidden-small-mobile diamond-visible-large-tablet">
+          <!--- @TODO: replace this with an animated inline svg --->
+          <!--- @TODO: Customise the grid to fit this in on smaller screens --->
+          <img src="/assets/images/temp-hero.svg" alt="" width="400" height="400" />
+        </diamond-grid-item>
+      </diamond-grid>
+    </diamond-section>
+  </section>
 
   <d-separator></d-separator>
 
-  <diamond-section padding="fluid">
-    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-      <p>It’s pretty simple, but that’s the whole point!</p>
-      <h2>It’s easy to understand</h2>
-      <p>Each component is created with a single concern from one of four areas of responsibility.</p>
-    </d-title-group>
-    <p>When following Diamond UI methodology</p>
-    <ul>
-      <li>Simple – components are small and easy to understand.</li>
-      <li>With clear boundaries between them, it’s immediately obvious when a component is trying to overstep its area of responsibility and contribute to technical debt.</li>
-      <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
-      <li>The methodology does not dictate any technology or naming constraints.</li>
-    </ul>
-  </diamond-section>
+  <section>
+    <diamond-section padding="fluid">
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+        <p>The methodology in a nutshell</p>
+        <h2>Introducing the four Cs</h2>
+        <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+      </d-title-group>
+      <d-tabs>
+        <ul>
+          <li><a href="#content-tab">Content</a></li>
+          <li><a href="#controls-tab">Controls</a></li>
+          <li><a href="#canvas-tab">Canvas</a></li>
+          <li><a href="#composition-tab">Composition</a></li>
+        </ul>
+      </d-tabs>
+
+      <diamond-section padding="fluid" id="content-tab">
+        <diamond-grid>
+          <diamond-grid-item small-mobile="12" small-tablet="6">
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              Content components look after the general styles for text and images, but can extend to
+              data-specific patterns such as user profiles or product information.
+            </p>
+            <h3 class="diamond-text-size-base">Examples</h3>
+            <ul>
+              <li>Heading - title elements, represented in HTML as h1-5</li>
+              <li>Text - a piece of typographic content</li>
+              <li>Icon - a glyph representing something in the app ecosystem</li>
+              <li>Data-specific –  UserProfile, ProductSummary, PaymentDetails</li>
+            </ul>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" small-tablet="6">
+            <syntax-highlight
+              language="html"
+              webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+            >
+              <page-hero
+  title="Page title"
+  intro="Lorem ipsum dolor [...etc]"
+  cta="Main action"
+  url="/page-slug"
+/>
+            </syntax-highlight>
+          </diamond-grid-item>
+        </diamond-grid>
+      </diamond-section>
+
+      <diamond-section padding="fluid" id="controls-tab">
+        <h3>Controls</h3>
+      </diamond-section>
+
+      <diamond-section padding="fluid" id="canvas-tab">
+        <h3>Canvas</h3>
+      </diamond-section>
+
+      <diamond-section padding="fluid" id="composition-tab">
+        <h3>Composition</h3>
+      </diamond-section>
+    </diamond-section>
+  </section>
 
   <d-separator></d-separator>
 
-  <diamond-section padding="fluid">
-    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-      <p>You’ll grow to like it</p>
-      <h2>It pays you back</h2>
-      <p>Each component is created with a single concern from one of four areas of responsibility.</p>
-    </d-title-group>
-    <p>When maintaining components that were built with Diamond UI</p>
-    <ul>
-      <li>By scoping to a single area of responsibility, components are less prone to prop bloat.</li>
-      <li>With fewer output variations, Diamond components are easier to test.</li>
-      <li>Diamond UI components have simple interfaces and less complicated props to understand.</li>
-      <li>Diamond UI solves future problems, by being extremely flexible. Components can be constructed in thousands of combinations to suit the context.</li>
-      <li>When compared to a utility-first framework, Diamond UI components retain human legibility whilst staying almost as flexible.</li>
-    </ul>
-  </diamond-section>
+  <section>
+    <diamond-section padding="fluid">
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+        <p>It’s pretty simple, but that’s the whole point!</p>
+        <h2>It’s easy to understand</h2>
+        <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+      </d-title-group>
+      <p>When following Diamond UI methodology</p>
+      <ul>
+        <li>Simple – components are small and easy to understand.</li>
+        <li>
+          With clear boundaries between them, it’s immediately obvious when a component is trying
+          to overstep its area of responsibility and contribute to technical debt.
+        </li>
+        <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
+        <li>The methodology does not dictate any technology or naming constraints.</li>
+      </ul>
+    </diamond-section>
+  </section>
+
+  <d-separator></d-separator>
+
+  <section>
+    <diamond-section padding="fluid">
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+        <p>You’ll grow to like it</p>
+        <h2>It pays you back</h2>
+        <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+      </d-title-group>
+      <p>When maintaining components that were built with Diamond UI</p>
+      <ul>
+        <li>By scoping to a single area of responsibility, components are less prone to prop bloat.</li>
+        <li>With fewer output variations, Diamond components are easier to test.</li>
+        <li>Diamond UI components have simple interfaces and less complicated props to understand.</li>
+        <li>
+          Diamond UI solves future problems, by being extremely flexible. Components can be
+          constructed in thousands of combinations to suit the context.
+        </li>
+        <li>
+          When compared to a utility-first framework, Diamond UI components retain human
+          legibility whilst staying almost as flexible.
+        </li>
+      </ul>
+    </diamond-section>
+  </section>
 </diamond-wrap>
