@@ -5,14 +5,35 @@
   }
 </style>
 
-<nav>
+<script>
+const siteNav = document.getElementById('site-nav');
+const pageUrl = window.location.pathname;
+
+class SiteNavLink extends HTMLElement {
+  static register() {
+    if ("customElements" in window) {
+      customElements.define('d-site-nav-link', SiteNavLink);
+    }
+  }
+
+  connectedCallback() {
+    const link = this.querySelector('a');
+
+    if (window.location.pathname === link.getAttribute('href')) {
+      link.classList.add('active');
+    }
+  }
+}
+
+SiteNavLink.register();
+</script>
+
+<nav id="site-nav">
   <ul class="list-style-none">
     <li webc:for="siteLink of $data.siteLinks">
-      <a
-        :href="siteLink.href"
-        :class="`${page.url.includes(siteLink.href) ? 'active' : ''}`"
-        @text="siteLink.label"
-      ></a>
+      <d-site-nav-link>
+        <a :href="siteLink.href" @text="siteLink.label"></a>
+      </d-site-nav-link>
     </li>
   </ul>
 </nav>

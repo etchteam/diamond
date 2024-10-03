@@ -2,6 +2,9 @@
   :host {
     display: block;
     margin-block-start: var(--diamond-spacing-lg);
+  }
+  
+  .inner {
     border-block-end: var(--diamond-border);
     padding-block-end: var(--diamond-spacing);
   }
@@ -9,6 +12,8 @@
 
 <header>
   <diamond-wrap size="xxl">
-    <slot></slot>
+    <div class="inner">
+      <slot></slot>
+    </div>
   </diamond-wrap>
 </header>
