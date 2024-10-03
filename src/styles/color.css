@@ -9,4 +9,15 @@
   --color-blue: #0066ff;
   --color-blue-light: #77aaff;
   --color-blue-lightest: #ccddff;
+
+  --color-red: #ff4488;
+  --color-green: #44ff88;
+}
+
+.text-color-red {
+  color: var(--color-red);
+}
+
+.text-color-green {
+  color: var(--color-green);
 }

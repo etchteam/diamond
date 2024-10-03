@@ -55,19 +55,14 @@
             <d-made-with-love-and-coffee></d-made-with-love-and-coffee>
           </diamond-grid-item>
           <diamond-grid-item small-mobile="12" small-tablet="6" large-tablet="4">
-            <diamond-card muted radius>
-              <diamond-grid align-items="baseline" gap="sm">
-                <diamond-grid-item><d-icon icon="heart" class="diamond-text-size-lg"></d-icon></diamond-grid-item>
-                <diamond-grid-item grow shrink>
-                  <h2 class="diamond-text-size-base diamond-text-weight-bold diamond-spacing-bottom-xs">
-                    Have you tried Diamond UI?
-                  </h2>
-                  <p>
-                    Do you use it on your product? <a href="mailto:hey@etch.co">Tell us</a> and we’ll add your site to our sparkly wall of appreciation.
-                  </p>
-                </diamond-grid-item>
-              </diamond-grid>
-            </diamond-card>
+            <d-alert>
+              <d-icon icon="heart" class="text-color-red" slot="icon"></d-icon>
+              <h2>Have you tried Diamond UI?</h2>
+              <p>
+                Do you use it on your product? <a href="mailto:hey@etch.co">Tell us</a> and we’ll
+                add your site to our sparkly wall of appreciation.
+              </p>
+            </d-alert>
           </diamond-grid-item>
         </diamond-grid>
         <diamond-grid justify-content="space-between">

@@ -14,23 +14,17 @@ layout: default.webc
           <p class="diamond-text-size-xl diamond-spacing-bottom-lg">
             Diamond UI is a methodology for teams who build software products and design systems.
           </p>
-          <diamond-card muted radius>
-            <diamond-grid align-items="baseline" gap="sm">
-              <diamond-grid-item><d-icon icon="info" class="diamond-text-size-lg"></d-icon></diamond-grid-item>
-              <diamond-grid-item grow shrink>
-                <h2 class="diamond-text-size-base diamond-text-weight-bold diamond-spacing-bottom-xs">
-                  You’ve heard of Atomic Design, right?
-                </h2>
-                <p>
-                  It’s great, and we’re big fans, but after years of building interfaces, we’ve
-                  found a more intuitive way to define components and organise code. 
-                </p>
-                <p>
-                  Let us tell you about another way to build components.
-                </p>
-              </diamond-grid-item>
-            </diamond-grid>
-          </diamond-card>
+          <d-alert>
+            <d-icon icon="info" slot="icon"></d-icon>
+            <h2>You’ve heard of Atomic Design, right?</h2>
+            <p>
+              It’s great, and we’re big fans, but after years of building interfaces, we’ve
+              found a more intuitive way to define components and organise code. 
+            </p>
+            <p>
+              Let us tell you about another way to build components.
+            </p>
+          </d-alert>
         </diamond-grid-item>
         <diamond-grid-item small-mobile="12" large-tablet="4" class="diamond-hidden-small-mobile diamond-visible-large-tablet">
           <!--- @TODO: replace this with an animated inline svg --->
@@ -149,6 +143,74 @@ layout: default.webc
           legibility whilst staying almost as flexible.
         </li>
       </ul>
+    </diamond-section>
+  </section>
+
+  <d-separator></d-separator>
+
+  <section>
+    <diamond-section padding="fluid">
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+        <p>The TL;DR you’ve been looking for</p>
+        <h2>It’s about clarity, not perfection.</h2>
+        <p>
+          Software products are never finished. Features can always be improved. Diamond UI makes it
+          easy to see where your interface changes will take effect. Giving you more confidence
+          when developing your product.
+        </p>
+      </d-title-group>
+      <diamond-grid wrap="wrap">
+        <diamond-grid-item small-mobile="12" small-tablet="6">
+          <d-alert>
+            <d-icon icon="tick" class="text-color-green" slot="icon"></d-icon>
+            <h3 class="text-color-green">What it is</h2>
+            <ul>
+              <li>A helping hand to guide teams when creating interfaces</li>
+              <li>A rather simple, yet potentially transformative way of building interfaces</li>
+              <li>The outcome of decades of building complicated interfaces</li>
+            </ul>
+          </d-alert>
+        </diamond-grid-item>
+        <diamond-grid-item small-mobile="12" small-tablet="6">
+          <d-alert>
+            <d-icon icon="cross" class="text-color-red" slot="icon"></d-icon>
+            <h3 class="text-color-red">What it is not</h2>
+            <ul>
+              <li>Another UI pattern library</li>
+              <li>A silver bullet… defining and naming things is always tricky.</li>
+              <li>The next big thing in “DEZINE SYSTAMZ”</li>
+            </ul>
+          </d-alert>
+        </diamond-grid-item>
+      </diamond-grid>
+    </diamond-section>
+  </section>
+
+  <d-separator></d-separator>
+
+  <section>
+    <diamond-section padding="fluid">
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+        <p>OMG, we still have your attention!</p>
+        <h2>Interested in trying it out?</h2>
+        <p>New is exciting, but it comes with friction – we realise there’s more to explain.</p>
+      </d-title-group>
+      <diamond-wrap size="lg">
+        <diamond-grid wrap="wrap" gap="lg">
+          <diamond-grid-item small-mobile="12" small-tablet="6">
+            <d-nav-card icon="document" href="/docs/">
+              <h3>Documentation</h3>
+              <p>Guidance on how to get started and use Diamond UI on your next project.</p>
+            </d-nav-card>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" small-tablet="6">
+            <d-nav-card icon="book" href="/about/">
+              <h3>About</h3>
+              <p>The short story of Diamond UI and how it came to be.</p>
+            </d-nav-card>
+          </diamond-grid-item>
+        </diamond-grid>
+      </diamond-wrap>
     </diamond-section>
   </section>
 </diamond-wrap>
