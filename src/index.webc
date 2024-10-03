@@ -60,7 +60,7 @@ layout: default.webc
       </d-tabs>
 
       <diamond-section padding="fluid" id="content-tab">
-        <diamond-grid>
+        <diamond-grid wrap="wrap">
           <diamond-grid-item small-mobile="12" small-tablet="6">
             <p class="diamond-text-size-lg diamond-spacing-bottom-md">
               Content components look after the general styles for text and images, but can extend to
