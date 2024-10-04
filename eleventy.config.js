@@ -1,5 +1,6 @@
 import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
+import markdownIt from 'markdown-it';
 import webc from '@11ty/eleventy-plugin-webc';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import renderSvg from './lib/renderSvg.js';
@@ -34,6 +35,12 @@ export default function(eleventyConfig) {
       transforms: [transformCSS],
     },
   });
+  // Support markdown templates in webc using <template webc:type="11ty" 11ty:type="md">
+	eleventyConfig.setLibrary('md', markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true,
+	}));
   // add syntax highlighting to code blocks
 	eleventyConfig.addPlugin(syntaxHighlight);
 

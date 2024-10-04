@@ -1,5 +1,7 @@
 ---
 layout: default.webc
+title: About
+description: The origin story of Diamond UI
 ---
 
 <diamond-wrap size="lg" class="diamond-spacing-bottom-fluid">

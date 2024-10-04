@@ -1,0 +1,6 @@
+---
+layout: docs.webc
+title: Canvas
+description: Content components look after the general styles for text and images, but can extend to data-specific patterns such as user profiles or product information.
+tags: ['docs', 'Four Cs']
+---

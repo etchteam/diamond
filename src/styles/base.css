@@ -17,10 +17,6 @@ a.active {
   color: var(--diamond-theme-color);
 }
 
-.logo {
-  display: inline-block;
-  margin-left: .1em;
-  vertical-align: middle;
-  transform: translateY(-18%);
-  width: 3.5rem;
+.giant-icon {
+  font-size: 5.5em;
 }

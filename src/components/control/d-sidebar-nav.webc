@@ -1,0 +1,144 @@
+<style>
+  d-sidebar-nav {
+    details {
+      border-block-end: var(--diamond-border);
+
+      @media (width >= 600px) {
+        margin-block-start: var(--diamond-spacing-fluid);
+      }
+    }
+
+    summary {
+      align-items: center;
+      color: var(--color-white);
+      column-gap: var(--diamond-spacing-sm);
+      cursor: pointer;
+      display: inline-flex;
+      list-style: none;
+      padding-block: var(--diamond-spacing-sm);
+      font-size: var(--diamond-font-size-lg);
+      transition: color var(--diamond-transition);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--diamond-theme-link-color);
+        }
+      }
+
+      @media (width >= 600px) {
+        display: none;
+      }
+    }
+
+    section {
+      border-block-start: var(--diamond-border);
+      border-block-end: var(--diamond-border);
+      padding-block: var(--diamond-spacing);
+
+      & + section {
+        border-block-start: 0 none;
+      }
+
+      &:last-child {
+        border-block-end: 0 none;
+      }
+    }
+
+
+    h2 {
+      color: var(--color-blue-lightest);
+      font-size: var(--diamond-font-size-base);
+      font-weight: var(--diamond-font-weight-bold);
+      margin-block: var(--diamond-spacing-sm) var(--diamond-spacing);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-block: var(--diamond-spacing-xs);
+
+      &:last-child {
+        margin-block-start: 0;
+      }
+    }
+
+    a {
+      border-radius: var(--diamond-radius);
+      display: inline-flex;
+      align-items: center;
+      column-gap: var(--diamond-spacing-sm);
+      padding: var(--diamond-spacing-sm) var(--diamond-spacing);
+      text-decoration: none;
+      transition: var(--diamond-transition);
+      width: 100%;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--diamond-theme-background-muted);
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  class SidebarNavDetails extends HTMLElement {
+    static register() {
+      if ("customElements" in window) {
+        customElements.define('d-sidebar-nav-details', SidebarNavDetails);
+      }
+    }
+
+    constructor() {
+      super();
+      this.handleWindowResize = this.handleWindowResize.bind(this);
+    }
+
+    setDetailsOpenState() {
+      const details = this.querySelector('details');
+
+      if (window.matchMedia('(width >= 600px)').matches) {
+        details.open = true;
+      } else {
+        details.open = false;
+      }
+    }
+
+    handleWindowResize() {
+      this.setDetailsOpenState();
+    }
+
+    connectedCallback() {
+      this.setDetailsOpenState();
+      window.addEventListener('resize', this.handleWindowResize);
+    }
+
+    detachedCallback() {
+      window.removeEventListener('resize', this.handleWindowResize);
+    }
+  }
+
+  SidebarNavDetails.register();
+</script>
+
+<aside>
+  <nav aria-label="Sidebar navigation">
+    <d-sidebar-nav-details>
+      <details>
+        <summary>
+          <d-icon icon="menu" class="text-color-blue diamond-text-size-lg"></d-icon>
+          Menu
+        </summary>
+        <slot></slot>
+      </details>
+    </d-sidebar-nav-details>
+  </nav>
+</aside>

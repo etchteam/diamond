@@ -15,8 +15,12 @@
 
     connectedCallback() {
       const link = this.querySelector('a');
+      const href = link.getAttribute('href');
+      const pathname = window.location.pathname;
 
-      if (window.location.pathname === link.getAttribute('href')) {
+      if (pathname.includes(href) && href !== '/') {
+        link.classList.add('active');
+      } else if (pathname === '/' && href === '/') {
         link.classList.add('active');
       }
     }
@@ -25,12 +29,10 @@
   SiteNavLink.register();
 </script>
 
-<nav>
-  <ul class="list-style-none">
-    <li webc:for="siteLink of $data.siteLinks">
-      <d-site-nav-link>
-        <a :href="siteLink.href" @text="siteLink.label"></a>
-      </d-site-nav-link>
-    </li>
-  </ul>
-</nav>
+<ul class="list-style-none">
+  <li webc:for="siteLink of $data.siteLinks">
+    <d-site-nav-link>
+      <a :href="siteLink.href" @text="siteLink.label"></a>
+    </d-site-nav-link>
+  </li>
+</ul>
