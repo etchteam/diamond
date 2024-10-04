@@ -1,0 +1,4 @@
+/* Custom elements don't respect the global hidden attribute */
+[hidden] {
+  display: none !important;
+}

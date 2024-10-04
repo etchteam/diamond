@@ -19,6 +19,7 @@
 
     <!--- Bundled base styles --->
     <link rel="stylesheet" href="../../node_modules/@etchteam/diamond-ui/diamond-ui.css" webc:bucket="styles">
+    <link rel="stylesheet" href="../styles/reset.css" webc:bucket="styles">
     <link rel="stylesheet" href="../styles/color.css" webc:bucket="styles">
     <link rel="stylesheet" href="../styles/font.css" webc:bucket="styles">
     <link rel="stylesheet" href="../styles/spacing.css" webc:bucket="styles">

@@ -2,9 +2,25 @@
   d-sidebar-nav {
     details {
       border-block-end: var(--diamond-border);
+      margin-block-start: var(--diamond-spacing-fluid);
+      
+      @media (width < 600px) {
+        background: var(--color-blue-darker);
+        border-block-start: var(--diamond-border);
+        margin-block-start: calc(var(--diamond-border-width) * -1);
+        margin-inline: calc(var(--diamond-spacing) * -1);
+        padding-inline: var(--diamond-spacing);
 
-      @media (width >= 600px) {
-        margin-block-start: var(--diamond-spacing-fluid);
+        @supports (interpolate-size: allow-keywords) {
+          interpolate-size: allow-keywords;
+          transition: height .5s var(--diamond-transition-timing);
+          height: calc(((var(--diamond-spacing-sm) * 2) + var(--diamond-font-size-lg)) * var(--diamond-font-line-height));
+          
+          &[open] {
+            height: auto;
+            overflow: clip; /* Clip off contents while animating */
+          }
+        }
       }
     }
 
@@ -15,9 +31,11 @@
       cursor: pointer;
       display: inline-flex;
       list-style: none;
-      padding-block: var(--diamond-spacing-sm);
+      padding: var(--diamond-spacing-sm) var(--diamond-spacing);
+      margin-inline: calc(var(--diamond-spacing) * -1);
       font-size: var(--diamond-font-size-lg);
       transition: color var(--diamond-transition);
+      user-select: none;
 
       &::-webkit-details-marker {
         display: none;
