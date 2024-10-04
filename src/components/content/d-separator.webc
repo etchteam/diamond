@@ -1,6 +1,6 @@
 <style webc:scoped>
   @keyframes expandline {
-    0% { width: 40%; }
+    0% { width: 15%; }
     40% { width: 100%; }
     100% { width: 100%; }
   }
