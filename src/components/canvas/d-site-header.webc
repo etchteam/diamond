@@ -5,7 +5,7 @@
   }
   
   header {
-    view-transition-name: none;
+    view-transition-name: header;
   }
 
   .inner {

@@ -11,11 +11,7 @@
   }
 
   aside {
-    view-transition-name: none;
-  }
-
-  article {
-    view-transition-name: doc;
+    view-transition-name: sidebar;
   }
 </style>
 

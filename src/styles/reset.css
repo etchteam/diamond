@@ -1,8 +1,8 @@
+@view-transition {
+  navigation: auto;
+}
+
 /* Custom elements don't respect the global hidden attribute */
 [hidden] {
   display: none !important;
-}
-
-@view-transition {
-  navigation: auto;
 }

@@ -1,5 +1,7 @@
 ---
 layout: default.webc
+title: Diamond UI - Bring clarity to your components
+description: Diamond UI is a methodology for teams who build software products and design systems.
 ---
 
 <diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">

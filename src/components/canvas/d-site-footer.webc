@@ -1,6 +1,6 @@
 <style webc:scoped>
   footer {
-    view-transition-name: none;
+    view-transition-name: footer;
   }
 </style>
 
