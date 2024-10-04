@@ -2,3 +2,7 @@
 [hidden] {
   display: none !important;
 }
+
+@view-transition {
+  navigation: auto;
+}

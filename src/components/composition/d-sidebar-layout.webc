@@ -9,6 +9,14 @@
       grid-template-columns: 1fr 3fr;
     }
   }
+
+  aside {
+    view-transition-name: none;
+  }
+
+  article {
+    view-transition-name: doc;
+  }
 </style>
 
 <aside><slot name="sidebar"></slot></aside>

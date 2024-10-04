@@ -4,6 +4,10 @@
     margin-block-start: var(--diamond-spacing-lg);
   }
   
+  header {
+    view-transition-name: none;
+  }
+
   .inner {
     border-block-end: var(--diamond-border);
     padding-block-end: var(--diamond-spacing);

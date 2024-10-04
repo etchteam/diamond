@@ -1,3 +1,9 @@
+<style webc:scoped>
+  footer {
+    view-transition-name: none;
+  }
+</style>
+
 <footer class="theme-medium">
   <diamond-section padding="lg">
     <diamond-wrap size="xxl">
