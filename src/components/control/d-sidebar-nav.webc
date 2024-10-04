@@ -4,7 +4,7 @@
       border-block-end: var(--diamond-border);
       margin-block-start: var(--diamond-spacing-fluid);
       
-      @media (width < 600px) {
+      @media (width < 768px) {
         background: var(--color-blue-darker);
         border-block-start: var(--diamond-border);
         margin-block-start: calc(var(--diamond-border-width) * -1);
@@ -47,7 +47,7 @@
         }
       }
 
-      @media (width >= 600px) {
+      @media (width >= 768px) {
         display: none;
       }
     }
@@ -123,7 +123,7 @@
     setDetailsOpenState() {
       const details = this.querySelector('details');
 
-      if (window.matchMedia('(width >= 600px)').matches) {
+      if (window.matchMedia('(width >= 768px)').matches) {
         details.open = true;
       } else {
         details.open = false;
