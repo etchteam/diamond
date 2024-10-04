@@ -18,7 +18,7 @@
           
           &[open] {
             height: auto;
-            overflow: clip; /* Clip off contents while animating */
+            overflow: clip;
           }
         }
       }

@@ -46,10 +46,12 @@ layout: default.webc
       </d-title-group>
       <d-tabs>
         <ul>
-          <li><a href="#content-tab">Content</a></li>
-          <li><a href="#controls-tab">Controls</a></li>
-          <li><a href="#canvas-tab">Canvas</a></li>
-          <li><a href="#composition-tab">Composition</a></li>
+          <li webc:for="tab of ['content', 'controls', 'canvas', 'composition']">
+            <a :href="`#${tab}-tab`">
+              <d-icon :icon="tab" class="diamond-text-size-lg text-color-blue"></d-icon>
+              <span @text="tab"></span>
+            </a>
+          </li>
         </ul>
       </d-tabs>
 

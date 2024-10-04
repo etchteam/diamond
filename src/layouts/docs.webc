@@ -3,47 +3,46 @@ layout: default.webc
 ---
 
 <diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
-    <diamond-grid wrap="wrap" gap="xl">
-      <diamond-grid-item small-mobile="12" small-tablet="4" large-tablet="3">
-        <d-sidebar-nav>
-          <section webc:for="docSection of ['Getting started', 'Four Cs', 'Optional Cs']">
-            <h2 @text="docSection"></h2>
-            <ul>
-              <li webc:for="doc of $data.collections[docSection]">
-                <a :href="doc.url">
-                  <d-icon webc:if="doc.data.icon" :icon="doc.data.icon" class="diamond-text-size-lg text-color-blue"></d-icon>
-                  <span @text="doc.data.title"></span>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </d-sidebar-nav>
-      </diamond-grid-item>
-      <diamond-grid-item small-mobile="12" small-tablet="8" large-tablet="9">
-        <article>
-          <diamond-section padding="fluid">
-            <diamond-grid>
-              <diamond-grid-item grow shrink>
-                <d-title-group class="diamond-spacing-bottom-xl">
-                  <p @text="$data.tags[1]"></p>
-                  <h1 @text="$data.title"></h1>
-                  <p @text="$data.description"></p>
-                </d-title-group>
-              </diamond-grid-item>
-              <diamond-grid-item
-                webc:if="$data.icon"
-                class="diamond-hidden-small-mobile diamond-visible-large-tablet"
-              >
-                <d-icon :icon="$data.icon" class="giant-icon text-color-blue"></d-icon>
-              </diamond-grid-item>
-            </diamond-grid>
-  
-            <d-separator class="diamond-spacing-bottom-xl"></d-separator>
-  
-            <div @raw="content"></div>
-          </diamond-section>
-        </article>
-      </diamond-grid-item>
-    </diamond-grid>
-  </diamond-section>
+  <diamond-grid wrap="wrap" gap="xl">
+    <diamond-grid-item small-mobile="12" small-tablet="4" large-tablet="3">
+      <d-sidebar-nav>
+        <section webc:for="docSection of ['Getting started', 'Four Cs', 'Optional Cs']">
+          <h2 @text="docSection"></h2>
+          <ul>
+            <li webc:for="doc of $data.collections[docSection]">
+              <a :href="doc.url">
+                <d-icon webc:if="doc.data.icon" :icon="doc.data.icon" class="diamond-text-size-lg text-color-blue"></d-icon>
+                <span @text="doc.data.title"></span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </d-sidebar-nav>
+    </diamond-grid-item>
+    <diamond-grid-item small-mobile="12" small-tablet="8" large-tablet="9">
+      <article>
+        <diamond-section padding="fluid">
+          <diamond-grid>
+            <diamond-grid-item grow shrink>
+              <d-title-group class="diamond-spacing-bottom-xl">
+                <p @text="$data.tags[1]"></p>
+                <h1 @text="$data.title"></h1>
+                <p @text="$data.description"></p>
+              </d-title-group>
+            </diamond-grid-item>
+            <diamond-grid-item
+              webc:if="$data.icon"
+              class="diamond-hidden-small-mobile diamond-visible-large-tablet"
+            >
+              <d-icon :icon="$data.icon" class="giant-icon text-color-blue"></d-icon>
+            </diamond-grid-item>
+          </diamond-grid>
+
+          <d-separator class="diamond-spacing-bottom-xl"></d-separator>
+
+          <div @raw="content"></div>
+        </diamond-section>
+      </article>
+    </diamond-grid-item>
+  </diamond-grid>
 </diamond-wrap>

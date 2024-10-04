@@ -2,25 +2,49 @@
   d-tabs {
     ul {
       display: flex;
+      flex-wrap: wrap;
       list-style: none;
       padding: 0;
       margin: 0;
-      justify-content: center;
-      column-gap: var(--diamond-spacing-fluid-sm);
+      gap: var(--diamond-spacing-sm);
+      
+      @media (width >= 600px) {
+        gap: var(--diamond-spacing-fluid-sm);
+        justify-content: center;
+      }
+    }
+
+    li {
+      width: calc(50% - var(--diamond-spacing-sm));
+      flex: 1 1 auto;
+      
+      @media (width >= 600px) {
+        flex: 0 0 auto;
+        width: auto;
+      }
     }
 
     a {
+      align-items: center;
       border-radius: var(--diamond-radius);
+      column-gap: var(--diamond-spacing-sm);
+      display: inline-flex;
       padding: var(--diamond-spacing-sm) var(--diamond-spacing-md);
+      text-transform: capitalize;
       text-decoration: none;
       transition:
         background-color var(--diamond-transition),
         color var(--diamond-transition);
-
+      width: 100%;
+        
       &[aria-selected],
       &:hover {
         color: var(--color-white);
         background-color: var(--diamond-theme-background-muted);
+      }
+      
+      @media (width >= 600px) {
+        width: auto;
       }
     }
   }

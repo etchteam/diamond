@@ -26,7 +26,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets');
   // Reloading on css changes
   eleventyConfig.addWatchTarget('src/styles/*.css');
-  // make the renderSvg function available globally in templates
+  // make functions available globally in templates
   eleventyConfig.addJavaScriptFunction('renderSvg', renderSvg);
   // load all components added to the src/components directory
   eleventyConfig.addPlugin(webc, {
