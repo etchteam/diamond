@@ -7,37 +7,11 @@ description: Diamond UI is a methodology for teams who build software products a
 <diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
   <section>
     <diamond-section padding="fluid">
-      <diamond-grid wrap="wrap" justify-content="space-between">
-        <diamond-grid-item small-mobile="12" large-tablet="6">
-          <h1 class="diamond-spacing-bottom-md">
-            Bring clarity to<br />
-            your components
-          </h1>
-          <p class="diamond-text-size-xl diamond-spacing-bottom-lg">
-            Diamond UI is a methodology for teams who build software products and design systems.
-          </p>
-          <d-alert>
-            <d-icon icon="info" slot="icon"></d-icon>
-            <h2>You’ve heard of Atomic Design, right?</h2>
-            <p>
-              It’s great, and we’re big fans, but after years of building interfaces, we’ve
-              found a more intuitive way to define components and organise code. 
-            </p>
-            <p>
-              Let us tell you about another way to build components.
-            </p>
-          </d-alert>
-        </diamond-grid-item>
-        <diamond-grid-item small-mobile="12" large-tablet="4" class="diamond-hidden-small-mobile diamond-visible-large-tablet">
-          <!--- @TODO: replace this with an animated inline svg --->
-          <!--- @TODO: Customise the grid to fit this in on smaller screens --->
-          <img src="/assets/images/temp-hero.svg" alt="" width="400" height="400" />
-        </diamond-grid-item>
-      </diamond-grid>
+      <d-home-hero></d-home-hero>
     </diamond-section>
   </section>
 
-  <d-separator></d-separator>
+  <d-separator @load="true"></d-separator>
 
   <section>
     <diamond-section padding="fluid">
