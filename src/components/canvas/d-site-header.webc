@@ -3,10 +3,6 @@
     display: block;
     margin-block-start: var(--diamond-spacing-lg);
   }
-  
-  header {
-    view-transition-name: header;
-  }
 
   .inner {
     border-block-end: var(--diamond-border);

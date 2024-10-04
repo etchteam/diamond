@@ -22,22 +22,22 @@ layout: default.webc
       <diamond-grid>
         <diamond-grid-item grow shrink>
           <d-title-group class="diamond-spacing-bottom-xl">
-            <p @text="$data.tags[1]" :style="`view-transition-name: ${slugify(title)}-eyebrow`"></p>
-            <h1 @text="$data.title" :style="`view-transition-name: ${slugify(title)}-title`"></h1>
-            <p @text="$data.description" :style="`view-transition-name: ${slugify(title)}-lead`"></p>
+            <p @text="$data.tags[1]"></p>
+            <h1 @text="$data.title"></h1>
+            <p @text="$data.description"></p>
           </d-title-group>
         </diamond-grid-item>
         <diamond-grid-item
           webc:if="$data.icon"
           class="diamond-hidden-small-mobile diamond-visible-large-tablet"
         >
-          <d-icon :icon="$data.icon" class="giant-icon text-color-blue" :style="`view-transition-name: ${slugify(title)}-icon`"></d-icon>
+          <d-icon :icon="$data.icon" class="giant-icon text-color-blue"></d-icon>
         </diamond-grid-item>
       </diamond-grid>
   
       <d-separator class="diamond-spacing-bottom-xl"></d-separator>
   
-      <div @raw="content" :style="`view-transition-name: ${slugify(title)}-content`"></div>
+      <div @raw="content"></div>
     </diamond-section>
   </d-sidebar-layout>
 </diamond-wrap>

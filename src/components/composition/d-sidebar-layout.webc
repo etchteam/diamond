@@ -9,10 +9,6 @@
       grid-template-columns: 1fr 3fr;
     }
   }
-
-  aside {
-    view-transition-name: sidebar;
-  }
 </style>
 
 <aside><slot name="sidebar"></slot></aside>
