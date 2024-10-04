@@ -16,13 +16,15 @@ layout: default.webc
         <p>Over time, our egos came crashing down as new designs didn’t fit the components we’d built. They almost fit, so we shoehorned them in with new props. We were doing it! Our components could support anything!</p>
         <p>As time went on, the components became more and more complicated, trying to support every scenario, becoming harder to test and harder to understand.</p>
         <p>I spoke to Jim, our designer and asked:</p>
-        <diamond-card class="diamond-spacing-bottom-md" muted radius>
-          Why are the designs always fighting the existing components, why can’t you re-use the bits of the interface that are already there?
-        </diamond-card>
+        <d-alert class="diamond-spacing-bottom-sm">
+          <d-icon icon="chat" slot="icon"></d-icon>
+          <p>Why are the designs always fighting the existing components, why can’t you re-use the bits of the interface that are already there?</p>
+        </d-alert>
         <p>His response:</p>
-        <diamond-card class="diamond-spacing-bottom-md" muted radius>
-          I am re-using it! Interface styles can be grouped into four categories: composition, canvas, content and controls.
-        </diamond-card>
+        <d-alert class="diamond-spacing-bottom-sm">
+          <d-icon icon="chat" slot="icon"></d-icon>
+          <p>I am re-using it! Interface styles can be grouped into four categories: composition, canvas, content and controls.</p>
+        </d-alert>
         <p>And that was the inception point of Diamond UI.</p>
       </div>
     </article>
@@ -31,10 +33,26 @@ layout: default.webc
   <d-separator></d-separator>
 
   <diamond-section padding="fluid">
-    <d-title-group class="diamond-text-align-center">
+    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
       <p>The story continues</p>
       <h2>Do you want to know more?</h2>
     </d-title-group>
 
+    <diamond-wrap size="lg">
+      <diamond-grid wrap="wrap" gap="lg">
+        <diamond-grid-item small-mobile="12" small-tablet="6">
+          <d-nav-card icon="info" href="/">
+            <h3>Intro</h3>
+            <p>A quick run down of what Diamond UI is, and how it can help.</p>
+          </d-nav-card>
+        </diamond-grid-item>
+        <diamond-grid-item small-mobile="12" small-tablet="6">
+          <d-nav-card icon="document" href="/docs/">
+            <h3>Documentation</h3>
+            <p>Guidance on how to get started and use Diamond UI on your next project.</p>
+          </d-nav-card>
+        </diamond-grid-item>
+      </diamond-grid>
+    </diamond-wrap>
   </diamond-section>
 </diamond-wrap>

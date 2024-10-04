@@ -190,7 +190,7 @@ layout: default.webc
 
   <section>
     <diamond-section padding="fluid">
-      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
         <p>OMG, we still have your attention!</p>
         <h2>Interested in trying it out?</h2>
         <p>New is exciting, but it comes with friction – we realise there’s more to explain.</p>
