@@ -55,13 +55,8 @@ How do we stop our codebase from heading down this path? How can we define compo
 
 Diamond UI sets strict rules for component responsibilities that solve future maintenance problems **now.**
 
-Components are grouped into one of the 4 Cs of UI, aiming to be concerned with fulfilling a single area of responsibility:
+Components get grouped into one of the 4 Cs of UI, aiming to be concerned with fulfilling a single area of responsibility:
 
-- Content
-- Controls
-- Canvas
-- Composition
-
-Let’s dive in.
+So, what are the 4 Cs? Let’s dive in.
 
 </template>

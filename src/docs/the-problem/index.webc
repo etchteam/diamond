@@ -103,7 +103,7 @@ Over the months, more requirements come in and more props get added. Different t
 
 This component is getting out of hand.
 
-It’s riddled with conditional statements and testing the different combinations of props gets increasingly awkward. We would have done better just writing this out with <abbr>HTML</abbr>!
+It’s riddled with conditional statements and testing the different combinations of props gets increasingly awkward. We would have done better just writing this out with HTML.
 
 There must be a better way!
 
