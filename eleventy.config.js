@@ -35,7 +35,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImagePlugin, {
     formats: ['webp'],
     widths: [800, 1600],
-    urkPath: '/assets/images/',
+    urlPath: '/assets/images/',
     defaultAttributes: {
       sizes: '100vw',
       loading: 'lazy',
