@@ -5,7 +5,7 @@
     margin-block-end: var(--diamond-spacing-xs);
   }
 
-  diamond-card {
+  :host.fill diamond-card {
     height: 100%;
   }
 </style>

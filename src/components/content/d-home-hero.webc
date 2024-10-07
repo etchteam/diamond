@@ -50,11 +50,6 @@
     opacity: 0;
   }
 
-  .alert {
-    grid-row: 1 / 3;
-    grid-column: 1 / 3;
-  }
-
   .image {
     animation: rotateit 0.5s var(--diamond-transition-timing) 0.4s forwards;
     align-content: center;
