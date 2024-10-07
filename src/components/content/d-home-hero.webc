@@ -116,7 +116,7 @@
 </style>
 
 <div class="content">
-  <h1 class="diamond-spacing-bottom-md">
+  <h1 class="diamond-spacing-bottom-md fade-in">
     Bring clarity to<br />
     your components
   </h1>
