@@ -1,4 +1,4 @@
-@keyframes fade {
+@keyframes fadein {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
@@ -10,7 +10,7 @@
 }
 
 .fade-in {
-  animation: fade 0.75s var(--diamond-transition-timing) forwards;
+  animation: fadein 0.75s var(--diamond-transition-timing) forwards;
   opacity: 0;
 }
 

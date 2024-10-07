@@ -32,7 +32,7 @@ description: Diamond UI is a methodology for teams who build software products a
           </ul>
         </d-tabs>
   
-        <diamond-section padding="fluid" id="content-tab">
+        <diamond-section padding="fluid" class="fade-in" id="content-tab">
           <diamond-grid wrap="wrap">
             <diamond-grid-item small-mobile="12" small-tablet="6">
               <p class="diamond-text-size-lg diamond-spacing-bottom-md">
@@ -52,14 +52,14 @@ description: Diamond UI is a methodology for teams who build software products a
   language="html"
   webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
 >
-<h2><my-icon type="hello"></my-icon> Title</h2>
+<h2>Title</h2>
 <p>A paragraph of text.</p>
 </syntax-highlight>
             </diamond-grid-item>
           </diamond-grid>
         </diamond-section>
   
-        <diamond-section padding="fluid" id="controls-tab">
+        <diamond-section padding="fluid" class="fade-in" id="controls-tab">
           <diamond-grid wrap="wrap">
             <diamond-grid-item small-mobile="12" small-tablet="6">
               <p class="diamond-text-size-lg diamond-spacing-bottom-md">
@@ -79,7 +79,7 @@ description: Diamond UI is a methodology for teams who build software products a
   language="diff-html"
   webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
 >
-<h2><my-icon type="hello"></my-icon> Title</h2>
+<h2>Title</h2>
 <p>A paragraph of text.</p>
 + <button type="button">Action</button>
 </syntax-highlight>
@@ -87,7 +87,7 @@ description: Diamond UI is a methodology for teams who build software products a
           </diamond-grid>
         </diamond-section>
   
-        <diamond-section padding="fluid" id="canvas-tab">
+        <diamond-section padding="fluid" class="fade-in" id="canvas-tab">
           <diamond-grid wrap="wrap">
             <diamond-grid-item small-mobile="12" small-tablet="6">
               <p class="diamond-text-size-lg diamond-spacing-bottom-md">
@@ -108,7 +108,7 @@ description: Diamond UI is a methodology for teams who build software products a
   webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
 >
 + <my-card>
-    <h2><my-icon type="hello"></my-icon> Title</h2>
+    <h2>Title</h2>
     <p>A paragraph of text.</p>
     <button type="button">Action</button>
 + </my-card>
@@ -117,7 +117,7 @@ description: Diamond UI is a methodology for teams who build software products a
           </diamond-grid>
         </diamond-section>
   
-        <diamond-section padding="fluid" id="composition-tab">
+        <diamond-section padding="fluid" class="fade-in" id="composition-tab">
           <diamond-grid wrap="wrap">
             <diamond-grid-item small-mobile="12" small-tablet="6">
               <p class="diamond-text-size-lg diamond-spacing-bottom-md">
@@ -139,14 +139,14 @@ description: Diamond UI is a methodology for teams who build software products a
 + <div class="grid">
 +   <div class="grid-item">
       <my-card>
-        <h2><my-icon type="hello"></my-icon> Title</h2>
+        <h2>Title</h2>
         <p>A paragraph of text.</p>
         <button type="button">Action</button>
       </my-card>
 +   </div>
 +   <div class="grid-item">
       <my-card>
-        <h2><my-icon type="hello"></my-icon> Title</h2>
+        <h2>Title</h2>
         <p>A paragraph of text.</p>
         <button type="button">Action</button> 
       </my-card>

@@ -128,7 +128,9 @@ pre[class*="language-"] {
 }
 
 .token.inserted {
+  animation: fadein 0.75s var(--diamond-transition-timing) forwards;
 	background-color: hsl(120deg 73% 75% / 10%);
+  opacity: 0;
 }
 
 /* Make the + and - characters unselectable for copy/paste */
