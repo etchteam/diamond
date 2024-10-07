@@ -1,7 +1,0 @@
----
-layout: docs.webc
-tags: ['docs', 'Getting started']
-title: The solution
-description: Diamond UI is a method of organising and grouping components to cleanly separate their responsibilities.
-icon: tick
----

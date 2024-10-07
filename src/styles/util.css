@@ -22,3 +22,7 @@
   display: grid;
   height: 100%;
 }
+
+.text-title-case {
+  text-transform: capitalize;
+}

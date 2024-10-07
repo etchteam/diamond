@@ -1,9 +1,11 @@
 import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
 import markdownIt from 'markdown-it';
+import { eleventyImagePlugin } from '@11ty/eleventy-img';
 import webc from '@11ty/eleventy-plugin-webc';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import renderSvg from './lib/renderSvg.js';
+import findCollectionItem from './lib/findCollectionItem.js';
 
 async function transformCSS(content) {
   if (this.type !== 'css') {
@@ -28,9 +30,23 @@ export default function(eleventyConfig) {
   eleventyConfig.addWatchTarget('src/styles/*.css');
   // make functions available globally in templates
   eleventyConfig.addJavaScriptFunction('renderSvg', renderSvg);
+  eleventyConfig.addJavaScriptFunction('findCollectionItem', findCollectionItem);
+  // support eleventy-image https://www.11ty.dev/docs/plugins/image
+  eleventyConfig.addPlugin(eleventyImagePlugin, {
+    formats: ['webp'],
+    widths: [800, 1600],
+    urkPath: '/assets/images/',
+    defaultAttributes: {
+      sizes: '100vw',
+      loading: 'lazy',
+    },
+  });
   // load all components added to the src/components directory
   eleventyConfig.addPlugin(webc, {
-    components: 'src/components/**/*.webc',
+    components: [
+      'src/components/**/*.webc',
+      'npm:@11ty/eleventy-img/*.webc',
+    ],
     bundlePluginOptions: {
       transforms: [transformCSS],
     },

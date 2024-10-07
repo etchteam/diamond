@@ -1,0 +1,110 @@
+---
+layout: docs.webc
+tags: ['docs', 'Getting started']
+title: The problem
+description: How do you create and organise components in a way that is scalable and maintainable over time?
+icon: warning
+permalink: /docs/index.html
+next: /docs/the-solution/
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Imagine you’ve been tasked with designing a page hero. Having no other context or information to go on, you came up with the most conventional design ever.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/the-problem/hero.webp"
+  alt="A conventional page hero UI"
+/>
+
+Excellent work! Now using a component-first mindset, you create a button component and a hero component.
+
+The hero takes some props:
+
+- title
+- intro
+- button text
+- button url
+
+This is awesome! It’s turned a bunch of HTML into a simple one-liner.
+
+```html
+<page-hero
+  title="Page title"
+  intro="Lorem ipsum dolor [...etc]"
+  button-text="Main action"
+  button-url="/page-slug"
+/>
+```
+
+A little while later a new request comes in for a slightly different hero &ndash; a yellow variant with a new button style.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/the-problem/yellow-hero.webp"
+  alt="The page hero with a yellow background"
+/>
+
+Easy, you add a prop to the hero to control the background colour and another one to pass the new button variant to the CTA.
+
+It’s a couple more props, but it’s not too bad.
+
+```html
+<page-hero
+  title="Page title"
+  intro="Lorem ipsum dolor [...etc]"
+  cta="Main action"
+  url="/page-slug"
+  cta-style="secondary"
+  theme="yellow"
+/>
+```
+
+This component is pretty neat, now it’s getting more powerful and can support more variations!
+
+Over the months, more requirements come in and more props get added. Different teams have different requirements and they all need to use the component.
+
+- Eyebrow text is added above the page title.
+- A second smaller paragraph gets added below the intro (this one has links in it too).
+- The Marketing team wanted a way to feature multiple CTAs of different types (sometimes they are buttons, sometimes links).
+- The SEO team decide the eyebrow needs to be the `h1` and the “page title” text actually needs to be a `p` for maximum search power.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/the-problem/max-hero.webp"
+  alt="The hero component with all the possible features"
+/>
+
+```html
+<page-hero
+  title="Page title"
+  intro="Lorem ipsum dolor [...etc]"
+  cta="Main action"
+  url="https://another.site/page-slug"
+  cta-target="_blank"
+  cta-rel="noopener noreferrer"
+  cta-style="secondary"
+  theme="grey"
+  eyebrow="Eyebrow text"
+  eyebrow-tag="h1"
+  title-tag="p"
+  secondary-cta="Secondary action"
+  secondary-cta-type="button"
+  secondary-cta-style="secondary"
+  on-secondary-cta-click="handleCtaClick()"
+>
+	<p slot="secondary-text">
+		Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod 
+		ipsum ut mi <a href="#">elementum interdum</a>.
+	</p>
+</page-hero>
+```
+
+This component is getting out of hand.
+
+It’s riddled with conditional statements and testing the different combinations of props gets increasingly awkward. We would have done better just writing this out with HTML!
+
+There must be a better way!
+
+</template>
