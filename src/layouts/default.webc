@@ -33,7 +33,13 @@
     <!--- Bundled component styles --->
     <link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep>
 
-    <script defer src="https://eu.umami.is/script.js" data-website-id="9d537fd5-cc28-4c00-9350-45e5727f264f" webc:keep></script>
+    <script
+      webc:if="process.env.NODE_ENV === 'production'"
+      src="https://eu.umami.is/script.js"
+      data-website-id="9d537fd5-cc28-4c00-9350-45e5727f264f"
+      defer
+      webc:keep
+    ></script>
   </head>
   <body>
     <diamond-app>
