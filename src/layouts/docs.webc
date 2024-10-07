@@ -37,7 +37,7 @@ layout: default.webc
   
       <d-separator class="diamond-spacing-bottom-xl"></d-separator>
   
-      <div @raw="content" class="diamond-spacing-bottom-xl"></div>
+      <div @raw="content" class="longform diamond-spacing-bottom-xl"></div>
 
       <diamond-grid>
         <diamond-grid-item small-mobile="6" webc:for="direction of ['previous', 'next']">

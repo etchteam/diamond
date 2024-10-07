@@ -1,0 +1,35 @@
+---
+layout: docs.webc
+title: Content
+description: Content components look after the general styles for text and images, but can extend to data-specific patterns such as user profiles or product information.
+tags: ['docs', 'Four Cs']
+icon: content
+previous: /docs/the-solution/
+next: /docs/controls/
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Content components are focused around text and images and the base level, but can extend into more specialised areas such as a person or a product. Content components are where the UI library can become more specialised towards the industry or product that the library is serving.
+
+Typical examples of content components are:
+
+- Heading - title elements, represented in HTML as h1-5
+- Text - a piece of typographic content
+- Icon - a glyph representing something in the app ecosystem
+- Person, ProductSummary, PaymentDetails - product/industry-specific content
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/content/content.webp"
+  alt="An example of UI with content highlighted"
+/>
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="bGMBLgR" data-pen-title="Content" data-preview="true" data-user="gavmck" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/gavmck/pen/bGMBLgR">
+  Content</a> by gavmck (<a href="https://codepen.io/gavmck">@gavmck</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js" webc:keep></script>
+
+</template>

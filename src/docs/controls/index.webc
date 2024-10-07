@@ -1,0 +1,34 @@
+---
+layout: docs.webc
+title: Controls
+description: Controls are interactive elements of the page.
+tags: ['docs', 'Four Cs']
+icon: controls
+previous: /docs/content/
+next: /docs/canvas/
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Anything that can be clicked, dragged, typed into or accessed in some way with the mouse, keyboard or touch is a control.
+
+Typical examples of controls are:
+
+- Button - a clickable component that triggers an action, such as submitting a form
+- Link - a hypertext link that takes the user to another page or section of the app
+- Input - a form input that allows users to enter information
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/controls/controls.webp"
+  alt="An example of UI with controls highlighted"
+/>
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="NWMbyaw" data-pen-title="Controls" data-preview="true" data-user="gavmck" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/gavmck/pen/NWMbyaw">
+  Controls</a> by gavmck (<a href="https://codepen.io/gavmck">@gavmck</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js" webc:keep></script>
+
+</template>

@@ -26,3 +26,15 @@
 .text-title-case {
   text-transform: capitalize;
 }
+
+.longform {
+  img, pre[class*=language-], .cp_embed_wrapper {
+    margin-block: var(--diamond-spacing-lg);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
