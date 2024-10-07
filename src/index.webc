@@ -41,38 +41,120 @@ description: Diamond UI is a methodology for teams who build software products a
               </p>
               <h3 class="diamond-text-size-base">Examples</h3>
               <ul>
-                <li>Heading - title elements, represented in HTML as h1-5</li>
-                <li>Text - a piece of typographic content</li>
-                <li>Icon - a glyph representing something in the app ecosystem</li>
-                <li>Data-specific –  UserProfile, ProductSummary, PaymentDetails</li>
+                <li>Heading &ndash; title elements, represented in HTML as h1-5</li>
+                <li>Text &ndash; a piece of typographic content</li>
+                <li>Icon &ndash; a glyph representing something in the app ecosystem</li>
+                <li>Data-specific &ndash; UserProfile, ProductSummary</li>
               </ul>
             </diamond-grid-item>
             <diamond-grid-item small-mobile="12" small-tablet="6">
-              <syntax-highlight
-                language="html"
-                webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
-              >
-                <page-hero
-    title="Page title"
-    intro="Lorem ipsum dolor [...etc]"
-    cta="Main action"
-    url="/page-slug"
-  />
-              </syntax-highlight>
+<syntax-highlight
+  language="html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<h2><my-icon type="hello"></my-icon> Title</h2>
+<p>A paragraph of text.</p>
+</syntax-highlight>
             </diamond-grid-item>
           </diamond-grid>
         </diamond-section>
   
         <diamond-section padding="fluid" id="controls-tab">
-          <h3>Controls</h3>
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                Controls are interactive elements of the page. Anything that can be clicked,
+                dragged, typed into or accessed in some way with the mouse, keyboard or touch
+                is a control.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Button &ndash; a clickable component that triggers an action, such as submitting a form</li>
+                <li>Input &ndash; a hypertext link that takes the user to another page or section of the app</li>
+                <li>Form &ndash; a form input that allows users to enter information</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<h2><my-icon type="hello"></my-icon> Title</h2>
+<p>A paragraph of text.</p>
++ <button type="button">Action</button>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
         </diamond-section>
   
         <diamond-section padding="fluid" id="canvas-tab">
-          <h3>Canvas</h3>
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                A canvas represents a part of the page that content and controls sit within.
+                Canvases provide padding and backgrounds for their content area, but do not
+                dictate any other layout constraints.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Card &ndash; a flat box, often containing an image, title, text and a call to action</li>
+                <li>Header &ndash; a floating element at the top of the page, containing the logo and main navigation</li>
+                <li>Hero &ndash; the first element in the main content of the page, containing the title and intro</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
++ <my-card>
+    <h2><my-icon type="hello"></my-icon> Title</h2>
+    <p>A paragraph of text.</p>
+    <button type="button">Action</button>
++ </my-card>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
         </diamond-section>
   
         <diamond-section padding="fluid" id="composition-tab">
-          <h3>Composition</h3>
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                Compositions are an invisible element of the page that provides layout.
+                Compositions are solely concerned with creating structure and spacing.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Grid &ndash; a layout with grid cells arranged in columns and rows</li>
+                <li>Spacing &ndash; adds spacing between components or areas of the page</li>
+                <li>Container &ndash; sets a max width for a page, block of content or components</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
++ <div class="grid">
++   <div class="grid-item">
+      <my-card>
+        <h2><my-icon type="hello"></my-icon> Title</h2>
+        <p>A paragraph of text.</p>
+        <button type="button">Action</button>
+      </my-card>
++   </div>
++   <div class="grid-item">
+      <my-card>
+        <h2><my-icon type="hello"></my-icon> Title</h2>
+        <p>A paragraph of text.</p>
+        <button type="button">Action</button> 
+      </my-card>
++   </div>
++ </div>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
         </diamond-section>
       </diamond-section>
     </section>
