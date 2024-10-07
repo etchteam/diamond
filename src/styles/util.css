@@ -17,3 +17,8 @@
 .fade-in-delay {
   animation-delay: 0.75s;
 }
+
+.fill {
+  display: grid;
+  height: 100%;
+}

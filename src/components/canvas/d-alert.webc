@@ -1,12 +1,12 @@
 <style webc:scoped>
-  :host {
-    display: block;
-  }
-
   h2, h3, h4 {
     font-size: var(--diamond-font-size-base);
     font-weight: var(--diamond-font-weight-bold);
     margin-block-end: var(--diamond-spacing-xs);
+  }
+
+  diamond-card {
+    height: 100%;
   }
 </style>
 

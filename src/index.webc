@@ -166,15 +166,12 @@ description: Diamond UI is a methodology for teams who build software products a
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
           <p>It’s pretty simple, but that’s the whole point!</p>
           <h2>It’s easy to understand</h2>
-          <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+          <p>The four Cs clarify boundaries between component responsibilities.</p>
         </d-title-group>
         <p>When following Diamond UI methodology</p>
         <ul>
-          <li>Simple – components are small and easy to understand.</li>
-          <li>
-            With clear boundaries between them, it’s immediately obvious when a component is trying
-            to overstep its area of responsibility and contribute to technical debt.
-          </li>
+          <li>Components stay small and easy to understand.</li>
+          <li>It’s clear when a component is trying to overstep its area of responsibility.</li>
           <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
           <li>The methodology does not dictate any technology or naming constraints.</li>
         </ul>
@@ -188,20 +185,16 @@ description: Diamond UI is a methodology for teams who build software products a
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
           <p>You’ll grow to like it</p>
           <h2>It pays you back</h2>
-          <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+          <p>Diamond UI solves future problems, by being extremely flexible.</p>
         </d-title-group>
         <p>When maintaining components that were built with Diamond UI</p>
         <ul>
-          <li>By scoping to a single area of responsibility, components are less prone to prop bloat.</li>
-          <li>With fewer output variations, Diamond components are easier to test.</li>
-          <li>Diamond UI components have simple interfaces and less complicated props to understand.</li>
+          <li>There are fewer output variations, so components are easier to test.</li>
+          <li>Components use simpler interfaces that are less prone to prop bloat.</li>
+          <li>UI can be constructed in thousands of component combinations to suit the context.</li>
           <li>
-            Diamond UI solves future problems, by being extremely flexible. Components can be
-            constructed in thousands of combinations to suit the context.
-          </li>
-          <li>
-            When compared to a utility-first framework, Diamond UI components retain human
-            legibility whilst staying almost as flexible.
+            When compared to a utility-first framework, components retain human
+            legibility whilst staying flexible.
           </li>
         </ul>
       </diamond-section>
@@ -212,17 +205,16 @@ description: Diamond UI is a methodology for teams who build software products a
     <section>
       <diamond-section padding="fluid">
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-          <p>The TL;DR you’ve been looking for</p>
-          <h2>It’s about clarity, not perfection.</h2>
+          <p>Software products are never finished</p>
+          <h2>It’s about clarity, not perfection</h2>
           <p>
-            Software products are never finished. Features can always be improved. Diamond UI makes it
-            easy to see where your interface changes will take effect. Giving you more confidence
-            when developing your product.
+            Features can always be improved. Diamond UI can help you be more confident when
+            developing your product.
           </p>
         </d-title-group>
         <diamond-grid wrap="wrap">
           <diamond-grid-item small-mobile="12" small-tablet="6">
-            <d-alert>
+            <d-alert class="fill">
               <d-icon icon="tick" class="text-color-green" slot="icon"></d-icon>
               <h3 class="text-color-green">What it is</h2>
               <ul>
@@ -233,13 +225,13 @@ description: Diamond UI is a methodology for teams who build software products a
             </d-alert>
           </diamond-grid-item>
           <diamond-grid-item small-mobile="12" small-tablet="6">
-            <d-alert>
+            <d-alert class="fill">
               <d-icon icon="cross" class="text-color-red" slot="icon"></d-icon>
               <h3 class="text-color-red">What it is not</h2>
               <ul>
                 <li>Another UI pattern library</li>
-                <li>A silver bullet… defining and naming things is always tricky.</li>
-                <li>The next big thing in “DEZINE SYSTAMZ”</li>
+                <li>A silver bullet&hellip;defining and naming things is always tricky</li>
+                <li>The next big thing in “design systems”</li>
               </ul>
             </d-alert>
           </diamond-grid-item>
@@ -252,9 +244,9 @@ description: Diamond UI is a methodology for teams who build software products a
     <section>
       <diamond-section padding="fluid">
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
-          <p>OMG, we still have your attention!</p>
+          <p>Looks like we got your attention</p>
           <h2>Interested in trying it out?</h2>
-          <p>New is exciting, but it comes with friction – we realise there’s more to explain.</p>
+          <p>New is exciting, but it comes with friction &ndash; we realise there’s more to explain.</p>
         </d-title-group>
         <diamond-wrap size="lg">
           <diamond-grid wrap="wrap" gap="lg">
