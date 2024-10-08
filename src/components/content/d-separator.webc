@@ -22,10 +22,11 @@
   }
 
   :host {
-    display: flex;
     align-items: center;
-    justify-content: center;
     column-gap: var(--diamond-spacing);
+    display: flex;
+    justify-content: center;
+    padding-block: var(--diamond-spacing-sm);
   }
 
   .line {
