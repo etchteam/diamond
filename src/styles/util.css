@@ -28,7 +28,11 @@
 }
 
 .longform {
-  img, pre[class*=language-], .cp_embed_wrapper {
+  h2, h3 {
+    margin-block-start: var(--diamond-spacing-lg);
+  }
+
+  img, pre[class*=language-], iframe {
     margin-block: var(--diamond-spacing-lg);
     max-width: 100%;
   }

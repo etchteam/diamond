@@ -5,7 +5,7 @@ description: Designs can be broken up using the four Cs to separate component re
 tags: ['docs', 'Workflow']
 icon: layers
 previous: /docs/composition/
-next: /docs/combined/
+next: /docs/organisation/
 ---
 
 <template webc:type="11ty" 11ty:type="md">
@@ -38,11 +38,7 @@ In code form the separated components might now look like:
   <div class="container">
     <div class="spacing-bottom-lg">
       <h1>Page title</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Present in mi volutpat, congue risus non, euismod diam.
-        Integer nec neque at ligula viverra rhoncus.
-      </p>
+      <p>Lorem ipsum dolor [...etc]</p>
     </div>
     <a class="button button--primary" href="#">Call to action</a>
   </div>
@@ -65,11 +61,7 @@ Adding the eyebrow text and secondary paragraph is pretty straightforward. Becau
     <div class="spacing-bottom-lg">
 +     <p class="eyebrow">Eyebrow text</p>
       <h1>Page title</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Present in mi volutpat, congue risus non, euismod diam.
-        Integer nec neque at ligula viverra rhoncus.
-      </p>
+      <p>Lorem ipsum dolor [...etc]</p>
 +     <p class="text-size-sm">
 +       Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod ipsum jut mi <a href="#">elementum interdum</a>.
 +     </p>
@@ -79,6 +71,71 @@ Adding the eyebrow text and secondary paragraph is pretty straightforward. Becau
 </section>
 ```
 
-We call this pattern “composition over props”, by favouring this pattern the new paragraph can accept the link at the end whereas our previous string prop for `intro` was unable to include any extra text formatting.
+We start to see here how composing individual components broken up by the four Cs over using single components with many props gives us more flexibility. For example, the new paragraph can accept the link at the end whereas our previous string prop for `intro` was unable to include any extra text formatting.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/apply-the-cs/hero-with-two-controls.webp"
+  alt="The conventional page hero UI with the controls highlighted by a dashed border"
+/>
+
+Next let’s look at the two button Controls, one has a new ‘secondary’ style. The grid Composition handles their size and spacing.
+
+```diff-html
+<section class="page-section page-section--muted">
+  <div class="container">
+    <div class="spacing-bottom-lg">
+      <p class="eyebrow">Eyebrow text</p>
+      <h1>Page title</h1>
+      <p>Lorem ipsum dolor [...etc]</p>
+      <p class="text-size-sm">
+        Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod ipsum jut mi <a href="#">elementum interdum</a>.
+      </p>
+    </div>
++   <div class="grid">
++     <div class="grid__item">
+        <a class="button button--primary" href="#">Main action</a>
++     </div>
++     <div class="grid__item">
++       <a class="button button--secondary" href="#">Secondary action</a>
++     </div>
++   </div>
+  </div>
+</section>
+```
+
+Now when the product team decide they need an email signup in the main hero or there’s a new dark hero variation we can perform the updates by swapping out the individual components.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/apply-the-cs/dark-mode-hero.webp"
+  alt="A dark mode version of the conventional page hero UI with an email signup form"
+/>
+
+```diff-html
++ <section class="page-section page-section--dark">
+    <div class="container">
+      <div class="spacing-bottom-lg">
+        <p class="eyebrow">Eyebrow text</p>
+        <h1>Page title</h1>
+        <p>Lorem ipsum dolor [...etc]</p>
+      </div>
++     <form action="#" method="post">
+        <div class="grid">
+          <div class="grid__item">
++           <email-input><input type="email" /></email-input>
+          </div>
+          <div class="grid__item">
++           <button type="submit" class="button button--primary" href="#">Sign up</button>
+          </div>
+        </div>
++     </form>
+    </div>
+  </section>
+```
+
+Something that would have previously been a complete refactor is now a simple update that builds upon our existing components instead of replacing them.
+
+This is the power of Diamond UI methodology.
 
 </template>
