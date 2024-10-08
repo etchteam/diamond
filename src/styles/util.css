@@ -30,6 +30,7 @@
 .longform {
   img, pre[class*=language-], .cp_embed_wrapper {
     margin-block: var(--diamond-spacing-lg);
+    max-width: 100%;
   }
 
   img {

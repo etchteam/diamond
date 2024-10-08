@@ -147,16 +147,14 @@
   SidebarNavDetails.register();
 </script>
 
-<aside>
-  <nav aria-label="Sidebar navigation">
-    <d-sidebar-nav-details>
-      <details>
-        <summary>
-          <d-icon icon="menu" class="text-color-blue diamond-text-size-lg"></d-icon>
-          Menu
-        </summary>
-        <slot></slot>
-      </details>
-    </d-sidebar-nav-details>
-  </nav>
-</aside>
+<nav aria-label="Sidebar navigation">
+  <d-sidebar-nav-details>
+    <details>
+      <summary>
+        <d-icon icon="menu" class="text-color-blue diamond-text-size-lg"></d-icon>
+        Menu
+      </summary>
+      <slot></slot>
+    </details>
+  </d-sidebar-nav-details>
+</nav>

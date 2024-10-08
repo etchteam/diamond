@@ -9,6 +9,10 @@
       grid-template-columns: 1fr 3fr;
     }
   }
+
+  article {
+    min-width: 0; /* Prevent grid blowout */
+  }
 </style>
 
 <aside><slot name="sidebar"></slot></aside>
