@@ -46,8 +46,12 @@
   }
 
   p, .alert {
-    animation: fade 0.75s var(--diamond-transition-timing) 0.5s forwards;
+    animation: fade 0.75s var(--diamond-transition-timing) forwards;
     opacity: 0;
+
+    @media (width >= 768px) {
+      animation-delay: 0.5s;
+    }
   }
 
   .image {
