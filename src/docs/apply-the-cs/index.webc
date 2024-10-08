@@ -1,0 +1,84 @@
+---
+layout: docs.webc
+title: Apply the Cs
+description: Designs can be broken up using the four Cs to separate component responsibilities.
+tags: ['docs', 'Workflow']
+icon: layers
+previous: /docs/composition/
+next: /docs/combined/
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Let’s go right back to the start and look at our [page hero component](/docs/) again. Could we have done this differently with Diamond?
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/apply-the-cs/hero.webp"
+  alt="The conventional page hero UI"
+/>
+
+Dividing this page hero component up into the four Cs we see it’s actually made up of many sub-components:
+
+- Composition - Container, Spacing
+- Canvas - Page Section
+- Content - Title and Text
+- Controls - Button
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/apply-the-cs/hero-content.webp"
+  alt="The conventional page hero UI with each part separated by a dashed border"
+/>
+
+In code form the separated components might now look like:
+
+```html
+<section class="page-section page-section--muted">
+  <div class="container">
+    <div class="spacing-bottom-lg">
+      <h1>Page title</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Present in mi volutpat, congue risus non, euismod diam.
+        Integer nec neque at ligula viverra rhoncus.
+      </p>
+    </div>
+    <a class="button button--primary" href="#">Call to action</a>
+  </div>
+</section>
+```
+
+Initially, this may appear to be quite a lot of components for such a small piece of the page, but let’s see how this up front work can pay off as the design gets more complicated.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/apply-the-cs/hero-with-eyebrow.webp"
+  alt="The conventional page hero UI with the eyebrow and second paragraph separated by a dashed border"
+/>
+
+Adding the eyebrow text and secondary paragraph is pretty straightforward. Because all our components accept any children, we can add an HTML element or component for the eyebrow text and another one for the secondary paragraph *without updating any of the existing component props*.
+
+```diff-html
+<section class="page-section page-section--muted">
+  <div class="container">
+    <div class="spacing-bottom-lg">
++     <p class="eyebrow">Eyebrow text</p>
+      <h1>Page title</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Present in mi volutpat, congue risus non, euismod diam.
+        Integer nec neque at ligula viverra rhoncus.
+      </p>
++     <p class="text-size-sm">
++       Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod ipsum jut mi <a href="#">elementum interdum</a>.
++     </p>
+    </div>
+    <a class="button button--primary" href="#">Call to action</a>
+  </div>
+</section>
+```
+
+We call this pattern “composition over props”, by favouring this pattern the new paragraph can accept the link at the end whereas our previous string prop for `intro` was unable to include any extra text formatting.
+
+</template>

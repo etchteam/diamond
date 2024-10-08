@@ -15,3 +15,9 @@ a.active {
 .giant-icon {
   font-size: 5.5em;
 }
+
+code:not(code[class*="language-"]) {
+  background: var(--color-blue-darker);
+  font-size: var(--diamond-font-size-sm);
+  border: var(--diamond-border);
+}

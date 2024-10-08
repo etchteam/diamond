@@ -5,7 +5,7 @@ description: Compositions are an invisible element of the page that provides lay
 tags: ['docs', 'Four Cs']
 icon: composition
 previous: /docs/canvas/
-next: /docs/the-realities/
+next: /docs/apply-the-cs/
 ---
 
 <template webc:type="11ty" 11ty:type="md">

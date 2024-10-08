@@ -5,7 +5,7 @@ layout: default.webc
 <diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
   <d-sidebar-layout>
     <d-sidebar-nav slot="sidebar">
-      <section webc:for="docSection of ['Getting started', 'Four Cs', 'Optional Cs']">
+      <section webc:for="docSection of ['Getting started', 'Four Cs', 'Workflow']">
         <h2 @text="docSection"></h2>
         <ul>
           <li webc:for="doc of $data.collections[docSection]">
