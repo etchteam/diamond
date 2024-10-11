@@ -127,6 +127,10 @@ pre[class*="language-"] {
   cursor: help;
 }
 
+.token.deleted {
+  background-color: hsla(0, 73%, 75%, 0.1);
+}
+
 .token.inserted {
   animation: fadein 0.75s var(--diamond-transition-timing) forwards;
 	background-color: hsl(120deg 73% 75% / 10%);

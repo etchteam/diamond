@@ -179,14 +179,24 @@ description: Diamond UI is a methodology for teams who build software products a
             </ul>
           </diamond-grid-item>
           <diamond-grid-item small-mobile="12" tablet="6">
-            <diamond-img responsive block>
-              <img 
-                src="https://placehold.co/800x600" 
-                width="800" 
-                height="600" 
-                alt="A diagram that makes Diamond look obvious" 
-              />
-            </diamond-img>
+<syntax-highlight
+  language="html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<dx-grid>
+  <dx-grid-item>
+    <dx-heading>Title</dx-heading>
+    <dx-text size="lg">A paragraph of text.</dx-text>
+    <dx-button type="button">Action</dx-button>
+  </dx-grid-item>
+  <dx-grid-item>
+    <dx-img 
+      src="image.webp" 
+      alt="Description" 
+    />
+  </dx-grid-item>
+</dx-grid>
+</syntax-highlight>
           </diamond-grid-item>
       </diamond-grid>
       </diamond-section>
@@ -203,14 +213,28 @@ description: Diamond UI is a methodology for teams who build software products a
         </d-title-group>
         <diamond-grid wrap="wrap" align-items="center" gap="lg">
           <diamond-grid-item small-mobile="12" tablet="6">
-            <diamond-img responsive block>
-              <img 
-                src="https://placehold.co/800x600" 
-                width="800" 
-                height="600" 
-                alt="A diagram that makes Diamond look obvious" 
-              />
-            </diamond-img>
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<dx-hero>
+  <dx-heading>Title</dx-heading>
+  <dx-text size="lg">A paragraph of text.</dx-text>
+- <dx-button type="button">Action</dx-button>
++ <dx-grid>
++   <dx-grid-item>
++     <dx-button type="button">
++       Action
++     </dx-button>
++   </dx-grid-item>
++   <dx-grid-item>
++     <dx-button type="button">
++       Secondary action
++     </dx-button>
++   </dx-grid-item>
++ </dx-grid>
+</dx-hero>
+</syntax-highlight>
           </diamond-grid-item>
           <diamond-grid-item small-mobile="12" tablet="6">
             <h3 class="diamond-text-size-lg">When maintaining components that were built with Diamond UI</h3>
