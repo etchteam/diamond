@@ -44,7 +44,7 @@ description: Diamond UI is a methodology for teams who build software products a
                 <li>Heading &ndash; title elements, represented in HTML as h1-5</li>
                 <li>Text &ndash; a piece of typographic content</li>
                 <li>Icon &ndash; a glyph representing something in the app ecosystem</li>
-                <li>Data-specific &ndash; UserProfile, ProductSummary</li>
+                <li>Data-specific &ndash; a user profile or product summary</li>
               </ul>
             </diamond-grid-item>
             <diamond-grid-item small-mobile="12" small-tablet="6">
@@ -107,11 +107,11 @@ description: Diamond UI is a methodology for teams who build software products a
   language="diff-html"
   webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
 >
-+ <my-card>
++ <div class="card">
     <h2>Title</h2>
     <p>A paragraph of text.</p>
     <button type="button">Action</button>
-+ </my-card>
++ </div>
 </syntax-highlight>
             </diamond-grid-item>
           </diamond-grid>
@@ -138,18 +138,18 @@ description: Diamond UI is a methodology for teams who build software products a
 >
 + <div class="grid">
 +   <div class="grid-item">
-      <my-card>
+      <div class="card">
         <h2>Title</h2>
         <p>A paragraph of text.</p>
         <button type="button">Action</button>
-      </my-card>
+      </div>
 +   </div>
 +   <div class="grid-item">
-      <my-card>
+      <div class="card">
         <h2>Title</h2>
         <p>A paragraph of text.</p>
         <button type="button">Action</button> 
-      </my-card>
+      </div>
 +   </div>
 + </div>
 </syntax-highlight>
@@ -168,13 +168,27 @@ description: Diamond UI is a methodology for teams who build software products a
           <h2>It’s easy to understand</h2>
           <p>The four Cs clarify boundaries between component responsibilities.</p>
         </d-title-group>
-        <p>When following Diamond UI methodology</p>
-        <ul>
-          <li>Components stay small and easy to understand.</li>
-          <li>It’s clear when a component is trying to overstep its area of responsibility.</li>
-          <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
-          <li>The methodology does not dictate any technology or naming constraints.</li>
-        </ul>
+        <diamond-grid wrap="wrap" align-items="center" gap="lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-lg">When following Diamond UI methodology</h3>
+            <ul>
+              <li>Components stay small and easy to understand.</li>
+              <li>It’s clear when a component is trying to overstep its area of responsibility.</li>
+              <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
+              <li>The methodology does not dictate any technology or naming constraints.</li>
+            </ul>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <diamond-img responsive block>
+              <img 
+                src="https://placehold.co/800x600" 
+                width="800" 
+                height="600" 
+                alt="A diagram that makes Diamond look obvious" 
+              />
+            </diamond-img>
+          </diamond-grid-item>
+      </diamond-grid>
       </diamond-section>
     </section>
   
@@ -187,16 +201,31 @@ description: Diamond UI is a methodology for teams who build software products a
           <h2>It pays you back</h2>
           <p>Diamond UI solves future problems, by being extremely flexible.</p>
         </d-title-group>
-        <p>When maintaining components that were built with Diamond UI</p>
-        <ul>
-          <li>There are fewer output variations, so components are easier to test.</li>
-          <li>Components use simpler interfaces that are less prone to prop bloat.</li>
-          <li>UI can be constructed in thousands of component combinations to suit the context.</li>
-          <li>
-            When compared to a utility-first framework, components retain human
-            legibility whilst staying flexible.
-          </li>
-        </ul>
+        <diamond-grid wrap="wrap" align-items="center" gap="lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <diamond-img responsive block>
+              <img 
+                src="https://placehold.co/800x600" 
+                width="800" 
+                height="600" 
+                alt="A diagram that makes Diamond look obvious" 
+              />
+            </diamond-img>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-lg">When maintaining components that were built with Diamond UI</h3>
+            <ul>
+              <li>There are fewer output variations, so components are easier to test.</li>
+              <li>Components use simpler interfaces that are less prone to prop bloat.</li>
+              <li>UI can be constructed in thousands of component combinations to suit the context.</li>
+              <li>
+                When compared to a utility-first framework, components retain human
+                legibility whilst staying flexible.
+              </li>
+            </ul>
+          </diamond-grid-item>
+      </diamond-grid>
+        
       </diamond-section>
     </section>
   
@@ -207,10 +236,12 @@ description: Diamond UI is a methodology for teams who build software products a
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
           <p>Software products are never finished</p>
           <h2>It’s about clarity, not perfection</h2>
-          <p>
-            Features can always be improved. Diamond UI can help you be more confident when
-            developing your product.
-          </p>
+          <diamond-wrap size="md" gutter="none">
+            <p>
+              Features can always be improved. Diamond UI can help you be more confident when
+              developing your product.
+            </p>
+          </diamond-wrap>
         </d-title-group>
         <diamond-grid wrap="wrap">
           <diamond-grid-item small-mobile="12" small-tablet="6">

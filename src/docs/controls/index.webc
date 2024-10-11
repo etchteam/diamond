@@ -6,6 +6,7 @@ tags: ['docs', 'Four Cs']
 icon: controls
 previous: /docs/content/
 next: /docs/canvas/
+date: 2024-10-02
 ---
 
 <template webc:type="11ty" 11ty:type="md">

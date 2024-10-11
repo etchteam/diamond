@@ -1,11 +1,12 @@
 ---
 layout: docs.webc
-title: Apply the Cs
+title: Apply Diamond UI
 description: Designs can be broken up using the four Cs to separate component responsibilities.
 tags: ['docs', 'Workflow']
 icon: layers
 previous: /docs/composition/
-next: /docs/organisation/
+next: /docs/storybook-example/
+date: 2024-10-01
 ---
 
 <template webc:type="11ty" 11ty:type="md">
@@ -14,20 +15,20 @@ Let’s go right back to the start and look at our [page hero component](/docs/)
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/apply-the-cs/hero.webp"
+  src="./src/docs/apply-diamond-ui/hero.webp"
   alt="The conventional page hero UI"
 />
 
 Dividing this page hero component up into the four Cs we see it’s actually made up of many sub-components:
 
-- Composition - Container, Spacing
-- Canvas - Page Section
 - Content - Title and Text
 - Controls - Button
+- Canvas - Page Section
+- Composition - Container, Spacing
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/apply-the-cs/hero-content.webp"
+  src="./src/docs/apply-diamond-ui/hero-content.webp"
   alt="The conventional page hero UI with each part separated by a dashed border"
 />
 
@@ -45,11 +46,11 @@ In code form the separated components might now look like:
 </section>
 ```
 
-Initially, this may appear to be quite a lot of components for such a small piece of the page, but let’s see how this up front work can pay off as the design gets more complicated.
+Initially, this may appear to be quite a lot of components for such a small piece of the page, but let’s see how this up-front work can pay off as the design gets more complicated.
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/apply-the-cs/hero-with-eyebrow.webp"
+  src="./src/docs/apply-diamond-ui/hero-with-eyebrow.webp"
   alt="The conventional page hero UI with the eyebrow and second paragraph separated by a dashed border"
 />
 
@@ -75,7 +76,7 @@ We start to see here how composing individual components broken up by the four C
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/apply-the-cs/hero-with-two-controls.webp"
+  src="./src/docs/apply-diamond-ui/hero-with-two-controls.webp"
   alt="The conventional page hero UI with the controls highlighted by a dashed border"
 />
 
@@ -108,7 +109,7 @@ Now when the product team decide they need an email signup in the main hero or t
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/apply-the-cs/dark-mode-hero.webp"
+  src="./src/docs/apply-diamond-ui/dark-mode-hero.webp"
   alt="A dark mode version of the conventional page hero UI with an email signup form"
 />
 

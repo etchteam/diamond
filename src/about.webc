@@ -13,21 +13,28 @@ description: The origin story of Diamond UI
       </div>
   
       <div class="diamond-text-size-lg">
-        <p>I’ve been writing HTML and CSS for a long time. There’s something amazing about drawing with code. Seeing all the little words and numbers turn into pictures on the screen that you can put in front of anybody in the world, essentially for free.</p>
-        <p>I remember the slow transition from fixed pages to flexible components, to systems. It felt like magic when we started writing and documenting components like we’d solved all the problems in the world with making websites. Now we had components, we could just re-use them all over our sites and fly away into the sunset as front-end development masters.</p>
-        <p>Over time, our egos came crashing down as new designs didn’t fit the components we’d built. They almost fit, so we shoehorned them in with new props. We were doing it! Our components could support anything!</p>
+        <p>We’ve been writing HTML and CSS for a long time. There’s something amazing about drawing with code. Seeing all the little words and numbers turn into pictures on the screen that you can put in front of anybody in the world, essentially for free.</p>
+        <p>Slowly the web transitioned from fixed pages to flexible components, to systems. It felt like magic when we started writing and documenting components like we’d solved all the problems in the world with making websites. Now we had components, we could just re-use them all over our sites and fly away into the sunset as front-end development masters.</p>
+        <p>Quickly, our egos came crashing down as new designs didn’t fit the components we’d built. They almost fit, so we shoehorned them in with new props. We were doing it! Our components could support anything!</p>
         <p>As time went on, the components became more and more complicated, trying to support every scenario, becoming harder to test and harder to understand.</p>
-        <p>I spoke to Jim, our designer and asked:</p>
-        <d-alert class="diamond-spacing-bottom-sm">
+        <p>I spoke to <a href="https://etch.co/team/jim" target="_blank" rel="noopener noreferrer">Jim</a>, our designer:</p>
+        <d-alert class="diamond-spacing-bottom-md">
           <d-icon icon="chat" slot="icon"></d-icon>
           <p>Why are the designs always fighting the existing components, why can’t you re-use the bits of the interface that are already there?</p>
         </d-alert>
-        <p>His response:</p>
-        <d-alert class="diamond-spacing-bottom-sm">
+        <p>He responded:</p>
+        <d-alert class="diamond-spacing-bottom-md">
           <d-icon icon="chat" slot="icon"></d-icon>
-          <p>I am re-using it! Interface styles can be grouped into four categories: composition, canvas, content and controls.</p>
+          <p>
+            I am re-using it! Interface styles can be grouped into four categories: 
+            <a href="/docs/content">content</a>, <a href="/docs/controls">controls</a>, <a href="/docs/canvas">canvas</a>
+            and <a href="/docs/composition">composition</a>.
+          </p>
         </d-alert>
-        <p>And that was the inception point of Diamond UI.</p>
+        <p>
+          5 years later, using Diamond UI is the most future friendly 
+          decision we've made for designing and building interfaces.
+        </p>
       </div>
     </article>
   </diamond-section>

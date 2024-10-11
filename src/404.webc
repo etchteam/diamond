@@ -1,0 +1,58 @@
+---
+layout: default.webc
+title: 404
+description: The origin story of Diamond UI
+---
+
+<diamond-wrap size="lg" class="diamond-spacing-bottom-fluid">
+  <diamond-section padding="fluid">
+    <article>
+      <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
+        <p>404</p>
+        <h1>Page not found</h1>
+      </d-title-group>
+
+      <diamond-wrap size="sm" gutter="none">
+        <p>
+          If you're looking for <strong>diamonds</strong>, try these tips:
+        </p>
+        <ul>
+          <li class="diamond-spacing-bottom-sm"><strong>Find a big cave:</strong> Look for caves in biomes with open fields, plains, deserts, or savannas. You can look for cliffs, ravines, or holes in the surface.</li>
+          <li class="diamond-spacing-bottom-sm"><strong>Bring torches:</strong> Torches help you see in the dark and prevent mobs from respawning.</li>
+          <li class="diamond-spacing-bottom-sm"><strong>Wear iron armor and a shield:</strong> This will help protect you.</li>
+          <li class="diamond-spacing-bottom-sm"><strong>Use a night vision potion:</strong> This will make diamonds and other ores more obvious.</li>
+          <li class="diamond-spacing-bottom-sm"><strong>Check the ceiling:</strong> Diamonds are often found on the ceiling of caves</li>
+        </ul>
+        <p>
+          If you're looking for <strong>Diamond UI</strong>, try <a href="/docs/">the docs</a>.
+        </p>
+      </diamond-wrap>
+    </article>
+  </diamond-section>
+  
+  <d-separator></d-separator>
+
+  <diamond-section padding="fluid">
+    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
+      <p>The story continues</p>
+      <h2>Do you want to know more?</h2>
+    </d-title-group>
+
+    <diamond-wrap size="lg">
+      <diamond-grid wrap="wrap" gap="lg">
+        <diamond-grid-item small-mobile="12" small-tablet="6">
+          <d-nav-card icon="info" href="/">
+            <h3>Intro</h3>
+            <p>A quick run down of what Diamond UI is, and how it can help.</p>
+          </d-nav-card>
+        </diamond-grid-item>
+        <diamond-grid-item small-mobile="12" small-tablet="6">
+          <d-nav-card icon="document" href="/docs/">
+            <h3>Documentation</h3>
+            <p>Guidance on how to get started and use Diamond UI on your next project.</p>
+          </d-nav-card>
+        </diamond-grid-item>
+      </diamond-grid>
+    </diamond-wrap>
+  </diamond-section>
+</diamond-wrap>

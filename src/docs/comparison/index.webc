@@ -1,10 +1,11 @@
 ---
 layout: docs.webc
 title: Comparison
-description: How does Diamond UI compare to some other popular methodologies and frameworks.
+description: How does Diamond UI compare to some other popular methodologies and frameworks?
 tags: ['docs', 'Workflow']
 icon: connection
-previous: /docs/organisation/
+previous: /docs/storybook-example/
+date: 2024-10-03
 ---
 
 <template webc:type="11ty" 11ty:type="md">
@@ -19,15 +20,31 @@ Atomic design relies on dividing components into groups called: atoms, molecules
 
 The smallest components are atoms. These are things like HTML elements, or other bits of UI that can’t be broken down any further without ceasing to be functional.
 
-[picture of some atoms]
+<diamond-wrap size="xs" gutter="none">
+  <img
+    webc:is="eleventy-image"
+    src="./src/docs/comparison/atoms.webp"
+    alt="Some atomic components: title, text, input, button"
+  />
+</diamond-wrap>
 
-Moving up from atoms, molecules are small groups of UI elements that bond together to create a purpose. A label, input and button can group together to form a search input group.
+Moving up from atoms, molecules are small groups of UI elements that bond together to create a purpose. A label, input and button can group together to form an input group.
 
-[picture of a search input group]
+<diamond-wrap size="xs" gutter="none">
+  <img
+    webc:is="eleventy-image"
+    src="./src/docs/comparison/input-button-group.webp"
+    alt="A grouped input and button"
+  />
+</diamond-wrap>
 
 Following this trend, organisms are larger groups of atoms and molecules. Organisms are more complicated bits of UI that form a distinct section of a user interface. A typical organism might be the hero we used as a case study at the beginning of these docs.
 
-[picture of the hero]
+<img
+  webc:is="eleventy-image"
+  src="./src/docs/the-problem/hero.webp"
+  alt="A conventional page hero UI"
+/>
 
 A template is as simple as being a full page with placeholder content and the final group, pages, is the templates that have been populated with real data.
 
