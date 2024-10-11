@@ -43,6 +43,7 @@ description: Diamond UI is a methodology for teams who build software products a
               <li>Difficult to understand.</li>
               <li>Not composable.</li>
             </ul>
+            <p>We can help.</p>
           </diamond-grid-item>
           <diamond-grid-item small-mobile="12" tablet="6">
 <syntax-highlight
