@@ -4,13 +4,13 @@
     src="/assets/images/logo-dark.svg"
     alt="Diamond UI"
     width="124"
-    height="20"
+    height="23"
   />
   <img
     webc:if="skin === 'light'"
-    src="/assets/images/logo.svg"
+    src="/assets/images/logo-light.svg"
     alt="Diamond UI"
     width="124"
-    height="20"
+    height="23"
   />
 </a>

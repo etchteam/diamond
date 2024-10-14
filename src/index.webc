@@ -321,9 +321,9 @@ description: Diamond UI is a methodology for teams who build software products a
     <section>
       <diamond-section padding="fluid">
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-          <p>Software products are never finished</p>
-          <h2>It’s about clarity, not perfection</h2>
           <diamond-wrap size="md" gutter="none">
+            <p>Software products are never finished</p>
+            <h2>It’s about clarity, not perfection</h2>
             <p>
               Features can always be improved. Diamond UI can help you be more confident when
               developing your product.

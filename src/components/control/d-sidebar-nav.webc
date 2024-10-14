@@ -95,12 +95,13 @@
       column-gap: var(--diamond-spacing-sm);
       padding: var(--diamond-spacing-sm) var(--diamond-spacing);
       text-decoration: none;
-      transition: var(--diamond-transition);
+      transition: background-color var(--diamond-transition), color var(--diamond-transition);
       width: 100%;
 
       @media (hover: hover) {
         &:hover {
           background-color: var(--diamond-theme-background-muted);
+          color: var(--color-white);
         }
       }
     }

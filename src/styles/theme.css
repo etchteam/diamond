@@ -4,10 +4,11 @@
   --diamond-theme-heading-color: var(--color-white);
   --diamond-theme-link-color: var(--color-blue-light);
   --diamond-theme-border-color: var(--color-blue-dark);
-  --diamond-theme-background-muted: var(--color-blue-dark);
+  --diamond-theme-background-muted: var(--color-blue-darker);
   --diamond-theme-border-color-hover: var(--color-blue-light);
 }
 
 .theme-medium {
   --diamond-theme-background: var(--color-blue-darker);
+  --diamond-theme-background-muted: var(--color-blue-dark);
 }
