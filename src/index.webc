@@ -1,7 +1,7 @@
 ---
 layout: default.webc
 title: Diamond UI - Bring clarity to your components
-description: Diamond UI is a methodology for teams who build software products and design systems.
+description: Diamond UI is a methodology for teams who build interfaces.
 ---
 
 <diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
@@ -18,8 +18,7 @@ description: Diamond UI is a methodology for teams who build software products a
     <section>
       <diamond-section padding="fluid">
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-          <p>The methodology in a nutshell</p>
-          <h2>Introducing the four Cs</h2>
+          <h2>The methodology in a nutshell</h2>
           <p>Each component is created with a single concern from one of four areas of responsibility.</p>
         </d-title-group>
         <d-tabs>
@@ -165,29 +164,32 @@ description: Diamond UI is a methodology for teams who build software products a
     <section>
       <diamond-section padding="fluid">
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-          <p>It’s pretty simple, but that’s the whole point!</p>
-          <h2>It’s easy to understand</h2>
-          <p>The four Cs clarify boundaries between component responsibilities.</p>
+          <h2>It’s pretty simple, but that’s the whole point!</h2>
+          <p>The four Cs set clear boundaries between component responsibilities.</p>
         </d-title-group>
 
-        <diamond-grid wrap="wrap" align-items="center" gap="lg">
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
           <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">Does this look familiar?</h3>
+            <h3 class="diamond-text-size-xl">
+              Are your components overcomplicated?
+            </h3>
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              As a product scales, even the most carefully crafted components can get out of shape.
+            </p>
             <p>
-              Over the years, components can quickly get out of hand. A library that was once
-              simple and easy to use can become a tangled mess of props and edge cases.
+              Components can become:
             </p>
             <ul>
-              <li>Too many props.</li>
-              <li>Needs updating every time a new design is handed over.</li>
-              <li>Hard to test.</li>
-              <li>Awkward to maintain.</li>
-              <li>Conflicting or impossible prop combinations.</li>
-              <li>Doesn't fit emerging needs.</li>
-              <li>Difficult to understand.</li>
+              <li>Bloated with props &ndash; <em>too complicated</em></li>
+              <li>Updated every time a new design ishanded over &ndash; <em>too specific</em></li>
+              <li>Hard to test >&ndash; <em>too many variables</em></li>
+              <li>Awkward to maintain &ndash; <em>too much time</em></li>
+              <li>Conflicting or impossible prop combinations &ndash; <em>too specific</em></li>
+              <li>Unsuitable for emerging needs &ndash; <em>low reuse</em></li>
+              <li>Difficult to understand &ndash; <em>too scared to touch them</em></li>
               <li>Not composable.</li>
             </ul>
-            <p>We can help.</p>
+            <p>Diamond UI helps avoid this.</p>
           </diamond-grid-item>
           <diamond-grid-item small-mobile="12" tablet="6">
 <syntax-highlight
@@ -210,19 +212,22 @@ description: Diamond UI is a methodology for teams who build software products a
   secondary-button-type="button"
   secondary-button-style="secondary"
   on-secondary-button-click="handleButtonClick()"
-/>
+></page-hero>
 </syntax-highlight>
           </diamond-grid-item>
         </diamond-grid>
 
-        <d-separator class="diamond-spacing-top-lg diamond-spacing-bottom-lg"></d-separator>
-
-        <diamond-grid wrap="wrap" align-items="center" gap="lg">
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
           <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">
-              Diamond UI solves future problems, by being extremely flexible.
+            <h3 class="diamond-text-size-xl">
+              Diamond UI keeps your components clean.
             </h3>
-            <p>When following Diamond UI principles:</p>
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              By separating responsibilities, we create reusable 
+              components that can solve future problems before knowing they exist.
+            </p>
+
+            <p>When following Diamond UI methodology:</p>
             <ul>
               <li>Components stay small and easy to understand.</li>
               <li>It’s clear when a component is trying to overstep its area of responsibility.</li>
@@ -251,12 +256,10 @@ description: Diamond UI is a methodology for teams who build software products a
 </syntax-highlight>
           </diamond-grid-item>
         </diamond-grid>
-
-        <d-separator class="diamond-spacing-top-lg diamond-spacing-bottom-lg"></d-separator>
   
-        <diamond-grid wrap="wrap" align-items="center" gap="lg">
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
           <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">It pays you back</h3>
+            <h3 class="diamond-text-size-xl diamond-spacing-bottom-md">It pays you back</h3>
             <p>When maintaining components that were built with Diamond UI:</p>
             <ul>
               <li>There are fewer output variations, so components are easier to test.</li>
@@ -290,42 +293,36 @@ description: Diamond UI is a methodology for teams who build software products a
 + </dx-grid>
 </dx-hero>
 </syntax-highlight>
-        </diamond-grid-item>
-      </diamond-grid>
-        
-      </diamond-section>
-    </section>
-  
-    <d-separator></d-separator>
-  
-    <section>
-      <diamond-section padding="fluid">
-        <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-          <diamond-wrap size="md" gutter="none">
-            <p>Software products are never finished</p>
-            <h2>It’s about clarity, not perfection</h2>
-            <p>
-              Features can always be improved. Diamond UI can help you be more confident when
-              developing your product.
+          </diamond-grid-item>
+        </diamond-grid>
+
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-xl">
+              It's about clarity, not perfection.
+            </h3>
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              Software products are never finished. Features can always be improved.
             </p>
-          </diamond-wrap>
-        </d-title-group>
-        <diamond-grid wrap="wrap">
-          <diamond-grid-item small-mobile="12" small-tablet="6">
-            <d-alert class="fill">
+
+            <p>
+              Diamond UI makes it easy to see where your interface changes will take effect. 
+              Giving you more confidence when developing your product.
+            </p>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <d-alert class="fill diamond-spacing-bottom-md">
               <d-icon icon="tick" class="text-color-green" slot="icon"></d-icon>
-              <h3 class="text-color-green">What it is</h2>
+              <h3 class="text-color-green">Diamond UI is</h2>
               <ul>
                 <li>A helping hand to guide teams when creating interfaces</li>
                 <li>A rather simple, yet potentially transformative way of building interfaces</li>
                 <li>The outcome of decades of building complicated interfaces</li>
               </ul>
             </d-alert>
-          </diamond-grid-item>
-          <diamond-grid-item small-mobile="12" small-tablet="6">
             <d-alert class="fill">
               <d-icon icon="cross" class="text-color-red" slot="icon"></d-icon>
-              <h3 class="text-color-red">What it is not</h2>
+              <h3 class="text-color-red">Diamond UI is not</h2>
               <ul>
                 <li>Another UI pattern library</li>
                 <li>A silver bullet&hellip;defining and naming things is always tricky</li>
@@ -334,6 +331,7 @@ description: Diamond UI is a methodology for teams who build software products a
             </d-alert>
           </diamond-grid-item>
         </diamond-grid>
+        
       </diamond-section>
     </section>
   
@@ -350,8 +348,8 @@ description: Diamond UI is a methodology for teams who build software products a
           <diamond-grid wrap="wrap" gap="lg">
             <diamond-grid-item small-mobile="12" small-tablet="6">
               <d-nav-card icon="document" href="/guide/">
-                <h3>Documentation</h3>
-                <p>Guidance on how to get started and use Diamond UI on your next project.</p>
+                <h3>Guide</h3>
+                <p>How to get started and use Diamond UI on your next project.</p>
               </d-nav-card>
             </diamond-grid-item>
             <diamond-grid-item small-mobile="12" small-tablet="6">

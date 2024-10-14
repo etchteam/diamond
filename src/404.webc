@@ -48,8 +48,8 @@ description: Page not found
         </diamond-grid-item>
         <diamond-grid-item small-mobile="12" small-tablet="6">
           <d-nav-card icon="document" href="/guide/">
-            <h3>Documentation</h3>
-            <p>Guidance on how to get started and use Diamond UI on your next project.</p>
+            <h3>Guide</h3>
+            <p>How to get started and use Diamond UI on your next project.</p>
           </d-nav-card>
         </diamond-grid-item>
       </diamond-grid>

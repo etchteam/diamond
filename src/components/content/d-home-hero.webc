@@ -41,7 +41,7 @@
     }
 
     @media (width >= 1280px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
     }
   }
 
@@ -119,18 +119,19 @@
     Bring clarity to<br />
     your components
   </h1>
-  <p class="diamond-text-size-xl diamond-spacing-bottom-lg">
-    Diamond UI is a methodology for teams who build software products and design systems.
+  <p class="diamond-text-size-xxl diamond-spacing-bottom-lg">
+    Diamond UI is a methodology for teams who build interfaces.
   </p>
   <d-alert class="alert">
     <d-icon icon="info" slot="icon"></d-icon>
     <h2>You’ve heard of Atomic Design, right?</h2>
     <p>
-      It’s great, and we’re big fans, but after years of building interfaces, we’ve
-      found a more intuitive way to define components and organise code. 
+      There's also BEM, SMACSS, OOCSS, Tailwind, we've tried them all! But after years 
+      of building interfaces, we’ve found a more intuitive way to define components and 
+      organise code. 
     </p>
     <p>
-      Let us tell you about another way to build components.
+      Let us tell you about another way to build interfaces.
     </p>
   </d-alert>
 </div>
