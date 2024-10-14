@@ -15,12 +15,7 @@ pre[class*="language-"] {
     monospace;
   height: 100%;
   hyphens: none;
-  hyphens: none;
-  hyphens: none;
-  hyphens: none;
   line-height: 1.5;
-  tab-size: 2;
-  tab-size: 2;
   tab-size: 2;
   text-align: left;
   white-space: pre;
@@ -138,7 +133,6 @@ pre[class*="language-"] {
 .token.prefix.unchanged,
 .token.prefix.inserted,
 .token.prefix.deleted {
-  user-select: none;
   user-select: none;
 }
 
