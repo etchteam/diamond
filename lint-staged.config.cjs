@@ -1,1 +1,1 @@
-module.exports = { '*.{css}': 'stylelint --fix' };
+module.exports = { '*.css': 'stylelint --fix' };
