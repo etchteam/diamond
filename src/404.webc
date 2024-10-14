@@ -1,7 +1,7 @@
 ---
 layout: default.webc
 title: 404
-description: The origin story of Diamond UI
+description: Page not found
 ---
 
 <diamond-wrap size="lg" class="diamond-spacing-bottom-fluid">
