@@ -1,17 +1,17 @@
 :root {
-  --color-white: #ffffff;
+  --color-white: #fff;
 
   --color-gray: #bdbdbd;
 
-  --color-blue-darkest: #112233;
-  --color-blue-darker: #223344;
-  --color-blue-dark: #334455;
-  --color-blue: #0066ff;
-  --color-blue-light: #77aaff;
-  --color-blue-lightest: #ccddff;
+  --color-blue-darkest: #123;
+  --color-blue-darker: #234;
+  --color-blue-dark: #345;
+  --color-blue: #06f;
+  --color-blue-light: #7af;
+  --color-blue-lightest: #cdf;
 
-  --color-red: #ff4488;
-  --color-green: #44ff88;
+  --color-red: #f48;
+  --color-green: #4f8;
 }
 
 .text-color-blue {

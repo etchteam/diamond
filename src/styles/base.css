@@ -8,8 +8,8 @@ a {
 }
 
 a.active {
-  text-decoration: none;
   color: var(--diamond-theme-color);
+  text-decoration: none;
 }
 
 .giant-icon {
@@ -18,6 +18,6 @@ a.active {
 
 code:not(code[class*="language-"]) {
   background: var(--color-blue-darker);
-  font-size: var(--diamond-font-size-sm);
   border: var(--diamond-border);
+  font-size: var(--diamond-font-size-sm);
 }

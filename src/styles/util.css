@@ -1,6 +1,11 @@
 @keyframes fadein {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .list-style-none {
@@ -28,18 +33,21 @@
 }
 
 .longform {
-  h2, h3 {
+  h2,
+  h3 {
     margin-block-start: var(--diamond-spacing-lg);
   }
 
-  img, pre[class*=language-], iframe {
+  img,
+  pre[class*="language-"],
+  iframe {
     margin-block: var(--diamond-spacing-lg);
     max-width: 100%;
   }
 
   img {
     display: block;
-    width: 100%;
     height: auto;
+    width: 100%;
   }
 }
