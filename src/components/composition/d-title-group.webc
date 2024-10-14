@@ -1,0 +1,22 @@
+<style>
+  d-title-group {
+    display: block;
+
+    p {
+      margin: 0;
+    }
+
+    p:first-child {
+      font-weight: var(--diamond-font-weight-bold);
+      font-size: var(--diamond-font-size-sm);
+    }
+    
+    h2 {
+      margin-block: var(--diamond-spacing);
+    }
+
+    p:last-child {
+      font-size: var(--diamond-font-size-lg);
+    }
+  }
+</style>

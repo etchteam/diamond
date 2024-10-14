@@ -1,0 +1,3 @@
+:root {
+  --diamond-spacing-fluid-sm: clamp(1rem, 2.5vw, 3rem);
+}

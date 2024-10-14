@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Intro",
+    "href": "/"
+  },
+  {
+    "label": "Guide",
+    "href": "/guide/"
+  },
+  {
+    "label": "About",
+    "href": "/about/"
+  }
+]

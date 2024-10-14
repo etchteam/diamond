@@ -1,0 +1,53 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fade-in {
+  animation: fadein 0.75s var(--diamond-transition-timing) forwards;
+  opacity: 0;
+}
+
+.fade-in-delay {
+  animation-delay: 0.75s;
+}
+
+.fill {
+  display: grid;
+  height: 100%;
+}
+
+.text-title-case {
+  text-transform: capitalize;
+}
+
+.longform {
+  h2,
+  h3 {
+    margin-block-start: var(--diamond-spacing-lg);
+  }
+
+  img,
+  pre[class*="language-"],
+  iframe {
+    margin-block: var(--diamond-spacing-lg);
+    max-width: 100%;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}

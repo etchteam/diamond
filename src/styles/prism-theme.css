@@ -1,0 +1,143 @@
+/**
+ * https://github.com/PrismJS/prism-themes/blob/master/themes/prism-nord.css
+ *
+ * Nord Theme Originally by Arctic Ice Studio
+ * https://nordtheme.com
+ *
+ * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  background: none;
+  color: #f8f8f2;
+  font-family: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  height: 100%;
+  hyphens: none;
+  line-height: 1.5;
+  tab-size: 2;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--color-blue-darker);
+  border: var(--diamond-border);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  border-radius: 0.3em;
+  padding: 0.1em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #636f88;
+}
+
+.token.punctuation {
+  color: #81a1c1;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #81a1c1;
+}
+
+.token.number {
+  color: #b48ead;
+}
+
+.token.boolean {
+  color: #81a1c1;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a3be8c;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #81a1c1;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #88c0d0;
+}
+
+.token.keyword {
+  color: #81a1c1;
+}
+
+.token.regex,
+.token.important {
+  color: #ebcb8b;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  animation: fadein 0.75s var(--diamond-transition-timing) forwards;
+  background-color: hsl(120deg 73% 75% / 10%);
+  opacity: 0;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+  user-select: none;
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+  display: block;
+}

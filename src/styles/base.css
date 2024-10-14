@@ -1,0 +1,23 @@
+h1,
+h2 {
+  font-weight: var(--diamond-font-weight-base);
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+a.active {
+  color: var(--diamond-theme-color);
+  text-decoration: none;
+}
+
+.giant-icon {
+  font-size: 5.5em;
+}
+
+code:not(code[class*="language-"]) {
+  background: var(--color-blue-darker);
+  border: var(--diamond-border);
+  font-size: var(--diamond-font-size-sm);
+}

@@ -1,0 +1,37 @@
+---
+layout: docs.webc
+title: Canvas
+description: A canvas represents a part of the page that content and controls sit within, they can provide padding and backgrounds for their content area.
+tags: ['docs', 'Four Cs']
+icon: canvas
+previous: /guide/controls/
+next: /guide/composition/
+date: 2024-10-03
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Canvases generally sit within a composition element to give them a layout context or they will flow outwards to fill the space.
+
+Canvases can provide padding for their content area, but should not generally dictate any other layout constraints.
+
+Typical examples of canvas components are: 
+
+- Card - a box, often presented with an image, title, text and a call to action
+- Navbar - a floating element at the top of the page, containing the logo and main navigation
+- Hero - the first element in the main content of the page, containing the title and intro
+
+<img
+  webc:is="eleventy-image"
+  src="./src/guide/canvas/canvas.webp"
+  alt="An example of UI with the canvas highlighted"
+/>
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYjypKv" data-pen-title="Canvas" data-preview="true" data-user="gavmck" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/gavmck/pen/vYjypKv">
+  Canvas</a> by gavmck (<a href="https://codepen.io/gavmck">@gavmck</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js" webc:keep></script>
+
+</template>

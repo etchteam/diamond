@@ -1,0 +1,26 @@
+<style webc:scoped>
+  :host {
+    display: block;
+  }
+
+  h2, h3, h4 {
+    font-size: var(--diamond-font-size-base);
+    font-weight: var(--diamond-font-weight-bold);
+    margin-block-end: var(--diamond-spacing-xs);
+  }
+
+  :host.fill diamond-card {
+    height: 100%;
+  }
+</style>
+
+<diamond-card class="card" muted radius>
+  <diamond-grid align-items="baseline" gap="sm">
+    <diamond-grid-item>
+      <span class="diamond-text-size-lg"><slot name="icon"></slot></span>
+    </diamond-grid-item>
+    <diamond-grid-item grow shrink>
+      <slot></slot>
+    </diamond-grid-item>
+  </diamond-grid>
+</diamond-card>

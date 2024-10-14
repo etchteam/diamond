@@ -1,0 +1,330 @@
+---
+layout: docs.webc
+title: Comparison
+description: How does Diamond UI compare to some other popular methodologies and frameworks?
+tags: ['docs', 'Workflow']
+icon: connection
+previous: /guide/storybook-example/
+date: 2024-10-03
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Diamond UI doesn't dictate any specific methodology or framework. You can use Diamond thinking at the same time as your existing process to enhance it. This should be seen as a comparison of how Diamond UI might fit into your existing workflow, not replace it.
+
+## Atomic design
+
+Running into common issues using [Atomic design](https://atomicdesign.bradfrost.com/) is probably the thing that lead to Diamond. We used Atomic Design for many years and greatly respect its contribution to component focused front-end architecture.
+
+Atomic design relies on dividing components into groups called: atoms, molecules, organisms, templates and pages.
+
+The smallest components are atoms. These are things like HTML elements, or other bits of UI that can’t be broken down any further without ceasing to be functional.
+
+<diamond-wrap size="xs" gutter="none">
+  <img
+    webc:is="eleventy-image"
+    src="./src/guide/comparison/atoms.webp"
+    alt="Some atomic components: title, text, input, button"
+  />
+</diamond-wrap>
+
+Moving up from atoms, molecules are small groups of UI elements that bond together to create a purpose. A label, input and button can group together to form an input group.
+
+<diamond-wrap size="xs" gutter="none">
+  <img
+    webc:is="eleventy-image"
+    src="./src/guide/comparison/input-button-group.webp"
+    alt="A grouped input and button"
+  />
+</diamond-wrap>
+
+Following this trend, organisms are larger groups of atoms and molecules. Organisms are more complicated bits of UI that form a distinct section of a user interface. A typical organism might be the hero we used as a case study at the beginning of these docs.
+
+<img
+  webc:is="eleventy-image"
+  src="./src/guide/the-problem/hero.webp"
+  alt="A conventional page hero UI"
+/>
+
+A template is as simple as being a full page with placeholder content and the final group, pages, is the templates that have been populated with real data.
+
+### Common issues?
+
+We frequently ran into a couple of common issues using Atomic Design across large teams. 
+
+The gist of Atomic Design is small components are atoms, bigger ones are molecules and so on. Developers are often unsure which group a component falls into. Is a component small or large because of its visual size, or the amount of code that goes into it? Does a molecule have to consume atoms or can it be self sufficient? We noticed a trend of component library consumers relying on search, because they did not know which group a component would sit within.
+
+Because organisms consume molecules which consume atoms, there is also a trend for component props to become overly complicated when supporting large teams. As seen in our case study, a page hero organism can quickly need to support many variations. If this has been wrapped up into a single component element, the props object needs to be quite extensive to support all the different use cases.
+
+### Differences with Diamond
+
+- Atomic Design groups components into **small vs large**.
+- Diamond groups components by **purpose**.
+
+Atomic Design and Diamond can be applied at the same time. Developers can use Atomic Design groupings, whilst making sure to limit components within those groups to one of the 4Cs of Diamond thinking. This is a common approach when transitioning from pure Atomic Design or looking to solve the common issues with Atomic Design listed above.
+
+## OOCSS
+
+[OOCSS](http://oocss.org/) was introduced in 2008 as a way to tackle page-centric CSS that had led to CSS bloat over large projects. 
+
+The main principles are to:
+
+- Separate structure from skin
+- Separate container from content
+
+Structure would refer to widths, heights, margins and paddings. Skin is backgrounds, text colour, borders and other visual UI elements. 
+
+Let’s take a button as an example.
+
+```css
+.button {
+  background: #ffffff;
+  border: 1px solid #ff0000;
+  border-radius: .5rem;
+  color: #ff0000;
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .25rem 1rem;
+}
+```
+
+We can see that the structural styles (display, margin, padding) are grouped with the visual styles (background, border, color).
+
+In OOCSS, we would split these groups apart.
+
+```css
+.button-base {
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .25rem 1rem;
+}
+
+.button-default {
+	background: #ffffff;
+  border: 1px solid #ff0000;
+  border-radius: .5rem;
+  color: #ff0000;
+}
+```
+
+OOCSS also mandates separating the container from the content. This means that an element should not be styled by its parent container, allowing it to be used independently anywhere on the page.
+
+```css
+/* Coupled container and content */
+.sidebar {
+	padding: 1rem;
+	width: 20rem;
+}
+
+.sidebar .button {
+	background: #ff0000;
+	color: #fff;
+}
+
+/* Split container and content */
+.sidebar {
+  padding: 1rem;
+	width: 20rem;
+}
+
+.button-primary {
+  background: #ff0000;
+	color: #fff;
+}
+```
+
+### Issues
+
+OOCSS does an awesome job of separating different CSS concerns, but it’s very development centric. Without bringing designers into the methodology, we are likely to see a clash between the design and development teams.
+
+Whilst OOCSS separates structure and style, it still allows structural CSS (width, height, margins) to exist on components, which can cause maintenance and application issues later. If a button component base structural styles include width and margin, it will be more difficult to use this in a wide array of contexts.
+
+### Differences with Diamond
+
+Diamond has a lot of parallels with OOCSS, but extends the methodology into both design and a component centred approach. Diamond and OOCSS can be used at the same time, with Diamond providing a stricter framework for separating structure and style, as well as container and content.
+
+- OOCSS is primarily concerned with **CSS organisation,** with the CSS being applied to HTML elements.
+- Diamond is concerned with **UI organisation**. Diamond thinking is applied at the design level and mirrored in the code.
+- OOCSS splits **CSS classes** by application.
+- Diamond splits **components** by application. We push one step further into the separation of skin and structure, by not allowing widths/heights and margins to be applied to non-Composition elements.
+- OOCSS uses **skin classes**.
+- Diamond uses **skin contexts**. In “theming components” we created CSS variable skin contexts that can be applied by our components.
+
+## SMACSS
+
+[SMACSS](https://smacss.com/) was written in 2011 following the release of OOCSS. SMACSS divides CSS into 5 distinct categories:
+
+- Base - single HTML element selectors (and maybe simple attribute, pseudo  and sibling selectors)
+- Layout - dividing the page into sections, which hold one or more modules.
+- Module - reusable, modular parts of the design such as callouts, sidebar sections, product lists.
+- State - describes how modules or layouts will look when in a specific state, such as open/closed, active/inactive. They also describe how a module appears in different views such as the home page.
+- Theme - describes how modules or layouts might look in different theme contexts or brands.
+
+SMACSS realises that mixing these categories results in over complexity and results in bloated, hard to maintain, CSS over time. The guidelines extend these categories into naming conventions for the classes.
+
+```css
+h1, h2, h3, p {
+  /* Base rules */
+}
+
+#main, #sidebar, .l-flipped {
+  /* Layout rules */
+}
+
+.callout, .product-list {
+  /* Module rules */
+}
+
+.is-hidden, .is-active {
+  /* State rules */
+}
+
+/*
+  Where's the theme rules!?
+  Theme rules extend module classes, 
+  but are applied in a different CSS file.
+*/
+```
+
+### Issues
+
+SMACSS modules share the same issues as Atomic Design molecules and organisms, in that they are quite vague in their application and can easily become quite bloated. There are no hard rules on where a module should start or end and what a module should be, so it can be hard to find the component we want when looking at the component library documentation.
+
+The SMACSS docs make extensive use of ids, element qualifiers and descendent selectors (It was a whole different world back then!). These are now thought to be CSS anti-patterns, leading to issues with specificity and bloated selectors.
+
+The naming convention for module and state relies on combination or descendent selectors because there can easily be multiple state classes with the same name.
+
+```css
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.accordion {
+  height: 0;
+}
+
+.accordion.is-open {
+  height: auto;
+}
+```
+
+If the `.is-open` class was applied without the qualifier, it could easily be accidentally applied to multiple unrelated elements on the page.
+
+SMACSS theming suggests keeping theme CSS in a separate file to the main CSS. This prevents there being a single source of truth for component layout code. Having to move between multiple files increases cognitive load and context switching on the developers having to hold more information in memory rather than in front of them on the screen.
+
+### Differences with Diamond
+
+- SMACSS splits **CSS** by application.
+- Diamond splits **components** by application.
+- SMACSS uses the **layout and modules** categories to define components.
+- Diamond uses **composition, canvas, content and controls** to define components.
+- SMACSS uses **state classes** to define component states.
+- Diamond uses **component props** to define component states.
+- SMACSS uses separate **theme stylesheets**.
+- Diamond uses **theme contexts**.
+
+## BEM
+
+[BEM](https://getbem.com/) is a method of structuring CSS to help create reusable components and more understandable CSS.
+
+BEM groups CSS selectors into 3 categories:
+
+- Block - the top level component group, such as a hero component or a button.
+- Element - an element within a component group, such as a hero title or a button icon.
+- Modifier - a state or variant on a component group, such as a dark hero or an active button.
+
+Each category has a specific naming convention in CSS. BEM CSS selectors only use classes and are as flat as possible. To differentiate between the types of selector, different delimiters are used between words in the class. Whilst these can be anything, they are commonly set to **elements** being prefixed by double underscore and **modifiers** being prefixed by double hyphen. **Block** selectors do not have a prefix and are always the namespace at the start of the class.
+
+```css
+.block__element--modifier {
+  /* CSS rules */
+}
+```
+
+BEM is often used with Atomic Design and this is the way we structured CSS at Etch for many years.
+
+### Issues
+
+BEM is as simple as being a naming convention for CSS classes. An emphasis on blocks encourages the creation of contained components, which can lead to bloated props. There are no guidelines in BEM on the application of CSS, only the naming structure. This means it is down to the developers to separate the concerns of different blocks. With no strict separation, it is easy to mix concerns and create inconsistent application of different UI styles.
+
+BEM also has no relation to the design process, being totally concerned with CSS naming conventions.
+
+With shadow DOM or CSS modules, the BEM naming convention almost becomes obsolete, as the idea is to namespace classes to avoid clashes as CSS is always global. Many developers find BEM to be ugly and verbose as a naming convention.
+
+### Differences with Diamond
+
+- BEM is a **naming convention** for CSS classes.
+- Diamond is a grouping by **component application.**
+- BEM does not separate styles by application, only by component.
+- BEM is explicit about how to write CSS selectors.
+- Diamond does not dictate how to write any code.
+
+## Tailwind
+
+[Tailwind](https://tailwindcss.com/) is a utility-first CSS framework, that is a flavour of [Atomic CSS](https://acss.io/) (Not Atomic Design!). Both Tailwind and Atomic CSS focus on tiny utility classes that perform a single function. 
+
+Tailwind is very close to turning design tokens into classes so they can be assembled in any combination on an HTML element. An advantage of Tailwind is that the CSS footprint can be kept very small, whilst allowing an enormous potential for different UI styles.
+
+```html
+<!-- "Standard" button component -->
+<button class="button">Button text</button>
+
+<!-- Tailwind button -->
+<button class="bg-slate-900 text-white font-semibold h-12 px-6 rounded-lg flex items-center justify-center">
+  Button text
+</button>
+```
+
+```css
+/* "Standard" button CSS */
+.button {
+	align-items: center;
+  background: rgb(15 23 42);
+  border-radius: .5rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-weight: 600;
+  height: 3rem;
+  justify-content: center;
+  padding-inline: 1.5rem;
+}
+
+/* Tailwind CSS */
+.bg-slate-900 { background: rgb(15 23 42); }
+.text-white { color: rgb(255, 255, 255); }
+.font-semibold { font-weight: 600; }
+.h-12 { height: 3rem; }
+.px-6 { padding-inline: 1.5rem; }
+.rounded-lg { border-radius: .5rem; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+
+```
+
+### Issues
+
+Tailwind is a bit like presenting all the ingredients for a menu instead of finished dishes. In skilled hands, these ingredients can be assembled into delicious UI dishes, but there are no pre-set combinations.
+
+As there are no pre-set combinations, it’s easy for UI to become inconsistent when applied over a large development team and multiple apps.
+
+The class system in the HTML is quite verbose and it’s easy to apply the same/conflicting class group multiple times. It’s pretty awkward to read and does not make for a consise set of HTML.
+
+Tailwind describes what you are doing, rather than the result you want. This is the opposite of declarative programming. 
+
+Tailwind describes the UI style that is needed, rather than the content that is being marked up. Traditionally HTML is used to add more meaning to content, rather than creating a UI for it.
+
+### Differences with Diamond
+
+- Tailwind is a **set of utility classes** to create UI.
+- Diamond is **a way of separating UI components** into reusable blocks.
+- Tailwind is concerned with **the CSS**.
+- Diamond is concerned with **the whole design and development process**.
+- Tailwind offers **unlimited combinations**.
+- Diamond curates UI into **composable groups**.
+
+</template>

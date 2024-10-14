@@ -1,0 +1,366 @@
+---
+layout: default.webc
+title: Diamond UI - Bring clarity to your components
+description: Diamond UI is a methodology for teams who build interfaces.
+---
+
+<diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
+  <section>
+    <diamond-section padding="fluid">
+      <d-home-hero></d-home-hero>
+    </diamond-section>
+  </section>
+
+  <d-separator @load="true"></d-separator>
+
+  <div class="fade-in fade-in-delay">
+    
+    <section>
+      <diamond-section padding="fluid">
+        <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+          <h2>The methodology in a nutshell</h2>
+          <p>Each component is created with a single concern from one of four areas of responsibility.</p>
+        </d-title-group>
+        <d-tabs>
+          <ul>
+            <li webc:for="tab of ['content', 'controls', 'canvas', 'composition']">
+              <a :href="`#${tab}-tab`">
+                <d-icon :icon="tab" class="diamond-text-size-lg text-color-blue"></d-icon>
+                <span @text="tab"></span>
+              </a>
+            </li>
+          </ul>
+        </d-tabs>
+  
+        <diamond-section padding="fluid" class="fade-in" id="content-tab">
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                Content components look after the general styles for text and images, but can extend to
+                data-specific patterns such as user profiles or product information.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Heading &ndash; title elements, represented in HTML as h1-5</li>
+                <li>Text &ndash; a piece of typographic content</li>
+                <li>Icon &ndash; a glyph representing something in the app ecosystem</li>
+                <li>Data-specific &ndash; a user profile or product summary</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<h2>Title</h2>
+<p>A paragraph of text.</p>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-section>
+  
+        <diamond-section padding="fluid" class="fade-in" id="controls-tab">
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                Controls are interactive elements of the page. Anything that can be clicked,
+                dragged, typed into or accessed in some way with the mouse, keyboard or touch
+                is a control.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Button &ndash; a clickable component that triggers an action, such as submitting a form</li>
+                <li>Input &ndash; a hypertext link that takes the user to another page or section of the app</li>
+                <li>Form &ndash; a form input that allows users to enter information</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<h2>Title</h2>
+<p>A paragraph of text.</p>
++ <button type="button">Action</button>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-section>
+  
+        <diamond-section padding="fluid" class="fade-in" id="canvas-tab">
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                A canvas represents a part of the page that content and controls sit within.
+                Canvases provide padding and backgrounds for their content area, but do not
+                dictate any other layout constraints.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Card &ndash; a flat box, often containing an image, title, text and a call to action</li>
+                <li>Header &ndash; a floating element at the top of the page, containing the logo and main navigation</li>
+                <li>Hero &ndash; the first element in the main content of the page, containing the title and intro</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
++ <div class="card">
+    <h2>Title</h2>
+    <p>A paragraph of text.</p>
+    <button type="button">Action</button>
++ </div>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-section>
+  
+        <diamond-section padding="fluid" class="fade-in" id="composition-tab">
+          <diamond-grid wrap="wrap">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+                Compositions are an invisible element of the page that provides layout.
+                Compositions are solely concerned with creating structure and spacing.
+              </p>
+              <h3 class="diamond-text-size-base">Examples</h3>
+              <ul>
+                <li>Grid &ndash; a layout with grid cells arranged in columns and rows</li>
+                <li>Spacing &ndash; adds spacing between components or areas of the page</li>
+                <li>Container &ndash; sets a max width for a page, block of content or components</li>
+              </ul>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
++ <div class="grid">
++   <div class="grid-item">
+      <div class="card">
+        <h2>Title</h2>
+        <p>A paragraph of text.</p>
+        <button type="button">Action</button>
+      </div>
++   </div>
++   <div class="grid-item">
+      <div class="card">
+        <h2>Title</h2>
+        <p>A paragraph of text.</p>
+        <button type="button">Action</button> 
+      </div>
++   </div>
++ </div>
+</syntax-highlight>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-section>
+      </diamond-section>
+    </section>
+  
+    <d-separator></d-separator>
+  
+    <section>
+      <diamond-section padding="fluid">
+        <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
+          <h2>It’s pretty simple, but that’s the whole point!</h2>
+          <p>The four Cs set clear boundaries between component responsibilities.</p>
+        </d-title-group>
+
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-xl">
+              Are your components overcomplicated?
+            </h3>
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              As a product scales, even the most carefully crafted components can get out of shape.
+            </p>
+            <p>
+              Components can become:
+            </p>
+            <ul>
+              <li>Bloated with props &ndash; <em>too complicated</em></li>
+              <li>Updated every time a new design ishanded over &ndash; <em>too specific</em></li>
+              <li>Hard to test &ndash; <em>too many variables</em></li>
+              <li>Awkward to maintain &ndash; <em>too much time</em></li>
+              <li>Conflicting or impossible prop combinations &ndash; <em>too specific</em></li>
+              <li>Unsuitable for emerging needs &ndash; <em>low reuse</em></li>
+              <li>Difficult to understand &ndash; <em>too scared to touch them</em></li>
+              <li>Not composable.</li>
+            </ul>
+            <p>Diamond UI helps avoid this.</p>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+<syntax-highlight
+  language="html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<page-hero
+  title="Page title"
+  intro="Lorem ipsum dolor [...etc]"
+  button-text="Main action"
+  button-url="https://another.site/page-slug"
+  button-target="_blank"
+  button-rel="noopener noreferrer"
+  button-style="secondary"
+  theme="grey"
+  eyebrow="Eyebrow text"
+  eyebrow-tag="h1"
+  title-tag="p"
+  secondary-button="Secondary action"
+  secondary-button-type="button"
+  secondary-button-style="secondary"
+  on-secondary-button-click="handleButtonClick()"
+></page-hero>
+</syntax-highlight>
+          </diamond-grid-item>
+        </diamond-grid>
+
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-xl">
+              Diamond UI keeps your components clean.
+            </h3>
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              By separating responsibilities, we create reusable 
+              components that can solve future problems before knowing they exist.
+            </p>
+
+            <p>When following Diamond UI methodology:</p>
+            <ul>
+              <li>Components stay small and easy to understand.</li>
+              <li>It’s clear when a component is trying to overstep its area of responsibility.</li>
+              <li>With minimal onboarding, developers can quickly understand where to find each type of component.</li>
+              <li>The methodology does not dictate any technology or naming constraints.</li>
+            </ul>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+<syntax-highlight
+  language="html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<dx-grid>
+  <dx-grid-item>
+    <dx-heading>Title</dx-heading>
+    <dx-text size="lg">A paragraph of text.</dx-text>
+    <dx-button type="button">Action</dx-button>
+  </dx-grid-item>
+  <dx-grid-item>
+    <dx-img 
+      src="image.webp" 
+      alt="Description" 
+    />
+  </dx-grid-item>
+</dx-grid>
+</syntax-highlight>
+          </diamond-grid-item>
+        </diamond-grid>
+  
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-xl diamond-spacing-bottom-md">It pays you back.</h3>
+            <p>When maintaining components that were built with Diamond UI:</p>
+            <ul>
+              <li>There are fewer output variations, so components are easier to test.</li>
+              <li>Components use simpler interfaces that are less prone to prop bloat.</li>
+              <li>UI can be constructed in thousands of component combinations to suit the context.</li>
+              <li>
+                When compared to a utility-first framework, components retain human
+                legibility whilst staying flexible.
+              </li>
+            </ul>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+<syntax-highlight
+  language="diff-html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<dx-hero>
+  <dx-heading>Title</dx-heading>
+  <dx-text size="lg">A paragraph of text.</dx-text>
++ <dx-grid>
++   <dx-grid-item>
++     <dx-button type="button">
++       Action
++     </dx-button>
++   </dx-grid-item>
++   <dx-grid-item>
++     <dx-button type="button">
++       Secondary action
++     </dx-button>
++   </dx-grid-item>
++ </dx-grid>
+</dx-hero>
+</syntax-highlight>
+          </diamond-grid-item>
+        </diamond-grid>
+
+        <diamond-grid wrap="wrap" align-items="center" gap="lg" class="diamond-spacing-bottom-lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-xl">
+              It's about clarity, not perfection.
+            </h3>
+            <p class="diamond-text-size-lg diamond-spacing-bottom-md">
+              Software products are never finished. Features can always be improved.
+            </p>
+
+            <p>
+              Diamond UI makes it easy to see where your interface changes will take effect. 
+              Giving you more confidence when developing your product.
+            </p>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <d-alert class="fill diamond-spacing-bottom-md">
+              <d-icon icon="tick" class="text-color-green" slot="icon"></d-icon>
+              <h3 class="text-color-green">Diamond UI is</h2>
+              <ul>
+                <li>A helping hand to guide teams when creating interfaces</li>
+                <li>A rather simple, yet potentially transformative way of building interfaces</li>
+                <li>The outcome of decades of building complicated interfaces</li>
+              </ul>
+            </d-alert>
+            <d-alert class="fill">
+              <d-icon icon="cross" class="text-color-red" slot="icon"></d-icon>
+              <h3 class="text-color-red">Diamond UI is not</h2>
+              <ul>
+                <li>Another UI pattern library</li>
+                <li>A silver bullet&hellip;defining and naming things is always tricky</li>
+                <li>The next big thing in “design systems”</li>
+              </ul>
+            </d-alert>
+          </diamond-grid-item>
+        </diamond-grid>
+        
+      </diamond-section>
+    </section>
+
+  
+    <d-separator></d-separator>
+  
+    <section>
+      <diamond-section padding="fluid">
+        <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
+          <h2>Interested in trying it out?</h2>
+          <p>New is exciting, but it comes with friction &ndash; we realise there’s more to explain.</p>
+        </d-title-group>
+        <diamond-wrap size="lg">
+          <diamond-grid wrap="wrap" gap="lg">
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <d-nav-card icon="document" href="/guide/">
+                <h3>Guide</h3>
+                <p>How to get started and use Diamond UI on your next project.</p>
+              </d-nav-card>
+            </diamond-grid-item>
+            <diamond-grid-item small-mobile="12" small-tablet="6">
+              <d-nav-card icon="book" href="/about/">
+                <h3>About</h3>
+                <p>The short story of Diamond UI and how it came to be.</p>
+              </d-nav-card>
+            </diamond-grid-item>
+          </diamond-grid>
+        </diamond-wrap>
+      </diamond-section>
+    </section>
+  </div>
+</diamond-wrap>

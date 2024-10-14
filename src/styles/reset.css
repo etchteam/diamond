@@ -1,0 +1,10 @@
+/* stylelint-disable-next-line scss/at-rule-no-unknown */
+@view-transition {
+  /* stylelint-disable-next-line property-no-unknown */
+  navigation: auto;
+}
+
+/* Custom elements don't respect the global hidden attribute */
+[hidden] {
+  display: none !important;
+}

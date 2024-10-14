@@ -1,0 +1,19 @@
+<style webc:scoped>
+  :host {
+    display: block;
+    margin-block-start: var(--diamond-spacing-lg);
+  }
+
+  .inner {
+    border-block-end: var(--diamond-border);
+    padding-block-end: var(--diamond-spacing);
+  }
+</style>
+
+<header>
+  <diamond-wrap size="xxl">
+    <div class="inner">
+      <slot></slot>
+    </div>
+  </diamond-wrap>
+</header>

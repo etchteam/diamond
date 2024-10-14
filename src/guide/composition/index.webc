@@ -1,0 +1,35 @@
+---
+layout: docs.webc
+title: Composition
+description: Compositions are an invisible element of the page that provides layout.
+tags: ['docs', 'Four Cs']
+icon: composition
+previous: /guide/canvas/
+next: /guide/apply-diamond-ui/
+date: 2024-10-04
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+Compositions are solely concerned with creating structure and spacing.
+
+Typical examples of a composition component are:
+
+- Grid - creates a layout with grid cells arranged in columns and rows
+- Spacing - creates spacing between components or areas of the page
+- Container - sets a max width for a page, block of content or components
+
+<img
+  webc:is="eleventy-image"
+  src="./src/guide/composition/composition.webp"
+  alt="An example of UI with the composition elements highlighted"
+/>
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ExLNbbg" data-pen-title="Composition" data-preview="true" data-user="gavmck" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/gavmck/pen/ExLNbbg">
+  Composition</a> by gavmck (<a href="https://codepen.io/gavmck">@gavmck</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js" webc:keep></script>
+
+</template>

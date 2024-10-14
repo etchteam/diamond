@@ -1,0 +1,19 @@
+<style webc:scoped>
+  :host {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--diamond-spacing-fluid-sm);
+    
+    @media (width >= 768px) {
+      gap: var(--diamond-spacing-fluid);
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  article {
+    min-width: 0; /* Prevent grid blowout */
+  }
+</style>
+
+<aside><slot name="sidebar"></slot></aside>
+<article><slot></slot></article>

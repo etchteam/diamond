@@ -1,0 +1,156 @@
+<style>
+  d-tabs {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: var(--diamond-spacing-sm);
+      
+      @media (width >= 600px) {
+        gap: var(--diamond-spacing-fluid-sm);
+        justify-content: center;
+      }
+    }
+
+    li {
+      width: calc(50% - var(--diamond-spacing-sm));
+      flex: 1 1 auto;
+      
+      @media (width >= 600px) {
+        flex: 0 0 auto;
+        width: auto;
+      }
+    }
+
+    a {
+      align-items: center;
+      border-radius: var(--diamond-radius);
+      column-gap: var(--diamond-spacing-sm);
+      display: inline-flex;
+      padding: var(--diamond-spacing-sm) var(--diamond-spacing-md);
+      text-transform: capitalize;
+      text-decoration: none;
+      transition:
+        background-color var(--diamond-transition),
+        color var(--diamond-transition);
+      width: 100%;
+        
+      &[aria-selected],
+      &:hover {
+        color: var(--color-white);
+        background-color: var(--diamond-theme-background-muted);
+      }
+      
+      @media (width >= 600px) {
+        width: auto;
+      }
+    }
+  }
+</style>
+
+<script>
+  class Tabs extends HTMLElement {
+    static register() {
+      if ("customElements" in window) {
+        customElements.define('d-tabs', Tabs);
+      }
+    }
+
+    constructor() {
+      super();
+    }
+
+    get tabs() {
+      return this.querySelectorAll('a');
+    }
+
+    getPanelName(tab) {
+      return tab.getAttribute('href').replace('#', '');
+    }
+
+    addA11yAttributes() {
+      this.querySelector('ul').setAttribute('role', 'tablist');
+      this.querySelectorAll('li').forEach((listItem, index) => {
+        const tab = listItem.querySelector('a');
+        const panelName = this.getPanelName(tab);
+        const panel = document.getElementById(panelName);
+
+        listItem.setAttribute('role', 'presentation');
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-controls', panel.id);
+        tab.id = `${panelName}-tab`;
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', `${panelName}-tab`);
+
+        if (index === 0) {
+          tab.setAttribute('aria-selected', 'true');
+          panel.setAttribute('tabindex', '0');
+        } else {
+          tab.setAttribute('tabindex', '-1');
+          panel.setAttribute('tabindex', '-1');
+          panel.setAttribute('hidden', '');
+        }
+      });
+    }
+
+    switchTab(oldTab, newTab) {
+      newTab.focus();
+      newTab.removeAttribute('tabindex');
+      newTab.setAttribute('aria-selected', 'true');
+      oldTab.removeAttribute('aria-selected');
+      oldTab.setAttribute('tabindex', '-1');
+
+      const newPanel = document.getElementById(this.getPanelName(newTab));
+      const oldPanel = document.getElementById(this.getPanelName(oldTab));
+      oldPanel.hidden = true;
+      oldPanel.setAttribute('tabindex', '-1');
+      newPanel.hidden = false;
+      newPanel.setAttribute('tabindex', '0');
+    }
+
+    focusPanel(tab) {
+      const panel = document.getElementById(this.getPanelName(tab));
+      panel.focus();
+    }
+
+    handleClick(event) {
+      event.preventDefault();
+      const currentTab = this.querySelector('[aria-selected]');
+
+      if (event.currentTarget !== currentTab) {
+        this.switchTab(currentTab, event.currentTarget);
+      }
+    }
+
+    handleKeydown(event, index) {
+      const dir = event.which === 37 ? index - 1 : event.which === 39 ? index + 1 : event.which === 40 ? 'down' : null;
+
+      if (dir === null) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (dir === 'down') {
+        return this.focusPanel(event.currentTarget);
+      }
+
+      if (this.tabs[dir]) {
+        return this.switchTab(event.currentTarget, this.tabs[dir])
+      }
+    }
+
+    connectedCallback() {
+      this.addA11yAttributes();
+
+      this.tabs.forEach((tab, index) => {
+        tab.addEventListener('click', (event) => this.handleClick(event));
+        tab.addEventListener('keydown', (event) => this.handleKeydown(event, index));
+      });
+    }
+  }
+
+  Tabs.register();
+</script>

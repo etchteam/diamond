@@ -1,0 +1,62 @@
+---
+layout: docs.webc
+tags: ['docs', 'Getting started']
+title: The solution
+description: Cleanly separate responsibilities to create reusable, future friendly, components.
+icon: tick
+previous: /guide/
+next: /guide/content/
+---
+
+<template webc:type="11ty" 11ty:type="md">
+
+When you think about it, a component is a function that takes some parameters and returns some HTML.
+
+When writing code, a generally agreed-on principle is that a function should *do one thing*. This makes functions more readable, modular, and easy to maintain.
+
+Here’s our [page hero component](/guide/) as a function:
+
+```js
+function pageHero(
+  title, 
+  intro, 
+  cta, 
+  url, 
+  ctaTarget, 
+  ctaRel, 
+  ctaStyle, 
+  theme, 
+  eyebrow, 
+  eyebrowTag, 
+  titleTag, 
+  secondaryCta, 
+  secondaryCtaType, 
+  secondaryCtaStyle, 
+  onSecondaryCtaClick, 
+  secondaryText
+) {
+  let result = `<header class="page-hero page-hero--${theme}">`;
+  
+  if (eyebrow) {
+	  result += `<${eyebrowTag} class="page-hero__eyebrow">${eyebrow}</${eyebrowTag}>`;
+  }
+  
+  result += `<${titleTag} class="page-hero__title">${title}</${titleTag}>`;
+  
+  // ...horror continues...
+  
+  return result;
+}
+```
+
+If there was a function that looked like this, it would set off some serious alarm bells, why is it OK in components?
+
+How do we stop our codebase from heading down this path? How can we define components from the start with clean boundaries to prevent the props from getting out of hand?
+
+Diamond UI sets strict rules for component responsibilities that solve future maintenance problems **now.**
+
+Components get grouped into one of the 4 Cs of UI, aiming to be concerned with fulfilling a single area of responsibility:
+
+So, what are the 4 Cs? Let’s dive in.
+
+</template>

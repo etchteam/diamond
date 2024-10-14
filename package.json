@@ -2,23 +2,36 @@
   "name": "diamond",
   "version": "1.0.0",
   "description": "A front-end site for diamond ui",
-  "source": "src/index.html",
-  "scripts": {
-    "dev": "parcel",
-    "build": "parcel build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Gavyn McKenzie",
+  "author": "Etch <hey@etch.co>",
   "license": "ISC",
-  "browserslist": "> 1%",
-  "devDependencies": {
-    "@parcel/packager-raw-url": "2.11.0",
-    "@parcel/packager-xml": "2.11.0",
-    "@parcel/transformer-webmanifest": "2.11.0",
-    "@parcel/transformer-xml": "2.11.0",
-    "parcel": "2.11.0"
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20.12.2",
+    "npm": "10.5.0"
+  },
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "prepare": "husky",
+    "lint": "stylelint 'src/**/*.css' --fix"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@etchteam/diamond-ui": "^1.27.4"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@etchteam/stylelint-config": "^1.5.0",
+    "browserslist": "^4.23.3",
+    "husky": "^9.1.6",
+    "lightningcss": "^1.27.0",
+    "lint-staged": "^15.2.10",
+    "markdown-it": "^14.1.0",
+    "prettier": "^3.3.3",
+    "stylelint": "^15.11.0",
+    "svgo": "^3.3.2"
   }
 }

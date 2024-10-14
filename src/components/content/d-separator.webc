@@ -1,0 +1,77 @@
+<style webc:scoped>
+  @keyframes expandline {
+    0% { width: 15%; }
+    40% { width: 100%; }
+    100% { width: 100%; }
+  }
+
+  @keyframes fadeandexpandline {
+    0% { opacity: 0; width: 0%; }
+    100% { opacity: 1; width: 100%; }
+  }
+
+  @keyframes growdiamond {
+    0% { transform: rotate(45deg) scale(0.4); }
+    40% { transform: rotate(135deg) scale(1); }
+    100% { transform: rotate(135deg) scale(1); }
+  }
+
+  @keyframes rotateandgrowdiamond {
+    0% { transform: rotate(0deg) scale(0); }
+    100% { transform: rotate(135deg) scale(1); }
+  }
+
+  :host {
+    align-items: center;
+    column-gap: var(--diamond-spacing);
+    display: flex;
+    justify-content: center;
+    padding-block: var(--diamond-spacing-sm);
+  }
+
+  .line {
+    height: 1px;
+    flex: 1 1 auto;
+    
+    &::after {
+      border-block-start: var(--diamond-border);
+      content: '';
+      display: block;
+      animation: expandline linear 1s;
+      animation-timeline: view();
+    }
+
+    &:first-child::after {
+      margin-inline-start: auto;
+    }
+  }
+
+  .diamond {
+    animation: growdiamond linear 1s;
+    animation-timeline: view();
+    aspect-ratio: 1;
+    background-color: var(--diamond-theme-border-color);
+    block-size: var(--diamond-font-size-xs);
+    border-radius: var(--diamond-radius-xs);
+    transform: rotate(45deg) scale(0.4);
+  }
+
+  .animate-on-load {
+    animation-timeline: none;
+  }
+
+  .diamond.animate-on-load {
+    animation: rotateandgrowdiamond 0.75s var(--diamond-transition-timing) 0.25s forwards;
+    transform: rotate(0deg) scale(0);
+  }
+
+  .line.animate-on-load::after {
+    animation: fadeandexpandline 0.5s var(--diamond-transition-timing) 0.5s forwards;
+    opacity: 0;
+    width: 0%;
+  }
+</style>
+
+<div :class="`line ${load ? 'animate-on-load' : ''}`"></div>
+<div :class="`diamond ${load ? 'animate-on-load' : ''}`"></div>
+<div :class="`line ${load ? 'animate-on-load' : ''}`"></div>

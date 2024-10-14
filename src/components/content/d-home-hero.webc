@@ -1,0 +1,143 @@
+<style webc:scoped>
+  @keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes enter-from-top-left {
+    0% { transform: translate(-100%, -100%); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes enter-from-top-right {
+    0% { transform: translate(100%, -100%); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes enter-from-bottom-left {
+    0% { transform: translate(-100%, 100%); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes enter-from-bottom-right {
+    0% { transform: translate(100%, 100%); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes rotateit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(45deg); }
+  }
+
+  :host {
+    display: grid;
+    grid-gap: var(--diamond-spacing-xl);
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    
+    @media (width >= 768px) {
+      padding-inline-end: 4rem; /* space for the rotate */
+      grid-template-columns: auto 1fr;
+    }
+
+    @media (width >= 1280px) {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  p, .alert {
+    animation: fade 0.75s var(--diamond-transition-timing) forwards;
+    opacity: 0;
+
+    @media (width >= 768px) {
+      animation-delay: 0.5s;
+    }
+  }
+
+  .image {
+    animation: rotateit 0.5s var(--diamond-transition-timing) 0.4s forwards;
+    align-content: center;
+    color: var(--color-blue);
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--diamond-spacing-sm);
+    transform: rotate(0deg);
+    margin-inline-start: auto;
+    width: 15vw;
+    max-width: 280px;
+    
+    @media (width >= 768px) {
+      display: grid;
+    }
+    
+    @media (width >= 1024px) {
+      width: 25vw;
+    }
+  }
+
+  .icon {
+    display: block;
+    opacity: 0;
+  }
+
+  .icon svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .icon-composition {
+    animation:
+      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
+      enter-from-top-left 0.4s var(--diamond-transition-timing) 0.25s forwards;
+    transform: translate(-100%, -100%);
+  }
+
+  .icon-content {
+    animation:
+      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
+      enter-from-top-right 0.4s var(--diamond-transition-timing) 0.25s forwards;
+    transform: translate(100%, -100%);
+  }
+
+  .icon-controls {
+    animation:
+      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
+      enter-from-bottom-left 0.4s var(--diamond-transition-timing) 0.25s forwards;
+    transform: translate(-100%, 100%);
+  }
+
+  .icon-canvas {
+    animation:
+      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
+      enter-from-bottom-right 0.4s var(--diamond-transition-timing) 0.25s forwards;
+    transform: translate(100%, 100%);
+  }
+</style>
+
+<div class="content">
+  <h1 class="diamond-spacing-bottom-md fade-in">
+    Bring clarity to<br />
+    your components
+  </h1>
+  <p class="diamond-text-size-xxl diamond-spacing-bottom-lg">
+    Diamond UI is a methodology for teams who build interfaces.
+  </p>
+  <d-alert class="alert">
+    <d-icon icon="info" slot="icon"></d-icon>
+    <h2>You’ve heard of Atomic Design, right?</h2>
+    <p>
+      There's also BEM, SMACSS, OOCSS, Tailwind, we've tried them all! But after years 
+      of building interfaces, we’ve found a more intuitive way to define components and 
+      organise code. 
+    </p>
+    <p>
+      Let us tell you about another way to build interfaces.
+    </p>
+  </d-alert>
+</div>
+<div class="image">
+  <d-icon class="icon icon-composition" icon="composition"></d-icon>
+  <d-icon class="icon icon-content" icon="content"></d-icon>
+  <d-icon class="icon icon-controls" icon="controls"></d-icon>
+  <d-icon class="icon icon-canvas" icon="canvas"></d-icon>
+</div>

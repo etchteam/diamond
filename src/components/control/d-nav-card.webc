@@ -1,0 +1,36 @@
+<style webc:scoped>
+  a {
+    display: block;
+    border: var(--diamond-border);
+    border-radius: var(--diamond-radius);
+    text-decoration: none;
+    color: var(--diamond-theme-color);
+    overflow: hidden;
+    transition: border-color var(--diamond-transition);
+
+    &:hover {
+      border-color: var(--diamond-theme-link-color);
+    }
+  }
+
+  .icon {
+    background: var(--diamond-theme-background-muted);
+    color: var(--color-blue-light);
+    padding: var(--diamond-spacing);
+    text-align: center;
+    font-size: 5em;
+  }
+
+  .content {
+    padding: var(--diamond-spacing);
+  }
+</style>
+
+<a :href="href">
+  <div class="icon">
+    <d-icon :icon="icon"></d-icon>
+  </div>
+  <div class="content">
+    <slot></slot>
+  </div>
+</a>
