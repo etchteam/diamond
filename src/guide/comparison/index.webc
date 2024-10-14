@@ -4,7 +4,7 @@ title: Comparison
 description: How does Diamond UI compare to some other popular methodologies and frameworks?
 tags: ['docs', 'Workflow']
 icon: connection
-previous: /docs/storybook-example/
+previous: /guide/storybook-example/
 date: 2024-10-03
 ---
 
@@ -23,7 +23,7 @@ The smallest components are atoms. These are things like HTML elements, or other
 <diamond-wrap size="xs" gutter="none">
   <img
     webc:is="eleventy-image"
-    src="./src/docs/comparison/atoms.webp"
+    src="./src/guide/comparison/atoms.webp"
     alt="Some atomic components: title, text, input, button"
   />
 </diamond-wrap>
@@ -33,7 +33,7 @@ Moving up from atoms, molecules are small groups of UI elements that bond togeth
 <diamond-wrap size="xs" gutter="none">
   <img
     webc:is="eleventy-image"
-    src="./src/docs/comparison/input-button-group.webp"
+    src="./src/guide/comparison/input-button-group.webp"
     alt="A grouped input and button"
   />
 </diamond-wrap>
@@ -42,7 +42,7 @@ Following this trend, organisms are larger groups of atoms and molecules. Organi
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/the-problem/hero.webp"
+  src="./src/guide/the-problem/hero.webp"
   alt="A conventional page hero UI"
 />
 

@@ -4,8 +4,8 @@ tags: ['docs', 'Getting started']
 title: The problem
 description: How do you create and organise components in a way that is scalable and maintainable over time?
 icon: warning
-permalink: /docs/index.html
-next: /docs/the-solution/
+permalink: /guide/index.html
+next: /guide/the-solution/
 ---
 
 <template webc:type="11ty" 11ty:type="md">
@@ -14,7 +14,7 @@ Imagine you’ve been tasked with designing a page hero. Having no other context
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/the-problem/hero.webp"
+  src="./src/guide/the-problem/hero.webp"
   alt="A conventional page hero UI"
 />
 
@@ -42,7 +42,7 @@ A little while later a new request comes in for a slightly different hero &ndash
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/the-problem/yellow-hero.webp"
+  src="./src/guide/the-problem/yellow-hero.webp"
   alt="The page hero with a yellow background"
 />
 
@@ -72,7 +72,7 @@ Over the months, more requirements come in and more props get added. Different t
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/the-problem/max-hero.webp"
+  src="./src/guide/the-problem/max-hero.webp"
   alt="The hero component with all the possible features"
 />
 

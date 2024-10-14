@@ -27,8 +27,8 @@ description: The origin story of Diamond UI
           <d-icon icon="chat" slot="icon"></d-icon>
           <p>
             I am re-using it! Interface styles can be grouped into four categories: 
-            <a href="/docs/content">content</a>, <a href="/docs/controls">controls</a>, <a href="/docs/canvas">canvas</a>
-            and <a href="/docs/composition">composition</a>.
+            <a href="/guide/content">content</a>, <a href="/guide/controls">controls</a>, <a href="/guide/canvas">canvas</a>
+            and <a href="/guide/composition">composition</a>.
           </p>
         </d-alert>
         <p>
@@ -56,7 +56,7 @@ description: The origin story of Diamond UI
           </d-nav-card>
         </diamond-grid-item>
         <diamond-grid-item small-mobile="12" small-tablet="6">
-          <d-nav-card icon="document" href="/docs/">
+          <d-nav-card icon="document" href="/guide/">
             <h3>Documentation</h3>
             <p>Guidance on how to get started and use Diamond UI on your next project.</p>
           </d-nav-card>

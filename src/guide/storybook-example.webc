@@ -4,8 +4,8 @@ title: Storybook example
 description: Diamond components can be organised into the four Cs to make their responsibilities clear.
 tags: ['docs', 'Workflow']
 icon: book
-next: /docs/comparison/
-previous: /docs/apply-diamond-ui/
+next: /guide/comparison/
+previous: /guide/apply-diamond-ui/
 date: 2024-10-02
 ---
 

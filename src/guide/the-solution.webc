@@ -4,8 +4,8 @@ tags: ['docs', 'Getting started']
 title: The solution
 description: Cleanly separate responsibilities to create reusable, future friendly, components.
 icon: tick
-previous: /docs/
-next: /docs/content/
+previous: /guide/
+next: /guide/content/
 ---
 
 <template webc:type="11ty" 11ty:type="md">
@@ -14,7 +14,7 @@ When you think about it, a component is a function that takes some parameters an
 
 When writing code, a generally agreed-on principle is that a function should *do one thing*. This makes functions more readable, modular, and easy to maintain.
 
-Here’s our [page hero component](/docs/) as a function:
+Here’s our [page hero component](/guide/) as a function:
 
 ```js
 function pageHero(

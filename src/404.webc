@@ -24,7 +24,7 @@ description: Page not found
           <li class="diamond-spacing-bottom-sm"><strong>Check the ceiling:</strong> Diamonds are often found on the ceiling of caves</li>
         </ul>
         <p>
-          If you're looking for <strong>Diamond UI</strong>, try <a href="/docs/">the docs</a>.
+          If you're looking for <strong>Diamond UI</strong>, try <a href="/guide/">the docs</a>.
         </p>
       </diamond-wrap>
     </article>
@@ -47,7 +47,7 @@ description: Page not found
           </d-nav-card>
         </diamond-grid-item>
         <diamond-grid-item small-mobile="12" small-tablet="6">
-          <d-nav-card icon="document" href="/docs/">
+          <d-nav-card icon="document" href="/guide/">
             <h3>Documentation</h3>
             <p>Guidance on how to get started and use Diamond UI on your next project.</p>
           </d-nav-card>

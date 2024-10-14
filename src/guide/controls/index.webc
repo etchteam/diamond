@@ -4,8 +4,8 @@ title: Controls
 description: Controls are interactive elements of the page.
 tags: ['docs', 'Four Cs']
 icon: controls
-previous: /docs/content/
-next: /docs/canvas/
+previous: /guide/content/
+next: /guide/canvas/
 date: 2024-10-02
 ---
 
@@ -21,7 +21,7 @@ Typical examples of controls are:
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/controls/controls.webp"
+  src="./src/guide/controls/controls.webp"
   alt="An example of UI with controls highlighted"
 />
 

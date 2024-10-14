@@ -4,8 +4,8 @@ title: Canvas
 description: A canvas represents a part of the page that content and controls sit within, they can provide padding and backgrounds for their content area.
 tags: ['docs', 'Four Cs']
 icon: canvas
-previous: /docs/controls/
-next: /docs/composition/
+previous: /guide/controls/
+next: /guide/composition/
 date: 2024-10-03
 ---
 
@@ -23,7 +23,7 @@ Typical examples of canvas components are:
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/canvas/canvas.webp"
+  src="./src/guide/canvas/canvas.webp"
   alt="An example of UI with the canvas highlighted"
 />
 

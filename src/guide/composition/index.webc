@@ -4,8 +4,8 @@ title: Composition
 description: Compositions are an invisible element of the page that provides layout.
 tags: ['docs', 'Four Cs']
 icon: composition
-previous: /docs/canvas/
-next: /docs/apply-diamond-ui/
+previous: /guide/canvas/
+next: /guide/apply-diamond-ui/
 date: 2024-10-04
 ---
 
@@ -21,7 +21,7 @@ Typical examples of a composition component are:
 
 <img
   webc:is="eleventy-image"
-  src="./src/docs/composition/composition.webp"
+  src="./src/guide/composition/composition.webp"
   alt="An example of UI with the composition elements highlighted"
 />
 
