@@ -14,69 +14,7 @@ description: Diamond UI is a methodology for teams who build software products a
   <d-separator @load="true"></d-separator>
 
   <div class="fade-in fade-in-delay">
-    <section>
-      <diamond-section padding="fluid">
-        <diamond-wrap size="md" gutter="none">
-          <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-            <p>The problem</p>
-            <h2>Bloated components</h2>
-            <p>
-              Are your components too complicated?
-            </p>
-          </d-title-group>
-        </diamond-wrap>
-
-        <diamond-grid wrap="wrap" align-items="center" gap="lg">
-          <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">Does this look familiar?</h3>
-            <p>
-              Over the years, components can quickly get out of hand. A library that was once
-              simple and easy to use can become a tangled mess of props and edge cases.
-            </p>
-            <ul>
-              <li>Too many props.</li>
-              <li>Needs updating every time a new design is handed over.</li>
-              <li>Hard to test.</li>
-              <li>Awkward to maintain.</li>
-              <li>Conflicting or impossible prop combinations.</li>
-              <li>Doesn't fit emerging needs.</li>
-              <li>Difficult to understand.</li>
-              <li>Not composable.</li>
-            </ul>
-            <p>We can help.</p>
-          </diamond-grid-item>
-          <diamond-grid-item small-mobile="12" tablet="6">
-<syntax-highlight
-  language="html"
-  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
->
-<page-hero
-  title="Page title"
-  intro="Lorem ipsum dolor [...etc]"
-  button-text="Main action"
-  button-url="https://another.site/page-slug"
-  button-target="_blank"
-  button-rel="noopener noreferrer"
-  button-style="secondary"
-  theme="grey"
-  eyebrow="Eyebrow text"
-  eyebrow-tag="h1"
-  title-tag="p"
-  secondary-button="Secondary action"
-  secondary-button-type="button"
-  secondary-button-style="secondary"
-  on-secondary-button-click="handleButtonClick()"
-/>
-</syntax-highlight>
-          </diamond-grid-item>
-      </diamond-grid>
-  
-      </diamond-section>
-    </section>
-  
-    <d-separator></d-separator>
-
-
+    
     <section>
       <diamond-section padding="fluid">
         <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
@@ -231,9 +169,60 @@ description: Diamond UI is a methodology for teams who build software products a
           <h2>It’s easy to understand</h2>
           <p>The four Cs clarify boundaries between component responsibilities.</p>
         </d-title-group>
+
         <diamond-grid wrap="wrap" align-items="center" gap="lg">
           <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">When following Diamond UI principles</h3>
+            <h3 class="diamond-text-size-lg">Does this look familiar?</h3>
+            <p>
+              Over the years, components can quickly get out of hand. A library that was once
+              simple and easy to use can become a tangled mess of props and edge cases.
+            </p>
+            <ul>
+              <li>Too many props.</li>
+              <li>Needs updating every time a new design is handed over.</li>
+              <li>Hard to test.</li>
+              <li>Awkward to maintain.</li>
+              <li>Conflicting or impossible prop combinations.</li>
+              <li>Doesn't fit emerging needs.</li>
+              <li>Difficult to understand.</li>
+              <li>Not composable.</li>
+            </ul>
+            <p>We can help.</p>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
+<syntax-highlight
+  language="html"
+  webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+<page-hero
+  title="Page title"
+  intro="Lorem ipsum dolor [...etc]"
+  button-text="Main action"
+  button-url="https://another.site/page-slug"
+  button-target="_blank"
+  button-rel="noopener noreferrer"
+  button-style="secondary"
+  theme="grey"
+  eyebrow="Eyebrow text"
+  eyebrow-tag="h1"
+  title-tag="p"
+  secondary-button="Secondary action"
+  secondary-button-type="button"
+  secondary-button-style="secondary"
+  on-secondary-button-click="handleButtonClick()"
+/>
+</syntax-highlight>
+          </diamond-grid-item>
+        </diamond-grid>
+
+        <d-separator class="diamond-spacing-top-lg diamond-spacing-bottom-lg"></d-separator>
+
+        <diamond-grid wrap="wrap" align-items="center" gap="lg">
+          <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-lg">
+              Diamond UI solves future problems, by being extremely flexible.
+            </h3>
+            <p>When following Diamond UI principles:</p>
             <ul>
               <li>Components stay small and easy to understand.</li>
               <li>It’s clear when a component is trying to overstep its area of responsibility.</li>
@@ -261,22 +250,14 @@ description: Diamond UI is a methodology for teams who build software products a
 </dx-grid>
 </syntax-highlight>
           </diamond-grid-item>
-      </diamond-grid>
-      </diamond-section>
-    </section>
+        </diamond-grid>
+
+        <d-separator class="diamond-spacing-top-lg diamond-spacing-bottom-lg"></d-separator>
   
-    <d-separator></d-separator>
-  
-    <section>
-      <diamond-section padding="fluid">
-        <d-title-group class="diamond-text-align-center diamond-spacing-bottom-xl">
-          <p>You’ll grow to like it</p>
-          <h2>It pays you back</h2>
-          <p>Diamond UI solves future problems, by being extremely flexible.</p>
-        </d-title-group>
         <diamond-grid wrap="wrap" align-items="center" gap="lg">
           <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">When maintaining components that were built with Diamond UI</h3>
+            <h3 class="diamond-text-size-lg">It pays you back</h3>
+            <p>When maintaining components that were built with Diamond UI:</p>
             <ul>
               <li>There are fewer output variations, so components are easier to test.</li>
               <li>Components use simpler interfaces that are less prone to prop bloat.</li>
