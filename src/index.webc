@@ -276,6 +276,18 @@ description: Diamond UI is a methodology for teams who build software products a
         </d-title-group>
         <diamond-grid wrap="wrap" align-items="center" gap="lg">
           <diamond-grid-item small-mobile="12" tablet="6">
+            <h3 class="diamond-text-size-lg">When maintaining components that were built with Diamond UI</h3>
+            <ul>
+              <li>There are fewer output variations, so components are easier to test.</li>
+              <li>Components use simpler interfaces that are less prone to prop bloat.</li>
+              <li>UI can be constructed in thousands of component combinations to suit the context.</li>
+              <li>
+                When compared to a utility-first framework, components retain human
+                legibility whilst staying flexible.
+              </li>
+            </ul>
+          </diamond-grid-item>
+          <diamond-grid-item small-mobile="12" tablet="6">
 <syntax-highlight
   language="diff-html"
   webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
@@ -297,19 +309,7 @@ description: Diamond UI is a methodology for teams who build software products a
 + </dx-grid>
 </dx-hero>
 </syntax-highlight>
-          </diamond-grid-item>
-          <diamond-grid-item small-mobile="12" tablet="6">
-            <h3 class="diamond-text-size-lg">When maintaining components that were built with Diamond UI</h3>
-            <ul>
-              <li>There are fewer output variations, so components are easier to test.</li>
-              <li>Components use simpler interfaces that are less prone to prop bloat.</li>
-              <li>UI can be constructed in thousands of component combinations to suit the context.</li>
-              <li>
-                When compared to a utility-first framework, components retain human
-                legibility whilst staying flexible.
-              </li>
-            </ul>
-          </diamond-grid-item>
+        </diamond-grid-item>
       </diamond-grid>
         
       </diamond-section>
