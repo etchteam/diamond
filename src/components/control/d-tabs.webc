@@ -1,5 +1,8 @@
 <style>
   d-tabs {
+    position: relative;
+    z-index: 1;
+
     ul {
       display: flex;
       flex-wrap: wrap;
