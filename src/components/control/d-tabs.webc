@@ -1,7 +1,7 @@
 <style>
   d-tabs {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Ensure the tabs are on top of the panels */
 
     ul {
       display: flex;
