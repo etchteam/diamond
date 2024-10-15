@@ -11,7 +11,7 @@ date: 2024-10-02
 
 <template webc:type="11ty" 11ty:type="md">
 
-We’ve set up [a Storybook](https://diamond.etch.co/components) to show how Diamond components might look in practice.
+We’ve set up <a href="https://diamond.etch.co/components" target="_blank" rel="noopener noreferrer">a Storybook</a> to show how Diamond components might look in practice.
 
 Design system maintainers may want to consider setting up folders like this for each of the four Cs, but it’s an optional step.
 
