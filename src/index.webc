@@ -70,8 +70,8 @@ description: Diamond UI is a methodology for teams who build interfaces.
               <h3 class="diamond-text-size-base">Examples</h3>
               <ul>
                 <li>Button &ndash; a clickable component that triggers an action, such as submitting a form</li>
-                <li>Input &ndash; a hypertext link that takes the user to another page or section of the app</li>
-                <li>Form &ndash; a form input that allows users to enter information</li>
+                <li>Link &ndash; a hypertext link that takes the user to another page or section of the app</li>
+                <li>Input &ndash; a form input that allows users to enter information</li>
               </ul>
             </diamond-grid-item>
             <diamond-grid-item small-mobile="12" small-tablet="6">
@@ -181,7 +181,7 @@ description: Diamond UI is a methodology for teams who build interfaces.
             </p>
             <ul>
               <li>Bloated with props &ndash; <em>too complicated</em></li>
-              <li>Updated every time a new design ishanded over &ndash; <em>too specific</em></li>
+              <li>Updated every time a new design is handed over &ndash; <em>too specific</em></li>
               <li>Hard to test &ndash; <em>too many variables</em></li>
               <li>Awkward to maintain &ndash; <em>too much time</em></li>
               <li>Conflicting or impossible prop combinations &ndash; <em>too specific</em></li>
