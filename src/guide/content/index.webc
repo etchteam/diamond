@@ -26,7 +26,17 @@ Typical examples of content components are:
   alt="An example of UI with content highlighted"
 />
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="bGMBLgR" data-pen-title="Content" data-preview="true" data-user="gavmck" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p 
+  class="codepen" 
+  data-height="500" 
+  data-theme-id="dark" 
+  data-default-tab="result" 
+  data-slug-hash="bGMBLgR" 
+  data-pen-title="Content" 
+  data-preview="true" 
+  data-user="gavmck" 
+  style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+>
   <span>See the Pen <a href="https://codepen.io/gavmck/pen/bGMBLgR">
   Content</a> by gavmck (<a href="https://codepen.io/gavmck">@gavmck</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

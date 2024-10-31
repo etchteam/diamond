@@ -95,8 +95,9 @@ Over the months, more requirements come in and more props get added. Different t
   on-secondary-button-click="handleButtonClick()"
 >
 	<p slot="secondary-text">
-		Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod 
-		ipsum ut mi <a href="#">elementum interdum</a>.
+		Suspendisse sed dictum dolor, at hendrerit nibh. 
+    Curabitur euismod ipsum ut mi 
+    <a href="#">elementum interdum</a>.
 	</p>
 </page-hero>
 ```

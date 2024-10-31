@@ -41,7 +41,9 @@ In code form the separated components might now look like:
       <h1>Page title</h1>
       <p>Lorem ipsum dolor [...etc]</p>
     </div>
-    <a class="button button--primary" href="#">Call to action</a>
+    <a class="button button--primary" href="#">
+      Call to action
+    </a>
   </div>
 </section>
 ```
@@ -64,10 +66,14 @@ Adding the eyebrow text and secondary paragraph is pretty straightforward. Becau
       <h1>Page title</h1>
       <p>Lorem ipsum dolor [...etc]</p>
 +     <p class="text-size-sm">
-+       Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod ipsum jut mi <a href="#">elementum interdum</a>.
++       Suspendisse sed dictum dolor, at hendrerit nibh. 
++       Curabitur euismod ipsum jut mi 
++       <a href="#">elementum interdum</a>.
 +     </p>
     </div>
-    <a class="button button--primary" href="#">Call to action</a>
+    <a class="button button--primary" href="#">
+      Call to action
+    </a>
   </div>
 </section>
 ```
@@ -90,15 +96,21 @@ Next let’s look at the two button Controls, one has a new ‘secondary’ styl
       <h1>Page title</h1>
       <p>Lorem ipsum dolor [...etc]</p>
       <p class="text-size-sm">
-        Suspendisse sed dictum dolor, at hendrerit nibh. Curabitur euismod ipsum jut mi <a href="#">elementum interdum</a>.
+        Suspendisse sed dictum dolor, at hendrerit nibh. 
+        Curabitur euismod ipsum jut mi 
+        <a href="#">elementum interdum</a>.
       </p>
     </div>
 +   <div class="grid">
 +     <div class="grid__item">
-        <a class="button button--primary" href="#">Main action</a>
+        <a class="button button--primary" href="#">
+          Main action
+        </a>
 +     </div>
 +     <div class="grid__item">
-+       <a class="button button--secondary" href="#">Secondary action</a>
++       <a class="button button--secondary" href="#">
++         Secondary action
++       </a>
 +     </div>
 +   </div>
   </div>
@@ -127,7 +139,13 @@ Now when the product team decide they need an email signup in the main hero or t
 +           <email-input><input type="email" /></email-input>
           </div>
           <div class="grid__item">
-+           <button type="submit" class="button button--primary" href="#">Sign up</button>
++           <button 
++             type="submit" 
++             class="button button--primary" 
++             href="#"
++           >
++             Sign up
++           </button>
           </div>
         </div>
 +     </form>

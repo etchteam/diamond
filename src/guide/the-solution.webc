@@ -38,10 +38,18 @@ function pageHero(
   let result = `<header class="page-hero page-hero--${theme}">`;
   
   if (eyebrow) {
-	  result += `<${eyebrowTag} class="page-hero__eyebrow">${eyebrow}</${eyebrowTag}>`;
+	  result += `
+      <${eyebrowTag} class="page-hero__eyebrow">
+        ${eyebrow}
+      </${eyebrowTag}>
+    `;
   }
   
-  result += `<${titleTag} class="page-hero__title">${title}</${titleTag}>`;
+  result += `
+    <${titleTag} class="page-hero__title">
+      ${title}
+    </${titleTag}>
+  `;
   
   // ...horror continues...
   
