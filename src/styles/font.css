@@ -21,8 +21,8 @@
 }
 
 :root {
-  --diamond-font-family: "Nunito sans", -apple-system, system-ui,
-    BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  --dmd-font-family: "Nunito sans", -apple-system, system-ui, BlinkMacSystemFont,
+    Roboto, Helvetica, Arial, sans-serif;
 
-  --diamond-font-size-h1: clamp(2rem, 10vw, 4rem);
+  --dmd-font-size-h1: clamp(2rem, 10vw, 4rem);
 }

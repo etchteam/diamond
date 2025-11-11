@@ -2,7 +2,7 @@
 layout: default.webc
 ---
 
-<diamond-wrap size="xxl" class="diamond-spacing-bottom-fluid">
+<dmd-wrap size="xxl" class="dmd-spacing-bottom-fluid">
   <d-sidebar-layout>
     <d-sidebar-nav slot="sidebar">
       <section webc:for="docSection of ['Getting started', 'Four Cs', 'Workflow']">
@@ -10,7 +10,7 @@ layout: default.webc
         <ul>
           <li webc:for="doc of $data.collections[docSection]">
             <a :href="doc.url">
-              <d-icon webc:if="doc.data.icon" :icon="doc.data.icon" class="diamond-text-size-lg text-color-blue"></d-icon>
+              <d-icon webc:if="doc.data.icon" :icon="doc.data.icon" class="dmd-text-size-lg text-color-blue"></d-icon>
               <span @text="doc.data.title"></span>
             </a>
           </li>
@@ -18,34 +18,34 @@ layout: default.webc
       </section>
     </d-sidebar-nav>
 
-    <diamond-section class="fade-in" padding="fluid">
-      <diamond-grid justify-content="space-between">
-        <diamond-grid-item small-mobile="12" large-tablet="10" small-desktop="9">
-          <d-title-group class="diamond-spacing-bottom-xl">
+    <dmd-section class="fade-in" padding="fluid">
+      <dmd-grid justify-content="space-between">
+        <dmd-grid-item small-mobile="12" large-tablet="10" small-desktop="9">
+          <d-title-group class="dmd-spacing-bottom-xl">
             <p @text="$data.tags[1]"></p>
             <h1 @text="$data.title"></h1>
             <p @text="$data.description"></p>
           </d-title-group>
-        </diamond-grid-item>
-        <diamond-grid-item
+        </dmd-grid-item>
+        <dmd-grid-item
           webc:if="$data.icon"
-          class="diamond-hidden-small-mobile diamond-visible-large-tablet"
+          class="dmd-hidden-small-mobile dmd-visible-large-tablet"
         >
           <d-icon :icon="$data.icon" class="giant-icon text-color-blue"></d-icon>
-        </diamond-grid-item>
-      </diamond-grid>
+        </dmd-grid-item>
+      </dmd-grid>
   
-      <d-separator class="diamond-spacing-bottom-xl"></d-separator>
+      <d-separator class="dmd-spacing-bottom-xl"></d-separator>
   
-      <diamond-grid wrap="wrap">
-        <diamond-grid-item small-mobile="12" large-tablet="10" small-desktop="9">
-          <div @raw="content" class="longform diamond-spacing-bottom-xl"></div>
+      <dmd-grid wrap="wrap">
+        <dmd-grid-item small-mobile="12" large-tablet="10" small-desktop="9">
+          <div @raw="content" class="longform dmd-spacing-bottom-xl"></div>
 
-          <diamond-grid>
-            <diamond-grid-item small-mobile="6" webc:for="direction of ['previous', 'next']">
+          <dmd-grid>
+            <dmd-grid-item small-mobile="6" webc:for="direction of ['previous', 'next']">
               <a :href="$data[direction]" webc:if="$data[direction]">
-                <diamond-card border radius>
-                  <h3 class="diamond-text-size-base text-title-case" @text="direction"></h3>
+                <dmd-card border radius>
+                  <h3 class="dmd-text-size-base text-title-case" @text="direction"></h3>
                   <p>
                     <d-icon
                       webc:if="findCollectionItem($data.collections.docs, $data[direction]).data.icon"
@@ -54,12 +54,12 @@ layout: default.webc
                     ></d-icon>
                     <span @text="findCollectionItem($data.collections.docs, $data[direction]).data.title"></span>
                   </p>
-                </diamond-card>
+                </dmd-card>
               </a>
-            </diamond-grid-item>
-          </diamond-grid>
-        </diamond-grid-item>
-      </diamond-grid>
-    </diamond-section>
+            </dmd-grid-item>
+          </dmd-grid>
+        </dmd-grid-item>
+      </dmd-grid>
+    </dmd-section>
   </d-sidebar-layout>
-</diamond-wrap>
+</dmd-wrap>

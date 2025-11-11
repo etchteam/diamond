@@ -20,23 +20,23 @@ Atomic design relies on dividing components into groups called: atoms, molecules
 
 The smallest components are atoms. These are things like HTML elements, or other bits of UI that can’t be broken down any further without ceasing to be functional.
 
-<diamond-wrap size="xs" gutter="none">
+<dmd-wrap size="xs" gutter="none">
   <img
     webc:is="eleventy-image"
     src="./src/guide/comparison/atoms.webp"
     alt="Some atomic components: title, text, input, button"
   />
-</diamond-wrap>
+</dmd-wrap>
 
 Moving up from atoms, molecules are small groups of UI elements that bond together to create a purpose. A label, input and button can group together to form an input group.
 
-<diamond-wrap size="xs" gutter="none">
+<dmd-wrap size="xs" gutter="none">
   <img
     webc:is="eleventy-image"
     src="./src/guide/comparison/input-button-group.webp"
     alt="A grouped input and button"
   />
-</diamond-wrap>
+</dmd-wrap>
 
 Following this trend, organisms are larger groups of atoms and molecules. Organisms are more complicated bits of UI that form a distinct section of a user interface. A typical organism might be the hero we used as a case study at the beginning of these docs.
 

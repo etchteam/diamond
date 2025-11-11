@@ -2,7 +2,7 @@
   :host {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: var(--diamond-spacing-sm);
+    column-gap: var(--dmd-spacing-sm);
     color: var(--color-white);
     align-items: center;
   }
@@ -15,12 +15,12 @@
   }
 
   p {
-    line-height: var(--diamond-font-line-height-sm);
+    line-height: var(--dmd-font-line-height-sm);
   }
 
   .dui {
-    font-size: var(--diamond-font-size-lg);
-    font-weight: var(--diamond-font-weight-bold);
+    font-size: var(--dmd-font-size-lg);
+    font-weight: var(--dmd-font-weight-bold);
   }
 </style>
 

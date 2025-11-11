@@ -28,7 +28,7 @@
     color: var(--color-blue);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--diamond-spacing-sm);
+    gap: var(--dmd-spacing-sm);
     transform: rotate(45deg);
   }
 
@@ -43,26 +43,26 @@
 
   .icon-composition {
     animation:
-      fade 0.75s var(--diamond-transition-timing),
-      enter-from-top-left 1s var(--diamond-transition-timing-boing);
+      fade 0.75s var(--dmd-transition-timing),
+      enter-from-top-left 1s var(--dmd-transition-timing-boing);
   }
 
   .icon-content {
     animation:
-      fade 0.75s var(--diamond-transition-timing),
-      enter-from-top-right 1s var(--diamond-transition-timing-boing);
+      fade 0.75s var(--dmd-transition-timing),
+      enter-from-top-right 1s var(--dmd-transition-timing-boing);
   }
 
   .icon-controls {
     animation:
-      fade 0.75s var(--diamond-transition-timing),
-      enter-from-bottom-left 1s var(--diamond-transition-timing-boing);
+      fade 0.75s var(--dmd-transition-timing),
+      enter-from-bottom-left 1s var(--dmd-transition-timing-boing);
   }
 
   .icon-canvas {
     animation:
-      fade 0.75s var(--diamond-transition-timing),
-      enter-from-bottom-right 1s var(--diamond-transition-timing-boing);
+      fade 0.75s var(--dmd-transition-timing),
+      enter-from-bottom-right 1s var(--dmd-transition-timing-boing);
   }
 </style>
 

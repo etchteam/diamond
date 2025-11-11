@@ -15,7 +15,7 @@
 }
 
 .fade-in {
-  animation: fadein 0.75s var(--diamond-transition-timing) forwards;
+  animation: fadein 0.75s var(--dmd-transition-timing) forwards;
   opacity: 0;
 }
 
@@ -35,13 +35,13 @@
 .longform {
   h2,
   h3 {
-    margin-block-start: var(--diamond-spacing-lg);
+    margin-block-start: var(--dmd-spacing-lg);
   }
 
   img,
   pre[class*="language-"],
   iframe {
-    margin-block: var(--diamond-spacing-lg);
+    margin-block: var(--dmd-spacing);
     max-width: 100%;
   }
 

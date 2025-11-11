@@ -2,10 +2,10 @@
   :host {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--diamond-spacing-fluid-sm);
+    gap: var(--dmd-spacing-fluid-sm);
     
     @media (width >= 768px) {
-      gap: var(--diamond-spacing-fluid);
+      gap: var(--dmd-spacing-fluid);
       grid-template-columns: 1fr 3fr;
     }
   }

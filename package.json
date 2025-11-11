@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@etchteam/diamond-ui": "^1.27.4"
+    "@etchteam/diamond-ui": "^2.0.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

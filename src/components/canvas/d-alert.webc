@@ -4,23 +4,23 @@
   }
 
   h2, h3, h4 {
-    font-size: var(--diamond-font-size-base);
-    font-weight: var(--diamond-font-weight-bold);
-    margin-block-end: var(--diamond-spacing-xs);
+    font-size: var(--dmd-font-size-base);
+    font-weight: var(--dmd-font-weight-bold);
+    margin-block-end: var(--dmd-spacing-xs);
   }
 
-  :host.fill diamond-card {
+  :host.fill dmd-card {
     height: 100%;
   }
 </style>
 
-<diamond-card class="card" muted radius>
-  <diamond-grid align-items="baseline" gap="sm">
-    <diamond-grid-item>
-      <span class="diamond-text-size-lg"><slot name="icon"></slot></span>
-    </diamond-grid-item>
-    <diamond-grid-item grow shrink>
+<dmd-card class="card" muted radius>
+  <dmd-grid align-items="baseline" gap="sm">
+    <dmd-grid-item>
+      <span class="dmd-text-size-lg"><slot name="icon"></slot></span>
+    </dmd-grid-item>
+    <dmd-grid-item grow shrink>
       <slot></slot>
-    </diamond-grid-item>
-  </diamond-grid>
-</diamond-card>
+    </dmd-grid-item>
+  </dmd-grid>
+</dmd-card>

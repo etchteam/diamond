@@ -4,26 +4,26 @@ title: About
 description: The origin story of Diamond UI
 ---
 
-<diamond-wrap size="lg" class="diamond-spacing-bottom-fluid">
-  <diamond-section padding="fluid">
+<dmd-wrap size="lg" class="dmd-spacing-bottom-fluid">
+  <dmd-section padding="fluid">
     <article>
-      <div class="diamond-text-align-center diamond-spacing-bottom-fluid">
+      <div class="dmd-text-align-center dmd-spacing-bottom-fluid">
         <h1>The origin story</h1>
-        <p class="diamond-text-size-xxl">How the pursuit of a better methodology began</p>
+        <p class="dmd-text-size-xxl">How the pursuit of a better methodology began</p>
       </div>
   
-      <div class="diamond-text-size-lg">
+      <div class="dmd-text-size-lg">
         <p>We’ve been writing HTML and CSS for a long time. There’s something amazing about drawing with code. Seeing all the little words and numbers turn into pictures on the screen that you can put in front of anybody in the world, essentially for free.</p>
         <p>Slowly the web transitioned from fixed pages to flexible components, to systems. It felt like magic when we started writing and documenting components like we’d solved all the problems in the world with making websites. Now we had components, we could just re-use them all over our sites and fly away into the sunset as front-end development masters.</p>
         <p>Quickly, our egos came crashing down as new designs didn’t fit the components we’d built. They almost fit, so we shoehorned them in with new props. We were doing it! Our components could support anything!</p>
         <p>As time went on, the components became more and more complicated, trying to support every scenario, becoming harder to test and harder to understand.</p>
         <p>I spoke to <a href="https://etch.co/team/jim" target="_blank" rel="noopener noreferrer">Jim</a>, our designer:</p>
-        <d-alert class="diamond-spacing-bottom-md">
+        <d-alert class="dmd-spacing-bottom-md">
           <d-icon icon="chat" slot="icon"></d-icon>
           <p>Why are the designs always fighting the existing components, why can’t you re-use the bits of the interface that are already there?</p>
         </d-alert>
         <p>He responded:</p>
-        <d-alert class="diamond-spacing-bottom-md">
+        <d-alert class="dmd-spacing-bottom-md">
           <d-icon icon="chat" slot="icon"></d-icon>
           <p>
             I am re-using it! Interface styles can be grouped into four categories: 
@@ -37,31 +37,31 @@ description: The origin story of Diamond UI
         </p>
       </div>
     </article>
-  </diamond-section>
+  </dmd-section>
   
   <d-separator></d-separator>
 
-  <diamond-section padding="fluid">
-    <d-title-group class="diamond-text-align-center diamond-spacing-bottom-lg">
+  <dmd-section padding="fluid">
+    <d-title-group class="dmd-text-align-center dmd-spacing-bottom-lg">
       <p>The story continues</p>
       <h2>Do you want to know more?</h2>
     </d-title-group>
 
-    <diamond-wrap size="lg">
-      <diamond-grid wrap="wrap" gap="lg">
-        <diamond-grid-item small-mobile="12" small-tablet="6">
+    <dmd-wrap size="lg">
+      <dmd-grid wrap="wrap" gap="lg">
+        <dmd-grid-item small-mobile="12" small-tablet="6">
           <d-nav-card icon="info" href="/">
             <h3>Intro</h3>
             <p>A quick run down of what Diamond UI is, and how it can help.</p>
           </d-nav-card>
-        </diamond-grid-item>
-        <diamond-grid-item small-mobile="12" small-tablet="6">
+        </dmd-grid-item>
+        <dmd-grid-item small-mobile="12" small-tablet="6">
           <d-nav-card icon="document" href="/guide/">
             <h3>Guide</h3>
             <p>How to get started and use Diamond UI on your next project.</p>
           </d-nav-card>
-        </diamond-grid-item>
-      </diamond-grid>
-    </diamond-wrap>
-  </diamond-section>
-</diamond-wrap>
+        </dmd-grid-item>
+      </dmd-grid>
+    </dmd-wrap>
+  </dmd-section>
+</dmd-wrap>
