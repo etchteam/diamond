@@ -7,16 +7,16 @@
     }
 
     p:first-child {
-      font-weight: var(--diamond-font-weight-bold);
-      font-size: var(--diamond-font-size-sm);
+      font-weight: var(--dmd-font-weight-bold);
+      font-size: var(--dmd-font-size-sm);
     }
     
     h2 {
-      margin-block: var(--diamond-spacing);
+      margin-block: var(--dmd-spacing);
     }
 
     p:last-child {
-      font-size: var(--diamond-font-size-lg);
+      font-size: var(--dmd-font-size-lg);
     }
   }
 </style>

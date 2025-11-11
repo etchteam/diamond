@@ -1,9 +1,9 @@
 :root {
-  --diamond-button-primary-background: var(--color-blue);
-  --diamond-button-primary-background-hover: color-mix(
+  --dmd-button-primary-background: var(--color-blue);
+  --dmd-button-primary-background-hover: color-mix(
     in srgb,
     var(--color-blue),
-    var(--diamond-color-black) 10%
+    var(--dmd-color-black) 10%
   );
-  --diamond-button-primary-color: var(--diamond-color-white);
+  --dmd-button-primary-color: var(--dmd-color-white);
 }

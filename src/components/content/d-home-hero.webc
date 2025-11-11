@@ -31,7 +31,7 @@
 
   :host {
     display: grid;
-    grid-gap: var(--diamond-spacing-xl);
+    grid-gap: var(--dmd-spacing-xl);
     grid-template-columns: 1fr;
     overflow: hidden;
     
@@ -46,7 +46,7 @@
   }
 
   p, .alert {
-    animation: fade 0.75s var(--diamond-transition-timing) forwards;
+    animation: fade 0.75s var(--dmd-transition-timing) forwards;
     opacity: 0;
 
     @media (width >= 768px) {
@@ -55,12 +55,12 @@
   }
 
   .image {
-    animation: rotateit 0.5s var(--diamond-transition-timing) 0.4s forwards;
+    animation: rotateit 0.5s var(--dmd-transition-timing) 0.4s forwards;
     align-content: center;
     color: var(--color-blue);
     display: none;
     grid-template-columns: 1fr 1fr;
-    gap: var(--diamond-spacing-sm);
+    gap: var(--dmd-spacing-sm);
     transform: rotate(0deg);
     margin-inline-start: auto;
     width: 15vw;
@@ -87,39 +87,39 @@
 
   .icon-composition {
     animation:
-      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
-      enter-from-top-left 0.4s var(--diamond-transition-timing) 0.25s forwards;
+      fade 0.75s var(--dmd-transition-timing) 0.25s forwards,
+      enter-from-top-left 0.4s var(--dmd-transition-timing) 0.25s forwards;
     transform: translate(-100%, -100%);
   }
 
   .icon-content {
     animation:
-      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
-      enter-from-top-right 0.4s var(--diamond-transition-timing) 0.25s forwards;
+      fade 0.75s var(--dmd-transition-timing) 0.25s forwards,
+      enter-from-top-right 0.4s var(--dmd-transition-timing) 0.25s forwards;
     transform: translate(100%, -100%);
   }
 
   .icon-controls {
     animation:
-      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
-      enter-from-bottom-left 0.4s var(--diamond-transition-timing) 0.25s forwards;
+      fade 0.75s var(--dmd-transition-timing) 0.25s forwards,
+      enter-from-bottom-left 0.4s var(--dmd-transition-timing) 0.25s forwards;
     transform: translate(-100%, 100%);
   }
 
   .icon-canvas {
     animation:
-      fade 0.75s var(--diamond-transition-timing) 0.25s forwards,
-      enter-from-bottom-right 0.4s var(--diamond-transition-timing) 0.25s forwards;
+      fade 0.75s var(--dmd-transition-timing) 0.25s forwards,
+      enter-from-bottom-right 0.4s var(--dmd-transition-timing) 0.25s forwards;
     transform: translate(100%, 100%);
   }
 </style>
 
 <div class="content">
-  <h1 class="diamond-spacing-bottom-md fade-in">
+  <h1 class="dmd-spacing-bottom-md fade-in">
     Bring clarity to<br />
     your components
   </h1>
-  <p class="diamond-text-size-xxl diamond-spacing-bottom-lg">
+  <p class="dmd-text-size-xxl dmd-spacing-bottom-lg">
     Diamond UI is a methodology for teams who build interfaces.
   </p>
   <d-alert class="alert">

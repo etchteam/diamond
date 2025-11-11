@@ -1,20 +1,20 @@
 <style>
   d-sidebar-nav {
     details {
-      border-block-end: var(--diamond-border);
-      margin-block-start: var(--diamond-spacing-fluid);
+      border-block-end: var(--dmd-border);
+      margin-block-start: var(--dmd-spacing-fluid);
       
       @media (width < 768px) {
         background: var(--color-blue-darker);
-        border-block-start: var(--diamond-border);
-        margin-block-start: calc(var(--diamond-border-width) * -1);
-        margin-inline: calc(var(--diamond-spacing) * -1);
-        padding-inline: var(--diamond-spacing);
+        border-block-start: var(--dmd-border);
+        margin-block-start: calc(var(--dmd-border-width) * -1);
+        margin-inline: calc(var(--dmd-spacing) * -1);
+        padding-inline: var(--dmd-spacing);
 
         @supports (interpolate-size: allow-keywords) {
           interpolate-size: allow-keywords;
-          transition: height .5s var(--diamond-transition-timing);
-          height: calc(((var(--diamond-spacing-sm) * 2) + var(--diamond-font-size-lg)) * var(--diamond-font-line-height));
+          transition: height .5s var(--dmd-transition-timing);
+          height: calc(((var(--dmd-spacing-sm) * 2) + var(--dmd-font-size-lg)) * var(--dmd-font-line-height));
           
           &[open] {
             height: auto;
@@ -27,14 +27,14 @@
     summary {
       align-items: center;
       color: var(--color-white);
-      column-gap: var(--diamond-spacing-sm);
+      column-gap: var(--dmd-spacing-sm);
       cursor: pointer;
       display: inline-flex;
       list-style: none;
-      padding: var(--diamond-spacing-sm) var(--diamond-spacing);
-      margin-inline: calc(var(--diamond-spacing) * -1);
-      font-size: var(--diamond-font-size-lg);
-      transition: color var(--diamond-transition);
+      padding: var(--dmd-spacing-sm) var(--dmd-spacing);
+      margin-inline: calc(var(--dmd-spacing) * -1);
+      font-size: var(--dmd-font-size-lg);
+      transition: color var(--dmd-transition);
       user-select: none;
 
       &::-webkit-details-marker {
@@ -43,7 +43,7 @@
 
       @media (hover: hover) {
         &:hover {
-          color: var(--diamond-theme-link-color);
+          color: var(--dmd-theme-link-color);
         }
       }
 
@@ -53,9 +53,9 @@
     }
 
     section {
-      border-block-start: var(--diamond-border);
-      border-block-end: var(--diamond-border);
-      padding-block: var(--diamond-spacing);
+      border-block-start: var(--dmd-border);
+      border-block-end: var(--dmd-border);
+      padding-block: var(--dmd-spacing);
 
       & + section {
         border-block-start: 0 none;
@@ -69,9 +69,9 @@
 
     h2 {
       color: var(--color-blue-lightest);
-      font-size: var(--diamond-font-size-base);
-      font-weight: var(--diamond-font-weight-bold);
-      margin-block: var(--diamond-spacing-sm) var(--diamond-spacing);
+      font-size: var(--dmd-font-size-base);
+      font-weight: var(--dmd-font-weight-bold);
+      margin-block: var(--dmd-spacing-sm) var(--dmd-spacing);
     }
 
     ul {
@@ -81,7 +81,7 @@
     }
 
     li {
-      margin-block: var(--diamond-spacing-xs);
+      margin-block: var(--dmd-spacing-xs);
 
       &:last-child {
         margin-block-start: 0;
@@ -89,18 +89,18 @@
     }
 
     a {
-      border-radius: var(--diamond-radius);
+      border-radius: var(--dmd-radius);
       display: inline-flex;
       align-items: center;
-      column-gap: var(--diamond-spacing-sm);
-      padding: var(--diamond-spacing-sm) var(--diamond-spacing);
+      column-gap: var(--dmd-spacing-sm);
+      padding: var(--dmd-spacing-sm) var(--dmd-spacing);
       text-decoration: none;
-      transition: background-color var(--diamond-transition), color var(--diamond-transition);
+      transition: background-color var(--dmd-transition), color var(--dmd-transition);
       width: 100%;
 
       @media (hover: hover) {
         &:hover {
-          background-color: var(--diamond-theme-background-muted);
+          background-color: var(--dmd-theme-background-muted);
           color: var(--color-white);
         }
       }
@@ -152,7 +152,7 @@
   <d-sidebar-nav-details>
     <details>
       <summary>
-        <d-icon icon="menu" class="text-color-blue diamond-text-size-lg"></d-icon>
+        <d-icon icon="menu" class="text-color-blue dmd-text-size-lg"></d-icon>
         Menu
       </summary>
       <slot></slot>

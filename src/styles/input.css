@@ -1,4 +1,4 @@
 :root {
-  --diamond-input-border-color: var(--color-gray);
-  --diamond-input-border-color-hover: var(--color-blue);
+  --dmd-input-border-color: var(--color-gray);
+  --dmd-input-border-color-hover: var(--color-blue);
 }

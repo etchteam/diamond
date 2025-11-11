@@ -35,7 +35,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: var(--color-blue-darker);
-  border: var(--diamond-border);
+  border: var(--dmd-border);
 }
 
 /* Inline code */
@@ -124,7 +124,7 @@ pre[class*="language-"] {
 }
 
 .token.inserted {
-  animation: fadein 0.75s var(--diamond-transition-timing) forwards;
+  animation: fadein 0.75s var(--dmd-transition-timing) forwards;
   background-color: hsl(120deg 73% 75% / 10%);
   opacity: 0;
 }

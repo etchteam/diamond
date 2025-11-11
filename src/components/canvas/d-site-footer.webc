@@ -1,7 +1,7 @@
 <footer class="theme-medium">
-  <diamond-section padding="lg">
-    <diamond-wrap size="xxl">
+  <dmd-section padding="lg">
+    <dmd-wrap size="xxl">
       <slot></slot>
-    </diamond-wrap>
-  </diamond-section>
+    </dmd-wrap>
+  </dmd-section>
 </footer>

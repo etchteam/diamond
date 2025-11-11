@@ -23,10 +23,10 @@
 
   :host {
     align-items: center;
-    column-gap: var(--diamond-spacing);
+    column-gap: var(--dmd-spacing);
     display: flex;
     justify-content: center;
-    padding-block: var(--diamond-spacing-sm);
+    padding-block: var(--dmd-spacing-sm);
   }
 
   .line {
@@ -34,7 +34,7 @@
     flex: 1 1 auto;
     
     &::after {
-      border-block-start: var(--diamond-border);
+      border-block-start: var(--dmd-border);
       content: '';
       display: block;
       animation: expandline linear 1s;
@@ -50,9 +50,9 @@
     animation: growdiamond linear 1s;
     animation-timeline: view();
     aspect-ratio: 1;
-    background-color: var(--diamond-theme-border-color);
-    block-size: var(--diamond-font-size-xs);
-    border-radius: var(--diamond-radius-xs);
+    background-color: var(--dmd-theme-border-color);
+    block-size: var(--dmd-font-size-xs);
+    border-radius: var(--dmd-radius-xs);
     transform: rotate(45deg) scale(0.4);
   }
 
@@ -61,12 +61,12 @@
   }
 
   .diamond.animate-on-load {
-    animation: rotateandgrowdiamond 0.75s var(--diamond-transition-timing) 0.25s forwards;
+    animation: rotateandgrowdiamond 0.75s var(--dmd-transition-timing) 0.25s forwards;
     transform: rotate(0deg) scale(0);
   }
 
   .line.animate-on-load::after {
-    animation: fadeandexpandline 0.5s var(--diamond-transition-timing) 0.5s forwards;
+    animation: fadeandexpandline 0.5s var(--dmd-transition-timing) 0.5s forwards;
     opacity: 0;
     width: 0%;
   }
